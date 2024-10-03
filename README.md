@@ -1,0 +1,1 @@
+# plugins-social-testimonials-and-reviews-widget
