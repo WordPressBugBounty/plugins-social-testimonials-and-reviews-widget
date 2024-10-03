@@ -1,0 +1,131 @@
+#iframe{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#repuso_js_code
+{
+    width: 100%;
+    max-width: 500px;
+}
+
+p { margin-top: 35px; font-size: 14px; line-height: 26px; }
+ol li { font-size: 14px; line-height: 26px; }
+
+h3 { margin-bottom: 8px; }
+
+.new-url select,
+.new-url input
+{
+    box-sizing: border-box;
+    padding: 2px 5px;
+    height: 30px;
+    margin: 0px;
+    margin-right: 5px;
+    float: left;
+}
+
+.new-url select
+{
+    width: 100px;
+}
+
+.new-url input
+{
+    width: 100%;
+    max-width: 390px;
+}
+
+.clearfix
+{
+    clear: both;
+}
+
+#generate-shortcode-form input[type="text"],
+#generate-shortcode-form textarea
+{
+    width: 100%;
+    max-width: 500px;
+}
+
+#generate-shortcode-form textarea
+{
+    height: 100px;
+}
+
+.login form {
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 26px 24px 46px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+
+.login {
+	width: 350px;
+	float: left;
+	margin-right: 20px;
+}
+
+.login form .input, .login input[type=password], .login input[type=email], .login input[type=text] {
+    font-size: 18px;
+    line-height: 1.33333333;
+    width: 100%;
+    border-width: .0625rem;
+    padding: .1875rem .3125rem;
+    margin: 0 6px 16px 0;
+    min-height: 40px;
+    max-height: none;
+}
+
+.login label {
+    font-size: 14px;
+    line-height: 1.5;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.login .button-primary {
+    float: right;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dashicons-star-filled {
+	color: gold;
+}
+
+.widefat td {
+	vertical-align: middle;
+}
+
+#rw-reviews .dashicons-yes-alt, #rw-reviews .dashicons-remove {
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+	opacity: 0.4;
+}
+
+#rw-reviews .dashicons-remove.status2 {
+	color: red;
+	opacity: 1;
+}
+
+#rw-reviews .dashicons-yes-alt.status1 {
+	color: green;
+	opacity: 1;
+}
