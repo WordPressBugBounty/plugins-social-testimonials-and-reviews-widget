@@ -53,7 +53,7 @@
             var new_url = $('.new-url').first().clone();
             new_url.find('input').val('');
             new_url.find('select').val('show');
-            //$('.urls-wrapper').append(new_url);
+            $('.urls-wrapper').append(new_url);
         });
         
         $('#grid_tags,#grid_id').keyup(function(e)

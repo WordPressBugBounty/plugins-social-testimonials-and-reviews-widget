@@ -561,165 +561,168 @@ jQuery(document).ready(function($){
 });
 </script>
 
-<ul class="subsubsub" style="float:right">
-	<li class="rw-logged"><a class="rw-logout" href=''>Disconnect</a> | </li>
-	<li><a class="open-dashboard" href="">Open full dashboard <span class="dashicons dashicons-external"></span></a> | </li>
-	<li><a href='https://repuso.com/help?utm_source=plugin&utm_medium=wordpress&utm_campaign=<?php echo esc_attr(wp_get_theme());?>' target='_blank'>Video guides <span class="dashicons dashicons-external"></span></a> | </li>
-	<li><a href='https://repuso.com?utm_source=plugin&utm_medium=wordpress&utm_campaign=<?php echo esc_attr(wp_get_theme());?>' target='_blank'>repuso.com <span class="dashicons dashicons-external"></span></a></li>
-</ul>
+<div id="rw-wrapper">
 
-<h1>Social proof reviews by Repuso</h1>
+	<ul class="subsubsub" style="float:right">
+		<li class="rw-logged"><a class="rw-logout" href=''>Disconnect</a> | </li>
+		<li><a class="open-dashboard" href="">Open full dashboard <span class="dashicons dashicons-external"></span></a> | </li>
+		<li><a href='https://repuso.com/help?utm_source=plugin&utm_medium=wordpress&utm_campaign=<?php echo esc_attr(wp_get_theme());?>' target='_blank'>Video guides <span class="dashicons dashicons-external"></span></a> | </li>
+		<li><a href='https://repuso.com?utm_source=plugin&utm_medium=wordpress&utm_campaign=<?php echo esc_attr(wp_get_theme());?>' target='_blank'>repuso.com <span class="dashicons dashicons-external"></span></a></li>
+	</ul>
 
-<div id="rw-error" class="error notice" style="display:none">
-    <p></p>
-</div>
+	<h1>Social proof reviews by Repuso</h1>
 
-<div style="display:none" class="rw-not-logged">
-	<div class="login" id="rw-login" style="display: none">
-		<form action="" method="post">
-			<div class="rep-row">
-				<h2>Login</h2>
-				<div class="col-xs-12">
-					<label>Email address</label>
-					<input type="email" id="email" value="<?php echo esc_attr($this->current_user->user_email)?>" placeholder="" />
-				</div>
-				<div class="col-xs-6">
-					<label>Password</label>
-					<input type="password" id="password" value="" placeholder="password" />
-				</div>
-				<div class="col-xs-6">
-					<span>No account? <a href='' class='show-register'>Register here</a></span>
-					
-					<span class="rw-loading" style="display: none"><img src="<?php echo esc_attr(get_admin_url())."images/spinner.gif";?>"></span>
-					<input type="submit" value="Login" id="login_submit" class="button button-primary" />
-				</div>
-			</div>
-		</form>
+	<div id="rw-error" class="error notice" style="display:none">
+		<p></p>
 	</div>
-	
-	<div class="login" id="rw-register">
-		<form action="" method="post">
-			<div class="rep-row">
-				<h2>Start by creating an account</h2>
-				<div class="col-xs-12">
-					<label>Email address</label>
-					<input type="email" id="remail" value="<?php echo esc_attr($this->current_user->user_email)?>" placeholder="" />
-				</div>
-				<div class="col-xs-6">
-					<label>Password</label>
-					<input type="password" id="rpassword" value="" placeholder="password" />
-				</div>
-				<div class="col-xs-6">
-					<label>Website name</label>
-					<input type="text" id="vanity" value="<?php echo esc_attr($this->hostname)?>" placeholder="" />
-				</div>
-				<div class="col-xs-6">
-					<span>Have an account? <a href='' class='show-login'>Login here</a></span>
-					
-					<span class="rw-loading" style="display: none"><img src="<?php echo get_admin_url()."images/spinner.gif";?>"></span>
-					<input type="submit" value="Register" id="register_submit" class="button button-primary" />
-				</div>
-			</div>
-		</form>
-	</div>
-	
-	<br class="clear"><br class="clear">
-	
-	<h1>Example of review widgets that you can install on your website:</h1>
-	<h3>These are real reviews about Repuso</h3>
-	
-	<!-- Begin widget code -->
-	<div data-rw-flash="19859"></div>
-	<script>var script = document.createElement("script");script.type = "module";script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-flash.js";document.getElementsByTagName("head")[0].appendChild(script);</script>
-	<!-- End widget code -->
-	
-	<!-- Begin widget code -->
-	<div data-rw-masonry="19857" data-disable-custom-posts="true"></div>
-	<script>var script = document.createElement("script");script.type = "module";script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-masonry.js";document.getElementsByTagName("head")[0].appendChild(script);</script>
-	<!-- End widget code -->
-	
-	<br class="clear">
-</div>
 
-<div style="display:none" class="rw-logged">
-
-	<div style="display:none" id="rw-subaccounts" class="tablenav top">
-		<div class="alignleft actions bulkactions">
-			<label for="accounts" class="screen-reader-text">Select account</label>
-			<select name="action" id="accounts">
-				<option value="-1">Select account</option>
-			</select>
-			<input type="submit" id="doaction" class="button action" value="Select account">
-		</div>		
-		<br class="clear">
-	</div>
-	
-	
-	<div style="display:none" id="rw-channels">
-		<h2>Social proof channels</h2>
-		<table class="wp-list-table widefat fixed striped">
-		<thead>
-			<th class="manage-column " style="width: 50px;">Type</th>
-			<th class="manage-column column-title column-primary">Name</th>
-			<th class="manage-column column-title">Rating</th>
-		</thead>
-		<tbody></tbody>
-		</table>
-		
-		<br class="clear">
-		
-		<div id="all"></div>
-		<a href="" class="open-dashboard button action">Connect a channel <span class="dashicons dashicons-external"></span></a>
-		
-	</div>
-	
-	<div style="display:none" id="rw-widgets">
-		<h2>Widgets</h2>
-		<table class="wp-list-table widefat fixed striped">
-		<thead>
-			<th class="manage-column column-date">Type</th>
-			<th class="manage-column column-title column-primary">Name</th>
-			<th class="manage-column column-title">Shortcode</th>
-			<th class="manage-column column-title"></th>
-		</thead>
-		<tbody></tbody>
-		</table>
-		
-		<br class="clear">
-		
-		<a href="" class="open-dashboard button action">Create new widget <span class="dashicons dashicons-external"></span></a>
-		
-		<div id="rw_preview_wrapper" style="display: none">
-			<iframe id="rw_preview" width="100%" height="100%" frameborder="0" style="vertical-align: text-bottom; position: relative; margin: 0px; overflow: hidden; background-color: transparent;"></iframe>
+	<div style="display:none" class="rw-not-logged">
+		<div class="login" id="rw-login" style="display: none">
+			<form action="" method="post">
+				<div class="rep-row">
+					<h2>Login</h2>
+					<div class="col-xs-12">
+						<label>Email address</label>
+						<input type="email" id="email" value="<?php echo esc_attr($this->current_user->user_email)?>" placeholder="" />
+					</div>
+					<div class="col-xs-6">
+						<label>Password</label>
+						<input type="password" id="password" value="" placeholder="password" />
+					</div>
+					<div class="col-xs-6">
+						<span>No account? <a href='' class='show-register'>Register here</a></span>
+						
+						<span class="rw-loading" style="display: none"><img src="<?php echo esc_attr(get_admin_url())."images/spinner.gif";?>"></span>
+						<input type="submit" value="Login" id="login_submit" class="button button-primary" />
+					</div>
+				</div>
+			</form>
 		</div>
-	</div>
-	
-	<div style="display:none" id="rw-reviews">
-		<h2>Reviews</h2>
 		
-		<ul class="subsubsub" style="">
-			<li><a data-path="/inbox" class="current" href="">Inbox</a> | </li>
-			<li><a data-path="" class="" href="">Approved</a> | </li>
-			<li><a data-path="/all" href="">All</a></li>
-		</ul>
-
-		<table class="wp-list-table widefat fixed striped">
-		<thead>
-			<th class="manage-column " style="width: 50px;">Source</th>
-			<th class="manage-column column-title column-primary">Text</th>
-			<th class="manage-column column-date" style="width: 50px;"></th>
-			<th class="manage-column column-date">Rating</th>
-			<th class="manage-column column-date">Date</th>
-			<th class="manage-column column-date">Actions</th>
-		</thead>
-		<tbody></tbody>
-		</table>
+		<div class="login" id="rw-register">
+			<form action="" method="post">
+				<div class="rep-row">
+					<h2>Start by creating an account</h2>
+					<div class="col-xs-12">
+						<label>Email address</label>
+						<input type="email" id="remail" value="<?php echo esc_attr($this->current_user->user_email)?>" placeholder="" />
+					</div>
+					<div class="col-xs-6">
+						<label>Password</label>
+						<input type="password" id="rpassword" value="" placeholder="password" />
+					</div>
+					<div class="col-xs-6">
+						<label>Website name</label>
+						<input type="text" id="vanity" value="<?php echo esc_attr($this->hostname)?>" placeholder="" />
+					</div>
+					<div class="col-xs-6">
+						<span>Have an account? <a href='' class='show-login'>Login here</a></span>
+						
+						<span class="rw-loading" style="display: none"><img src="<?php echo get_admin_url()."images/spinner.gif";?>"></span>
+						<input type="submit" value="Register" id="register_submit" class="button button-primary" />
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<br class="clear"><br class="clear">
+		
+		<h1>Example of review widgets that you can install on your website:</h1>
+		<h3>These are real reviews about Repuso</h3>
+		
+		<!-- Begin widget code -->
+		<div data-rw-flash="19859"></div>
+		<script>var script = document.createElement("script");script.type = "module";script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-flash.js";document.getElementsByTagName("head")[0].appendChild(script);</script>
+		<!-- End widget code -->
+		
+		<!-- Begin widget code -->
+		<div data-rw-masonry="19857" data-disable-custom-posts="true"></div>
+		<script>var script = document.createElement("script");script.type = "module";script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-masonry.js";document.getElementsByTagName("head")[0].appendChild(script);</script>
+		<!-- End widget code -->
 		
 		<br class="clear">
+	</div>
+
+	<div style="display:none" class="rw-logged">
+
+		<div style="display:none" id="rw-subaccounts" class="tablenav top">
+			<div class="alignleft actions bulkactions">
+				<label for="accounts" class="screen-reader-text">Select account</label>
+				<select name="action" id="accounts">
+					<option value="-1">Select account</option>
+				</select>
+				<input type="submit" id="doaction" class="button action" value="Select account">
+			</div>		
+			<br class="clear">
+		</div>
 		
-		<div id="all"></div>
-		<a href="" class="open-dashboard button action">Manage all reviews <span class="dashicons dashicons-external"></span></a>
+		
+		<div style="display:none" id="rw-channels">
+			<h2>Social proof channels</h2>
+			<table class="wp-list-table widefat fixed striped">
+			<thead>
+				<th class="manage-column " style="width: 50px;">Type</th>
+				<th class="manage-column column-title column-primary">Name</th>
+				<th class="manage-column column-title">Rating</th>
+			</thead>
+			<tbody></tbody>
+			</table>
+			
+			<br class="clear">
+			
+			<div id="all"></div>
+			<a href="" class="open-dashboard button action">Connect a channel <span class="dashicons dashicons-external"></span></a>
+			
+		</div>
+		
+		<div style="display:none" id="rw-widgets">
+			<h2>Widgets</h2>
+			<table class="wp-list-table widefat fixed striped">
+			<thead>
+				<th class="manage-column column-date">Type</th>
+				<th class="manage-column column-title column-primary">Name</th>
+				<th class="manage-column column-title">Shortcode</th>
+				<th class="manage-column column-title"></th>
+			</thead>
+			<tbody></tbody>
+			</table>
+			
+			<br class="clear">
+			
+			<a href="" class="open-dashboard button action">Create new widget <span class="dashicons dashicons-external"></span></a>
+			
+			<div id="rw_preview_wrapper" style="display: none">
+				<iframe id="rw_preview" width="100%" height="100%" frameborder="0" style="vertical-align: text-bottom; position: relative; margin: 0px; overflow: hidden; background-color: transparent;"></iframe>
+			</div>
+		</div>
+		
+		<div style="display:none" id="rw-reviews">
+			<h2>Reviews</h2>
+			
+			<ul class="subsubsub" style="">
+				<li><a data-path="/inbox" class="current" href="">Inbox</a> | </li>
+				<li><a data-path="" class="" href="">Approved</a> | </li>
+				<li><a data-path="/all" href="">All</a></li>
+			</ul>
+
+			<table class="wp-list-table widefat fixed striped">
+			<thead>
+				<th class="manage-column " style="width: 50px;">Source</th>
+				<th class="manage-column column-title column-primary">Text</th>
+				<th class="manage-column column-date" style="width: 50px;"></th>
+				<th class="manage-column column-date">Rating</th>
+				<th class="manage-column column-date">Date</th>
+				<th class="manage-column column-date">Actions</th>
+			</thead>
+			<tbody></tbody>
+			</table>
+			
+			<br class="clear">
+			
+			<div id="all"></div>
+			<a href="" class="open-dashboard button action">Manage all reviews <span class="dashicons dashicons-external"></span></a>
+			
+		</div>
 		
 	</div>
-	
 </div>
