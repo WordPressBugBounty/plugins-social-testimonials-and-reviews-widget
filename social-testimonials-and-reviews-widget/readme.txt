@@ -3,8 +3,8 @@ Contributors: neran
 Donate link: https://repuso.com
 Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, yelp reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, Realtor
 Requires at least: 3.0.1
-Tested up to: 6.7
-Stable tag: 5.11
+Tested up to: 6.7.1
+Stable tag: 5.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
@@ -28,7 +28,7 @@ Select your favorite reviews in the dashboard at your Wordpress admin for displa
 = Showcase reviews on your website to build trust =
 Increase your website's conversion by showing the selected reviews in the floating widget or inline on your most important pages.
 
-[youtube http://www.youtube.com/watch?v=sdfI-w091i8]
+[youtube http://www.youtube.com/watch?v=eQ5N3ZQpqD4]
 
 = Video testimonials and reviews =
 When it comes to social proof, you can’t beat video testimonials from real clients. It’s the most reliable review possible.
@@ -45,43 +45,41 @@ Some of the channels we support:
 6. Google Play Store
 7. Delighted
 8. Google My Business (GMB)
-9. Yelp
-10. GetApp
-11. Capterra
-12. G2
-13. Thumbtack
-15. TripAdvisor
-16. Yellow Pages
-17. Airbnb
-18. Healthgrades
-19. Vrbo / HomeAway
-20. Booking.com
-21. GetYourGuide
-22. Expedia
-23. Zillow
-24. Houzz
-25. HomeAdvisor
-26. Angie's List
-27. BBB.org
-28. OpenTable
-29. Realtor.com
-30. Viator
-31. Yell
-32. Fresha
-33. Booksy
-34. Bark
-35. Vitals
-36. WebMD
-37. Zocdoc
-38. RateMDs
-39. Zola
-40. The Knot
-41. WeddingWire
-42. Justia
-43. FindLaw
-44. Avvo
-45. Freetobook
-46. GlossGenius
+9. GetApp
+10. Capterra
+11. G2
+12. Thumbtack
+13. TripAdvisor
+14. Yellow Pages
+15. Airbnb
+16. Healthgrades
+17. Vrbo / HomeAway
+18. Booking.com
+19. GetYourGuide
+20. Expedia
+21. Zillow
+22. Houzz
+23. HomeAdvisor
+24. Angie's List
+25. BBB.org
+26. OpenTable
+27. Realtor.com
+28. Viator
+29. Yell
+30. Fresha
+31. Booksy
+32. Bark
+33. Vitals
+34. WebMD
+35. Zocdoc
+36. RateMDs
+37. Zola
+38. The Knot
+39. WeddingWire
+40. Justia
+41. Avvo
+42. Freetobook
+43. GlossGenius
 
 All your reviews are collected to one dashboard, where you can decide which of them to feature in widgets. Easily add these beautiful widgets to your website:
 1. Floating widget
@@ -95,8 +93,9 @@ All your reviews are collected to one dashboard, where you can decide which of t
 9. List widget
 10. Slider widget
 11. Badge2 widget
-12. Image badgets
+12. Image badges
 13. Email signature
+14. All Inclusive AI widgets
 
 Visit our website for more information about this plugin [Repuso](https://repuso.com/integrations-wordpress/?utm_source=web&utm_medium=wordpress&utm_campaign=plugin "Repuso - Social proof reviews and testimonials")
 
@@ -108,6 +107,9 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 5.20 =
+Multi language
 
 = 5.12 =
 WP 6.7.1
@@ -348,6 +350,9 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 6. Collect more positive reviews
 
 == Changelog ==
+
+= 5.20 =
+Multi language
 
 = 5.12 =
 WP 6.7.1
