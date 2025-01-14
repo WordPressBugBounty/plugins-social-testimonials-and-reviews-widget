@@ -4,7 +4,7 @@ Donate link: https://repuso.com
 Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, yelp reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, Realtor
 Requires at least: 3.0.1
 Tested up to: 6.7.1
-Stable tag: 5.20
+Stable tag: 5.21
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
@@ -107,6 +107,9 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 5.21 =
+Minor security fix
 
 = 5.20 =
 Multi language
@@ -350,6 +353,9 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 6. Collect more positive reviews
 
 == Changelog ==
+
+= 5.21 =
+Minor security fix
 
 = 5.20 =
 Multi language

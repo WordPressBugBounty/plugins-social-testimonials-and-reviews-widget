@@ -4,7 +4,7 @@ if (!defined('ABSPATH'))
 /*
   Plugin Name: Social proof testimonials and reviews by Repuso
   Description: Social testimonials & reviews on your own website as social proof. Increase your website's sales and conversion rate with Repuso.
-  Version: 5.20
+  Version: 5.21
  */
 
 class RepusoIntegration {
@@ -443,6 +443,13 @@ class RepusoIntegration {
 	}
     
 	function get_widget_image_code($type, $args) {
+
+		if(!empty($args) && is_array($args)) {
+			foreach($args as $k => $v) {
+				$args[$k] = sanitize_html_class($v);
+			}
+		}
+
 		if (isset($args['id'])) {
 			$id = $args['id'];
 			$link = $link_end = "";
@@ -474,6 +481,13 @@ class RepusoIntegration {
 	}
 
     function get_widget_code($type, $args) {
+
+		if(!empty($args) && is_array($args)) {
+			foreach($args as $k => $v) {
+				$args[$k] = sanitize_html_class($v);
+			}
+		}
+
 		ob_start();
         if (isset($args['id'])) {
             $id = $args['id'];
