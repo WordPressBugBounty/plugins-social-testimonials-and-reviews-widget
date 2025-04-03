@@ -4,7 +4,7 @@ if (!defined('ABSPATH'))
 /*
   Plugin Name: Social proof testimonials and reviews by Repuso
   Description: Social testimonials & reviews on your own website as social proof. Increase your website's sales and conversion rate with Repuso.
-  Version: 5.21
+  Version: 5.22
  */
 
 class RepusoIntegration {
@@ -314,7 +314,7 @@ class RepusoIntegration {
 	
 	function ajax_rw_store_info(){
 		
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
@@ -335,7 +335,7 @@ class RepusoIntegration {
 
 	function ajax_rw_store_login(){
 		
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !current_user_can('manage_options') || !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
@@ -359,7 +359,7 @@ class RepusoIntegration {
 	
 	function ajax_rw_store_subaccount(){
 		
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
@@ -379,7 +379,7 @@ class RepusoIntegration {
 		
 	function ajax_rw_logout(){
 		
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
