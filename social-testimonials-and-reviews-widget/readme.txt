@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: neran
 Donate link: https://repuso.com
-Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, yelp reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, Realtor
+Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, Realtor
 Requires at least: 3.0.1
 Tested up to: 6.8.1
-Stable tag: 5.23
+Stable tag: 5.24
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
@@ -80,6 +80,10 @@ Some of the channels we support:
 41. Avvo
 42. Freetobook
 43. GlossGenius
+44. Wordpress plugin
+45. AppSumo
+46. Product Hunt
+47. Envato
 
 All your reviews are collected to one dashboard, where you can decide which of them to feature in widgets. Easily add these beautiful widgets to your website:
 1. Floating widget
@@ -107,6 +111,9 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 5.24 =
+4 new review platforms added: Wordpress plugin, AppSumo, Product Hunt, Envato
 
 = 5.23 =
 WP v6.8.1
@@ -359,6 +366,9 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 6. Collect more positive reviews
 
 == Changelog ==
+
+= 5.24 =
+4 new review platforms added: Wordpress plugin, AppSumo, Product Hunt, Envato
 
 = 5.23 =
 WP v6.8.1
