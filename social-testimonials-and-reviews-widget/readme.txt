@@ -4,7 +4,7 @@ Donate link: https://repuso.com
 Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, Realtor
 Requires at least: 3.0.1
 Tested up to: 6.8.1
-Stable tag: 5.24
+Stable tag: 5.25
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
@@ -17,7 +17,7 @@ Collect social proof reviews, showcase on your website. Boost your website sales
 = Social proof increases conversion =
 By implementing Repuso and showing your visitors satisfied testimonials from real persons, you will boost the conversion rate of your website!
 
-[youtube http://www.youtube.com/watch?v=OyCzfWMwh8I]
+[youtube http://www.youtube.com/watch?v=YGtbuuVRl-Q]
 
 = Collect social proof reviews from various channels =
 Repuso monitors all your social media channels for reviews by your customers. Reviews can also be collected through our widgets. 
@@ -111,6 +111,9 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 5.25 =
+Collect page enhancements
 
 = 5.24 =
 4 new review platforms added: Wordpress plugin, AppSumo, Product Hunt, Envato
@@ -366,6 +369,9 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 6. Collect more positive reviews
 
 == Changelog ==
+
+= 5.25 =
+Collect page enhancements
 
 = 5.24 =
 4 new review platforms added: Wordpress plugin, AppSumo, Product Hunt, Envato
