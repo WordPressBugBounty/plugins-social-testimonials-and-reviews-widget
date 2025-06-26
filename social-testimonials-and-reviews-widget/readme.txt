@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: neran
 Donate link: https://repuso.com
-Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, Realtor
+Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, trustindex, Realtor
 Requires at least: 3.0.1
 Tested up to: 6.8.1
-Stable tag: 5.25
+Stable tag: 5.27
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
@@ -111,6 +111,12 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 5.27 =
+Plugin name change
+
+= 5.26 =
+Security enhancements
 
 = 5.25 =
 Collect page enhancements
@@ -369,6 +375,12 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 6. Collect more positive reviews
 
 == Changelog ==
+
+= 5.27 =
+Plugin name change
+
+= 5.26 =
+Security enhancements
 
 = 5.25 =
 Collect page enhancements
