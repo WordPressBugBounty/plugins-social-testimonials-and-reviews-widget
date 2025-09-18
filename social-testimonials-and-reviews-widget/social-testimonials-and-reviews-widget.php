@@ -4,7 +4,7 @@ if (!defined('ABSPATH'))
 /*
   Plugin Name: Reviews Widgets for Google & 45+ platforms by Repuso
   Description: Social testimonials & reviews on your own website as social proof. Increase your website's sales and conversion rate with Repuso.
-  Version: 5.28
+  Version: 5.29
  */
 
 class RepusoIntegration {

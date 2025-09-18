@@ -220,6 +220,12 @@ jQuery(document).ready(function($){
 		    success: function(response, textStatus, jqXHR) {
 			    console.log("got account info");
 		    	account = response;
+
+				if(!account || !account.widgets) {
+					console.log(response);
+			    	showError("Problem getting account information, please disconnect and log in again");
+					return false;
+				}
 		    	
 		    	let posts = account.approved_posts.usage ? account.approved_posts.usage : 0;
 		    	let widgets = account.widgets.usage ? account.widgets.usage : 0;
