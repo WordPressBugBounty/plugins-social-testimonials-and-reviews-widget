@@ -4,7 +4,7 @@ if (!defined('ABSPATH'))
 /*
   Plugin Name: Reviews Widgets for Google & 45+ platforms by Repuso
   Description: Social testimonials & reviews on your own website as social proof. Increase your website's sales and conversion rate with Repuso.
-  Version: 5.29
+  Version: 5.30
  */
 
 class RepusoIntegration {
@@ -155,6 +155,11 @@ class RepusoIntegration {
     }
 
     function admin_enqueue_scripts() {
+
+		if ( !current_user_can('manage_options') ) {
+			return;
+		}
+		
         wp_enqueue_style('rw_css_admin', $this->plugin_url . 'css/rw-admin.css');
         wp_enqueue_script('rw_js_admin', $this->plugin_url . 'js/rw-admin.js');
 		wp_localize_script('rw_js_admin', 'ajax_var', array(
@@ -185,7 +190,7 @@ class RepusoIntegration {
         $saved = false;
         if (!empty($_POST) && isset($_POST['repulso_save']) && current_user_can('manage_options')) {
 
-			if ( ! wp_verify_nonce( $_GET['_wpnonce'], 'floating-nonce' ) ) {
+			if ( !current_user_can('manage_options') || !wp_verify_nonce( $_GET['_wpnonce'], 'floating-nonce' ) ) {
 				$this->handle_nonce_error();
 			}
 
@@ -234,7 +239,12 @@ class RepusoIntegration {
 	    require_once dirname(__FILE__) . '/tmpl/main.php';
     }
     
-    function author_admin_notice(){
+    function author_admin_notice() {
+
+		if ( !current_user_can('manage_options') ) {
+			return;
+		}
+		
 	    $time = time();
 	    $screen = get_current_screen(); 
 	    $admin_url = admin_url(); 
@@ -297,7 +307,7 @@ class RepusoIntegration {
 
 	function ajax_rw_get_login_url(){
 		
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !current_user_can('manage_options') || !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
@@ -314,7 +324,7 @@ class RepusoIntegration {
 	
 	function ajax_rw_store_info(){
 		
-		if ( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !current_user_can('manage_options') || !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
@@ -359,7 +369,7 @@ class RepusoIntegration {
 	
 	function ajax_rw_store_subaccount(){
 		
-		if ( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !current_user_can('manage_options') || !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
@@ -379,7 +389,7 @@ class RepusoIntegration {
 		
 	function ajax_rw_logout(){
 		
-		if ( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !current_user_can('manage_options') || !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
@@ -399,7 +409,7 @@ class RepusoIntegration {
 	
 	function ajax_rw_store_notice_dismiss(){
 		
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !current_user_can('manage_options') || ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 		
@@ -529,7 +539,7 @@ class RepusoIntegration {
 
 	function hook() {
 
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+		if ( !current_user_can('manage_options') || ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 			$this->handle_nonce_error();
 		}
 
