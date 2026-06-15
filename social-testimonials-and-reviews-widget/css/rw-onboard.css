@@ -1,0 +1,3335 @@
+/*
+ * Repuso plugin admin styling. Modelled on Glow's onboarding plugin:
+ *   - Arial body, centered ~800px column, generous whitespace
+ *   - Cards: 40px padding, no border, soft shadow, 10px radius
+ *   - Inputs/buttons borrow Glow's proportions (10px padding, 6px radius)
+ *   - Repuso orange replaces Glow's pink throughout
+ *
+ * All colour values inlined; no CSS custom properties so the file is free
+ * of double-dash tokens.
+ */
+
+/* Wrapper spans the full WP admin column. Inner blocks (headline,
+ * cards, sections) keep their own width caps so wide screens don't
+ * stretch text into uncomfortable line lengths. */
+#rw-wrapper {
+	font-family: Arial, sans-serif;
+	color: #333;
+	margin: 20px 0 50px;
+	padding: 0 20px;
+	text-align: center;
+}
+/* When not connected (onboard/signup view) the layout is content-only -
+   no topbar (it's PHP-gated off in topbar.php) and the signup form
+   reads cleaner at a fixed reading width than at full screen width. */
+#rw-wrapper[data-rw-has-apikey="0"] {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#rw-wrapper a { transition: color 0.15s ease; }
+
+/* Quiet text-style top nav (no float, sits inside the column). */
+.rw-topnav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: flex-end;
+	gap: 16px;
+	font-size: 12px;
+}
+.rw-topnav li { margin: 0; padding: 0; }
+.rw-topnav a { text-decoration: none; color: #666; }
+.rw-topnav a:hover { color: #E67E21; }
+.rw-topnav .dashicons {
+	font-size: 13px;
+	width: 13px;
+	height: 13px;
+	vertical-align: middle;
+	margin-left: 2px;
+}
+
+/* Status pill (only shown when Connected / Connecting). */
+#rw-wrapper .rw-status-line {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin: 18px 0 0;
+	font-size: 13px;
+	color: #666;
+}
+.rw-status-dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: #bbb;
+	display: inline-block;
+	flex-shrink: 0;
+}
+.rw-disconnect-confirm { margin-left: 12px; font-size: 13px; color: #666; }
+.rw-disconnect-confirm a { margin-left: 6px; text-decoration: none; }
+.rw-disconnect-confirm a#rw-disconnect-yes { color: #c0392b; }
+.rw-disconnect-confirm a#rw-disconnect-no  { color: #999; }
+
+/* Initial-load placeholder. */
+.rw-checking {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 60px 0;
+	color: #666;
+	font-size: 13px;
+}
+.rw-checking__spinner {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	border: 3px solid #eee;
+	border-top-color: #E67E21;
+	border-radius: 50%;
+	animation: rw-spin 0.75s linear infinite;
+}
+
+/* Brand block: generous top + bottom space, centered. Mirrors Glow's logo
+ * pattern (30/45) but slightly tighter to match the narrower header. */
+.rw-brand {
+	text-align: center;
+	margin: 24px 0 36px;
+}
+.rw-brand__logo {
+	display: inline-block;
+	width: 150px;
+	height: auto;
+}
+
+/* Headline above the cards. Tighter line between title and subtitle. */
+/* Mirrors Glow's .glow-onboard__headline proportions:
+ *   h1: 24px / weight 600 / margin 0 0 8px
+ *   p : 14px / muted / margin 0
+ * Padding sets the breathing room between this header block and the cards
+ * row underneath; the gap *inside* the header (title -> subtitle) comes
+ * entirely from the h2's 8px bottom margin. */
+/* Disconnected onboard view: anchor for the floating language picker
+   pinned to the top-right (.rw-onboard__lang). Padding-top mirrors the
+   brand block above so the switcher doesn't visually clip the logo. */
+.rw-not-logged { position: relative; }
+.rw-onboard__lang {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	z-index: 10;
+}
+
+.rw-onboard__headline {
+	text-align: center;
+	padding: 16px 24px 28px;
+	max-width: 720px;
+	margin: 0 auto;
+}
+/* Modifier for connected-state pages that want a regular left-aligned
+   page header instead of the centered onboarding/landing treatment.
+   Sizes match section titles so all page headers feel uniform. */
+.rw-onboard__headline.is-left {
+	text-align: left;
+	max-width: none;
+	margin: 0;
+	padding: 4px 0 20px;
+}
+#rw-wrapper .rw-onboard__headline.is-left h2 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #222;
+	margin: 0;
+	padding: 0;
+}
+#rw-wrapper .rw-onboard__headline.is-left p {
+	font-size: 13px;
+	color: #6b7280;
+	margin: 4px 0 0;
+	padding: 0;
+}
+#rw-wrapper .rw-onboard__headline h2 {
+	font-size: 24px;
+	line-height: 1.3;
+	color: #222;
+	margin: 0 0 8px;
+	padding: 0;
+	font-weight: 600;
+}
+#rw-wrapper .rw-onboard__headline p {
+	color: #6b7280;
+	font-size: 14px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+/* Cards row: side-by-side, centered, equal heights. The login card's
+ * "Forgot password" link pushes to the bottom (margin-top: auto on .rw-card__hint)
+ * so the shorter card visually balances the taller signup card. */
+.rw-cards {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	align-items: stretch;
+	margin: 0 0 28px;
+}
+.rw-card {
+	flex: 1 1 0;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	padding: 28px 32px;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+}
+.rw-card__inner {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+.rw-card h3 {
+	margin: 0 0 6px;
+	font-size: 18px;
+	color: #222;
+}
+.rw-card__subtitle {
+	margin: 0 0 14px;
+	color: #666;
+	font-size: 13px;
+	line-height: 1.5;
+}
+/* margin-top: auto pushes this to the card's bottom edge (the card is a
+ * flex column), so the login form's "Forgot password" sits at the same
+ * baseline as the signup card's "Learn more" link regardless of how much
+ * content is in either. */
+.rw-card__hint {
+	margin: auto 0 0;
+	padding-top: 18px;
+	font-size: 14px;
+	line-height: 1.4;
+	text-align: center;
+}
+.rw-card__hint a {
+	color: #E67E21;
+	text-decoration: none;
+	line-height: 1.4;
+}
+.rw-card__hint a:hover { text-decoration: underline; }
+
+/* Intro paragraph at the TOP of an OTP step (e.g. "We'll email you a
+   6-digit code…"). Distinct from .rw-card__hint so it doesn't inherit
+   margin-top:auto, which would otherwise push it to the bottom of the
+   step alongside the switch links. #rw-wrapper prefix outweighs WP
+   admin's default `p { margin: 1em 0 }` so the negative-ish top
+   margin actually applies (we want the intro to sit close to the
+   email field above, not 14px+1em away from it). */
+#rw-wrapper .rw-step__intro {
+	margin: -4px 0 12px;
+	font-size: 13px;
+	color: #999;
+	line-height: 1.5;
+}
+
+/* Login card variants (password / OTP-request / OTP-verify) stack
+   one-at-a-time inside this wrapper. Inactive steps are display:none
+   (taken out of layout) and the active step is flex-grown to fill
+   whatever vertical space the form gives it - so its bottom-link
+   (.rw-card__hint, margin-top:auto) pins to the form's bottom edge,
+   matching the signup card's "Learn more" link sitting at the same
+   y. Tradeoff: switching login modes may resize the card slightly
+   (~30px) because each mode's intrinsic content differs; that's
+   acceptable given the alternative (stable card height) bloated
+   the wasted whitespace and broke bottom-link alignment. */
+.rw-login__steps {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+}
+.rw-login__step {
+	display: none;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+}
+.rw-login__step.is-current {
+	display: flex;
+}
+
+/* The 6-digit code input is given an oversized monospace style so the
+   user can scan-confirm it matches what's in their email at a glance. */
+.rw-field__input-code {
+	font-family: Menlo, Consolas, monospace;
+	font-size: 22px;
+	letter-spacing: 6px;
+	text-align: center;
+}
+
+/* Form fields. */
+.rw-field { margin-bottom: 14px; }
+.rw-field__label {
+	display: block;
+	font-size: 12px;
+	font-weight: 500;
+	color: #999;
+	margin: 0 0 4px;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+}
+/* WP admin's forms.css applies `input[type=text|email|password]` rules with
+ * higher specificity than a single class. Wrapping with `#rw-wrapper` and
+ * chaining `input` to the class beats those defaults without resorting to
+ * !important. Also explicitly reset box-shadow (WP admin gives inputs an
+ * inset 0 1px 2px shadow by default) so the border is the only outline. */
+#rw-wrapper input.rw-field__input {
+	width: 100%;
+	padding: 10px 12px;
+	font-size: 14px;
+	font-family: inherit;
+	color: #333;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	box-shadow: none;
+	box-sizing: border-box;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+	line-height: 1.4;
+}
+#rw-wrapper input.rw-field__input:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+.rw-field__error {
+	font-size: 12px;
+	color: #c0392b;
+	margin-top: 4px;
+}
+.rw-field__error:empty { display: none; }
+
+/* Buttons (full width, Glow proportions). */
+.rw-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 15px 0 0;
+	padding: 10px;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: inherit;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	cursor: pointer;
+	text-decoration: none;
+	box-sizing: border-box;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.rw-button-primary {
+	background: #E67E21;
+	color: #fff;
+	border-color: #E67E21;
+}
+.rw-button-primary:hover:not(:disabled) {
+	background: #fff;
+	color: #E67E21;
+	border-color: #E67E21;
+}
+.rw-button-outline {
+	background: #fff;
+	color: #E67E21;
+	border-color: #E67E21;
+}
+.rw-button-outline:hover:not(:disabled) {
+	background: #E67E21;
+	color: #fff;
+}
+.rw-button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Status banner inside a card. */
+.rw-onboard__status {
+	padding: 10px 12px;
+	border-radius: 6px;
+	font-size: 13px;
+	margin-bottom: 14px;
+	display: none;
+	text-align: left;
+}
+.rw-onboard__status.is-visible { display: block; }
+.rw-onboard__status-success {
+	background: #ecfdf5;
+	color: #065f46;
+	border: 1px solid #a7f3d0;
+}
+.rw-onboard__status-error {
+	background: #fef2f2;
+	color: #991b1b;
+	border: 1px solid #fecaca;
+}
+
+/* Trust line and rating image/link below the CTA. No separator. */
+/* Trust line ("Free trial. No credit card. Cancel anytime.") sits
+   directly under the signup button so it reads as reassurance for
+   THAT button, not a free-floating note. The #rw-wrapper prefix is
+   required to outweigh WP admin's default `p { margin: 1em 0 }`
+   which would otherwise dominate the gap above this line. */
+#rw-wrapper .rw-onboard__trust {
+	text-align: center;
+	font-size: 12px;
+	color: #999;
+	margin: 4px 0 0;
+}
+/* Make the signup form a flex column so the "Learn more" link below
+   can push to the card's bottom edge via margin-top:auto. Without
+   this, the form lays out its children in normal flow and the link
+   sits immediately under the trust line. Matches what the login
+   card already does so both cards align their bottom links. */
+#rw-signup-form,
+#rw-login-form {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+/* "Learn more about Repuso" pinned to the bottom of the card, sized
+   to match the login card's bottom switch link. */
+.rw-signup__learnmore {
+	text-align: center;
+	margin: auto 0 0;
+	padding-top: 18px;
+}
+.rw-signup__learnmore img {
+	max-width: 260px;
+	height: auto;
+	display: inline-block;
+	margin-bottom: 14px;
+}
+.rw-signup__learnmore .rw-learnmore-link {
+	display: block;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #E67E21;
+	text-decoration: none;
+}
+.rw-signup__learnmore .rw-learnmore-link:hover { text-decoration: underline; }
+
+/* Success screen (replaces signup form after registration). */
+.rw-onboard__success { text-align: center; padding: 8px 0; }
+.rw-onboard__success svg {
+	width: 48px;
+	height: 48px;
+	color: #065f46;
+	margin-bottom: 14px;
+}
+.rw-onboard__success h3 {
+	margin: 0 0 8px;
+	font-size: 18px;
+	color: #222;
+}
+.rw-onboard__success p {
+	color: #666;
+	font-size: 14px;
+	margin: 0 0 20px;
+}
+/* "Redirecting to your dashboard…" line shown after signup until the
+   JS navigates to the WP plugin Dashboard page. Spinner is the same
+   one the form buttons use; recoloured for the white card background. */
+.rw-onboard__redirecting {
+	color: #6b7280;
+	font-size: 13px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+}
+.rw-onboard__redirecting .rw-onboard__spinner {
+	border-color: rgba(230, 126, 33, 0.3);
+	border-top-color: #E67E21;
+	margin-right: 0;
+}
+
+/* Button spinner. */
+.rw-onboard__spinner {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: rw-spin 0.7s linear infinite;
+	margin-right: 8px;
+	vertical-align: middle;
+}
+.rw-button-outline .rw-onboard__spinner {
+	border-color: rgba(230, 126, 33, 0.3);
+	border-top-color: #E67E21;
+}
+@keyframes rw-spin { to { transform: rotate(360deg); } }
+
+/* Marketing card: logo (top, centered), bullets, video stacked vertically.
+ * Same card chrome (no border, soft shadow, 40px padding) as the auth cards. */
+.rw-marketing__logo {
+	text-align: center;
+}
+.rw-marketing__logo img {
+	display: inline-block;
+	width: 130px;
+	height: auto;
+}
+.rw-marketing {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	padding: 40px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	text-align: left;
+}
+.rw-marketing__copy { min-width: 0; }
+.rw-marketing__copy h3 {
+	margin: 0 0 14px;
+	font-size: 19px;
+	color: #222;
+	font-weight: bold;
+}
+.rw-marketing__features { margin: 0; padding: 0; list-style: none; }
+.rw-marketing__features li {
+	font-size: 13px;
+	color: #444;
+	line-height: 1.6;
+	padding-left: 18px;
+	position: relative;
+	margin: 0 0 8px;
+}
+.rw-marketing__features li:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 9px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #E67E21;
+}
+.rw-marketing__features strong {
+	color: #222;
+	font-weight: bold;
+}
+.rw-marketing__trial {
+	margin: 16px 0 0;
+	font-size: 12px;
+	color: #999;
+	font-style: italic;
+}
+
+/* Marketing video sits at the bottom of the marketing card. 56.25%
+ * padding-bottom keeps the iframe at a perfect 16:9. */
+.rw-marketing__video {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	height: 0;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.rw-marketing__video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+/* ====================================================================
+ * CONNECTED VIEW: widgets / channels / reviews sections.
+ *
+ * Each section is a soft-shadow card with a head (title + lede + action),
+ * a body (list of rows or review cards), and an optional foot.
+ * ==================================================================== */
+
+/* ====================================================================
+ * OVERVIEW DASHBOARD: action banner + KPI cards + (future) charts.
+ * ==================================================================== */
+/* Free-trial progress banner. Two variants share the same markup:
+   .rw-trial          → small "10 days left" strip, low chrome
+   .rw-trial.is-prominent → card with prominent CTA, used once the
+                            account is set up so picking a plan is
+                            the obvious next step.
+   Urgency colour follows .is-ok / .is-warning / .is-urgent so the
+   fill colour escalates as the trial winds down without the copy
+   needing to change. */
+.rw-trial {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	padding: 10px 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	/* Lives above the topbar now (rendered by tmpl/topbar.php) so it
+	   needs its own bottom spacing - the .rw-overview gap that
+	   previously separated it from the next card no longer applies.
+	   text-align:left because the banner is now a direct child of
+	   #rw-wrapper, which has text-align:center for the disconnected
+	   onboard view - we don't want that inheritance here. */
+	margin-bottom: 14px;
+	text-align: left;
+}
+.rw-trial__body {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.rw-trial__text {
+	flex: 1 1 auto;
+	font-size: 13px;
+	color: #374151;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.rw-trial__text strong {
+	font-weight: 600;
+}
+.rw-trial__sub {
+	color: #6b7280;
+	font-size: 12px;
+}
+.rw-trial__cta { white-space: nowrap; }
+.rw-trial__cta .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	margin-left: 4px;
+	vertical-align: middle;
+}
+/* In the subtle variant the CTA is a quiet outline button to keep
+   the strip unobtrusive while still actionable. */
+.rw-trial:not(.is-prominent) .rw-trial__cta {
+	background: transparent;
+	color: #E67E21;
+	border: 1px solid #E67E21;
+	padding: 4px 10px;
+	font-size: 12px;
+	font-weight: 500;
+}
+.rw-trial:not(.is-prominent) .rw-trial__cta:hover {
+	background: rgba(230, 126, 33, 0.08);
+}
+.rw-trial__progress {
+	height: 4px;
+	background: #eef0f3;
+	border-radius: 999px;
+	overflow: hidden;
+}
+.rw-trial__progress-fill {
+	height: 100%;
+	/* Keep at least a sliver visible even at 0% so the bar still
+	   reads as a progress indicator on a fresh signup (where
+	   elapsed/total = 0). Without this the bar looks empty/broken. */
+	min-width: 8px;
+	transition: width .3s ease, background .3s ease;
+}
+/* Disabled state explicitly clears the floor because the bar is
+   hidden via .rw-trial.is-disabled .rw-trial__progress display:none. */
+.rw-trial.is-ok      .rw-trial__progress-fill { background: #16a34a; }
+.rw-trial.is-warning .rw-trial__progress-fill { background: #f59e0b; }
+.rw-trial.is-urgent  .rw-trial__progress-fill { background: #dc2626; }
+
+/* Prominent variant: bigger padding, headline larger, progress bar
+   thicker, CTA prominent. Used when setup is complete - the user has
+   nothing else they "need" to do, so the trial countdown becomes the
+   primary call-to-action. */
+.rw-trial.is-prominent {
+	padding: 22px 24px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	border: 1px solid #fde7c8;
+}
+.rw-trial.is-prominent .rw-trial__text {
+	gap: 4px;
+}
+.rw-trial.is-prominent .rw-trial__text strong {
+	font-size: 18px;
+	color: #1f2937;
+	font-weight: 600;
+}
+.rw-trial.is-prominent .rw-trial__sub {
+	font-size: 13px;
+	color: #4b5563;
+}
+.rw-trial.is-prominent .rw-trial__progress {
+	height: 8px;
+}
+
+/* Disabled-account variant: red tinted background, no progress bar
+   (there's no time left to count down). Forced prominent so it
+   can't be missed. */
+.rw-trial.is-disabled {
+	background: #fef2f2;
+	border-color: #fecaca;
+}
+.rw-trial.is-disabled .rw-trial__progress { display: none; }
+.rw-trial.is-disabled .rw-trial__text strong { color: #b91c1c; }
+
+.rw-overview {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: left;
+}
+
+/* "Reviews waiting for approval" banner. Hidden until rw-overview.js
+ * finds at least one pending review. Acts as a clickable link to the
+ * Reviews tab so the user is one click from the work that's waiting. */
+.rw-action-banner {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 14px 18px;
+	background: linear-gradient(90deg, #fff8f0 0%, #fff 100%);
+	border: 1px solid #f0c68a;
+	border-radius: 10px;
+	text-decoration: none;
+	color: #1f2937;
+	transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.rw-action-banner:hover {
+	background: #fff8f0;
+	border-color: #E67E21;
+	transform: translateY(-1px);
+}
+.rw-action-banner__icon {
+	flex: 0 0 auto;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: #E67E21;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+.rw-action-banner__icon.dashicons {
+	font-size: 18px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+}
+.rw-action-banner__text {
+	flex: 1 1 auto;
+	font-size: 14px;
+	color: #1f2937;
+}
+.rw-action-banner__text strong {
+	color: #E67E21;
+	margin-right: 4px;
+}
+.rw-action-banner__cta {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 6px 12px;
+	background: #E67E21;
+	color: #fff;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+}
+.rw-action-banner__cta .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+}
+
+/* KPI cards: 3-up on desktop, stack on mobile. */
+.rw-kpis {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+/* KPI typography - copy of the production dashboard's .kpi-value / .dash-card-title:
+ *   label:  13px, weight 500, muted text, NO uppercase, mb 14px
+ *   value:  32px, weight 700, letter-spacing -0.02em, tabular-nums
+ *   delta:  13px, weight 500, tabular-nums, semantic up/down/flat colors */
+.rw-kpi {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	padding: 22px 24px;
+	min-height: 130px;
+	display: flex;
+	flex-direction: column;
+}
+.rw-kpi__label {
+	font-size: 13px;
+	font-weight: 500;
+	color: #6b7280;
+	margin-bottom: 14px;
+	text-transform: none;
+	letter-spacing: 0;
+}
+.rw-kpi__value {
+	font-size: 32px;
+	font-weight: 700;
+	color: #1A2233;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	font-variant-numeric: tabular-nums;
+}
+.rw-kpi__number { color: #1A2233; }
+.rw-kpi__suffix { color: #9ca3af; font-size: 20px; font-weight: 500; }
+.rw-kpi__meta {
+	font-size: 13px;
+	font-weight: 500;
+	color: #6b7280;
+	margin-top: 10px;
+	font-variant-numeric: tabular-nums;
+}
+/* Sparkline pinned to the card's bottom edge, matching the dashboard's
+ * `.kpi-card { display: flex } / .kpi-sparkline { margin-top: auto }`
+ * trick so the chart sits flush against the bottom regardless of how
+ * many meta lines the value/delta combination produces. */
+.rw-kpi__spark {
+	margin-top: auto;
+	padding-top: 10px;
+	margin-left: -8px;
+	margin-right: -8px;
+	height: 50px;
+	min-height: 50px;
+}
+.rw-kpi__spark:empty { display: none; }
+.rw-kpi__delta {
+	font-weight: 600;
+}
+.rw-kpi__delta-up   { color: #16a34a; }
+.rw-kpi__delta-down { color: #dc2626; }
+.rw-kpi__delta-flat { color: #6b7280; }
+
+/* Overview toolbar: time-range pills on the right, manual refresh
+ * button next to them with a live "Just updated / X min ago" label
+ * that ticks every 30 seconds. */
+.rw-overview-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 10px;
+}
+.rw-range {
+	display: inline-flex;
+	gap: 2px;
+	padding: 3px;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.rw-refresh {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 7px 12px;
+	background: #fff;
+	border: 0;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+	color: #6b7280;
+	font-size: 12px;
+	font-family: inherit;
+	font-weight: 500;
+	transition: color 0.15s ease;
+}
+.rw-refresh:hover { color: #E67E21; }
+.rw-refresh .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	color: #6b7280;
+	transition: color 0.15s ease;
+}
+.rw-refresh:hover .dashicons { color: #E67E21; }
+.rw-refresh.is-spinning {
+	cursor: progress;
+	color: #9ca3af;
+}
+.rw-refresh.is-spinning .dashicons {
+	color: #E67E21;
+	animation: rw-spin 0.9s linear infinite;
+}
+.rw-refresh__label { white-space: nowrap; }
+
+/* Section header right-side cluster: groups the per-section refresh
+   icon with the existing primary CTA so they sit on a single line. */
+.rw-section__head-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+}
+.rw-section__refresh {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	background: transparent;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	cursor: pointer;
+	color: #6b7280;
+	transition: color 0.15s ease, border-color 0.15s ease;
+}
+.rw-section__refresh:hover {
+	color: #E67E21;
+	border-color: #E67E21;
+}
+.rw-section__refresh .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	transition: color 0.15s ease;
+}
+.rw-section__refresh.is-spinning { cursor: progress; }
+.rw-section__refresh.is-spinning .dashicons {
+	color: #E67E21;
+	animation: rw-spin 0.9s linear infinite;
+}
+.rw-range__pill {
+	border: 0;
+	background: transparent;
+	padding: 6px 14px;
+	font-size: 13px;
+	font-weight: 500;
+	font-family: inherit;
+	color: #6b7280;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+.rw-range__pill:hover { color: #1f2937; background: #f5f5f5; }
+.rw-range__pill.is-active {
+	background: #E67E21;
+	color: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.rw-range__pill.is-active:hover { background: #C56B17; color: #fff; }
+
+/* Complete-setup checklist. Same shape as the dashboard's setup-card:
+ * header + badge + thin progress bar + numbered step rows with line-
+ * through on done. Repuso orange replaces the dashboard's blue accent
+ * for visual consistency with the rest of the WP plugin. */
+.rw-setup__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 18px;
+}
+/* Right-side cluster: refresh icon + done-badge. Mirrors the pattern
+   used in the other section headers (.rw-section__head-actions). */
+.rw-setup__head-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+#rw-wrapper .rw-setup__head h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-weight: 700;
+	color: #1A2233;
+}
+.rw-setup__badge {
+	font-size: 12px;
+	font-weight: 600;
+	background: rgba(230, 126, 33, 0.12);
+	color: #C56B17;
+	padding: 4px 10px;
+	border-radius: 999px;
+}
+/* Skeleton placeholder shown while the channels/widgets/posts probes
+   are in flight on a first visit (no localStorage cache yet). The
+   step rows reuse the KPI skeleton shimmer so the placeholder reads
+   as a loading state, not a blank/empty one. */
+.rw-setup__badge.is-loading {
+	background: #F1F3F5;
+	color: #6B7280;
+}
+.rw-setup__step.is-skeleton .rw-setup__step-icon .rw-kpi__skeleton {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 999px;
+}
+.rw-setup__step.is-skeleton .rw-setup__step-title .rw-kpi__skeleton {
+	display: block;
+	width: 40%;
+	height: 12px;
+}
+.rw-setup__step.is-skeleton .rw-setup__step-desc .rw-kpi__skeleton {
+	display: block;
+	width: 70%;
+	height: 10px;
+	margin-top: 6px;
+}
+.rw-setup__progress {
+	height: 6px;
+	background: #F1F3F5;
+	border-radius: 999px;
+	overflow: hidden;
+	margin-bottom: 22px;
+}
+.rw-setup__progress-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #E67E21, #f5a960);
+	border-radius: 999px;
+	transition: width .3s ease;
+}
+.rw-setup__step {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 0;
+	border-top: 1px solid #F1F3F5;
+}
+.rw-setup__step:first-of-type { border-top: 0; }
+.rw-setup__step-icon {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: #F1F3F5;
+	color: #6B7280;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	flex-shrink: 0;
+}
+.rw-setup__step.is-done .rw-setup__step-icon {
+	background: #16a34a;
+	color: #fff;
+}
+.rw-setup__step.is-done .rw-setup__step-icon .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+.rw-setup__step-body { flex: 1; min-width: 0; }
+.rw-setup__step-title { font-weight: 600; font-size: 14px; color: #1A2233; }
+.rw-setup__step-desc { color: #6B7280; font-size: 13px; margin-top: 2px; line-height: 1.45; }
+.rw-setup__step.is-done .rw-setup__step-title {
+	color: #6B7280;
+	text-decoration: line-through;
+	text-decoration-color: #9CA3AF;
+}
+.rw-setup__step.is-done .rw-setup__step-desc { color: #9CA3AF; }
+.rw-setup__step-cta {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 6px 13px; /* 1px less to account for the 1px border */
+	background: #E67E21;
+	color: #fff !important;
+	border: 1px solid #E67E21;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.rw-setup__step-cta:hover {
+	background: #fff;
+	color: #E67E21 !important;
+	border-color: #E67E21;
+	text-decoration: none;
+}
+.rw-setup__step-cta:hover .dashicons { color: #E67E21; }
+.rw-setup__step-cta .dashicons { font-size: 13px; width: 13px; height: 13px; }
+
+/* Customer outreach card. Same layout language as the setup card so the
+   two action-step blocks read as siblings - accent icon background
+   distinguishes it from the setup checkmark/numbered icons. */
+.rw-outreach .rw-section__head { margin-bottom: 4px; }
+.rw-outreach__step {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 0;
+	border-top: 1px solid #F1F3F5;
+}
+.rw-outreach__step:first-child { border-top: 0; }
+.rw-outreach__step-icon {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: rgba(230, 126, 33, 0.12);
+	color: #E67E21;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+.rw-outreach__step-icon .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+.rw-outreach__step-body { flex: 1; min-width: 0; }
+.rw-outreach__step-title { font-weight: 600; font-size: 14px; color: #1A2233; }
+.rw-outreach__step-desc { color: #6B7280; font-size: 13px; margin-top: 2px; line-height: 1.45; }
+.rw-outreach__step-cta {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 6px 13px; /* 1px less to account for the 1px border */
+	background: #E67E21;
+	color: #fff !important;
+	border: 1px solid #E67E21;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.rw-outreach__step-cta:hover {
+	background: #fff;
+	color: #E67E21 !important;
+	border-color: #E67E21;
+	text-decoration: none;
+}
+.rw-outreach__step-cta:hover .dashicons { color: #E67E21; }
+.rw-outreach__step-cta .dashicons { font-size: 13px; width: 13px; height: 13px; }
+
+/* Passive label shown in place of the CTA when a step is waiting on
+   upstream data (e.g. no reviews yet to approve). Mirrors the web
+   dashboard's .setup-step-cta-passive treatment. */
+.rw-setup__step-waiting {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 7px 12px;
+	font-size: 12px;
+	color: #6B7280;
+	font-style: italic;
+}
+
+/* Platform breakdown table. Mirrors the dashboard's typography
+ * (12px header, 13px body, 22x22 logo, dividers between rows). */
+.rw-platforms__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 50px 0;
+}
+.rw-platforms__empty {
+	padding: 40px 20px;
+	text-align: center;
+	color: #6b7280;
+	font-size: 13px;
+}
+.rw-platforms__table {
+	width: 100%;
+	font-size: 13px;
+	border-collapse: collapse;
+}
+.rw-platforms__table th {
+	text-align: left;
+	font-weight: 500;
+	color: #6B7280;
+	padding: 8px 0;
+	border-bottom: 1px solid #F1F3F5;
+	font-size: 12px;
+}
+.rw-platforms__table td {
+	padding: 10px 0;
+	border-bottom: 1px solid #F1F3F5;
+	color: #1A2233;
+}
+.rw-platforms__num { text-align: left; font-variant-numeric: tabular-nums; }
+.rw-platforms__logo {
+	width: 22px;
+	height: 22px;
+	border-radius: 6px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.rw-platforms__toggle {
+	margin-top: 14px;
+	text-align: center;
+}
+.rw-platforms__toggle-btn {
+	background: transparent;
+	border: 0;
+	color: #E67E21;
+	font-size: 13px;
+	font-weight: 500;
+	font-family: inherit;
+	cursor: pointer;
+	padding: 4px 8px;
+}
+.rw-platforms__toggle-btn:hover { text-decoration: underline; }
+/* Collapse rows beyond the visible-by-default limit. The JS marks
+   overflow rows with .is-overflow at render time and toggles
+   .is-collapsed on the tbody to show / hide them - no re-render. */
+[data-platforms-rows].is-collapsed .is-overflow { display: none; }
+
+/* Latest reviews. Direct port of the dashboard's latest-review-row:
+ * avatar with platform-badge overlay, rating + time-ago meta line,
+ * HTML-safe text, optional AI reply panel, footer tags, actions row
+ * with approve / dismiss / AI suggest / replied badge. */
+.rw-latest__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 50px 0;
+}
+.rw-latest__empty {
+	padding: 40px 20px;
+	text-align: center;
+	color: #6b7280;
+	font-size: 13px;
+}
+.rw-latest__list { display: flex; flex-direction: column; }
+.rw-latest__row {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	padding: 14px 0;
+	border-top: 1px solid #F1F3F5;
+}
+.rw-latest__row:first-of-type { border-top: 0; padding-top: 0; }
+
+.rw-latest__avatar-wrap {
+	position: relative;
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+}
+.rw-latest__avatar-placeholder {
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	background: #F1F3F5;
+	color: #9CA3AF;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.rw-latest__avatar-placeholder .dashicons { font-size: 22px; width: 22px; height: 22px; }
+.rw-latest__avatar {
+	position: absolute;
+	inset: 0;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	object-fit: cover;
+	background: #F1F3F5;
+}
+.rw-latest__platform-badge {
+	position: absolute;
+	right: -2px;
+	bottom: -2px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #fff;
+	border: 2px solid #fff;
+	object-fit: contain;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.rw-latest__body { flex: 1; min-width: 0; }
+.rw-latest__meta {
+	font-size: 12px;
+	color: #6B7280;
+	margin-bottom: 4px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.rw-latest__rating {
+	color: #f59e0b;
+	white-space: nowrap;
+	display: inline-flex;
+	gap: 1px;
+	font-size: 13px;
+	line-height: 1;
+}
+.rw-latest__text {
+	font-size: 13px;
+	color: #1A2233;
+	line-height: 1.45;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+}
+.rw-latest__text.is-expanded {
+	display: block;
+	-webkit-line-clamp: unset;
+	overflow: visible;
+}
+.rw-latest__readmore {
+	background: transparent;
+	border: 0;
+	color: #E67E21;
+	font-size: 12px;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 2px 0;
+	margin-top: 2px;
+	font-family: inherit;
+}
+.rw-latest__readmore:hover { text-decoration: underline; }
+.rw-latest__author {
+	margin-top: 4px;
+	font-size: 13px;
+	font-style: italic;
+	color: #6B7280;
+}
+
+/* AI reply panel (Repuso orange tinted, mirroring the dashboard's
+ * accent-soft blue tint). Shows the suggested reply text + copy button. */
+.rw-latest__ai-reply {
+	margin-top: 8px;
+	background: rgba(230, 126, 33, 0.07);
+	border: 1px solid rgba(230, 126, 33, 0.18);
+	border-radius: 10px;
+	padding: 10px 12px;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #1A2233;
+}
+.rw-latest__ai-reply-error {
+	background: rgba(220, 38, 38, 0.06);
+	border-color: rgba(220, 38, 38, 0.2);
+	color: #991b1b;
+}
+.rw-latest__ai-reply-error .dashicons { color: #dc2626; }
+.rw-latest__ai-reply-text {
+	outline: none;
+	margin-bottom: 6px;
+	white-space: pre-wrap;
+}
+.rw-latest__ai-reply-text:focus {
+	background: #fff;
+	border-radius: 6px;
+}
+.rw-latest__ai-reply-copy,
+.rw-latest__ai-reply-copy:hover {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: #E67E21;
+	font-size: 12px;
+	font-weight: 500;
+	cursor: pointer;
+	text-decoration: none;
+}
+/* Underline only the text span, leave the dashicon clean. Matches the
+   hover pattern used elsewhere for icon + text links (Reply, AI suggest
+   reply, widget row actions). */
+.rw-latest__ai-reply-copy:hover .rw-link-text { text-decoration: underline; }
+.rw-latest__ai-reply-copy:hover .dashicons { color: #C56B17; }
+
+.rw-latest__footer {
+	margin-top: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.rw-tag-item {
+	background: #E67E21;
+	border-radius: 3px;
+	margin-right: 3px;
+	font-size: 10px;
+	padding: 2px 5px;
+	color: #fff;
+	display: inline-block;
+	margin-top: 3px;
+}
+.rw-tag-property {
+	background: #fff;
+	border-radius: 3px;
+	margin-right: 8px;
+	font-size: 10px;
+	padding: 2px 5px;
+	color: #1A2233;
+	box-shadow: 0 0 0 1px #1A2233 inset;
+	display: inline-block;
+	margin-top: 3px;
+}
+
+.rw-latest__actions {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 14px;
+	margin-top: 10px;
+	font-size: 12px;
+	color: #ccc;
+}
+.rw-latest__reply-actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 14px;
+	font-size: 12px;
+}
+.rw-latest__mod-actions {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+.rw-latest__mod-btn {
+	background: transparent;
+	border: 0;
+	padding: 2px;
+	cursor: pointer;
+	color: #ccc;
+	transition: color 0.15s ease;
+}
+.rw-latest__mod-btn .dashicons {
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+}
+/* Inline SVG approve/dismiss icons (check-square / minus-square) that
+   mirror the web dashboard's fa-check-square-o / fa-minus-square-o
+   look. Stroke is currentColor so the parent button's color state
+   (gray / green / red) drives the icon color. */
+.rw-latest__mod-btn .rw-mod-icon {
+	width: 22px;
+	height: 22px;
+	display: block;
+}
+.rw-action-pill .rw-mod-icon {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+.rw-latest__approve:hover,
+.rw-latest__approve.is-active { color: #16a34a; }
+.rw-latest__dismiss:hover { color: #7d7d7d; }
+.rw-latest__dismiss.is-active { color: #dc2626; }
+.rw-latest__mod-btn.is-busy { opacity: 0.45; pointer-events: none; }
+
+.rw-tooltiper {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+}
+.rw-tooltiper .rw-tooltipertext {
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	bottom: calc(100% + 10px);
+	left: 50%;
+	transform: translateX(-50%);
+	background: #1A2233;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 500;
+	white-space: nowrap;
+	padding: 5px 9px;
+	border-radius: 6px;
+	box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+	transition: opacity 0.12s ease;
+	z-index: 20;
+}
+.rw-tooltiper .rw-tooltipertext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 4px solid transparent;
+	border-top-color: #1A2233;
+}
+.rw-tooltiper:hover .rw-tooltipertext,
+.rw-tooltiper:focus-within .rw-tooltipertext {
+	visibility: visible;
+	opacity: 1;
+}
+
+.rw-latest__replied-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	background: rgba(22, 163, 74, 0.12);
+	color: #15803d;
+	border-radius: 999px;
+	padding: 3px 10px;
+	font-weight: 600;
+}
+.rw-latest__replied-badge .dashicons { font-size: 14px; width: 14px; height: 14px; }
+.rw-latest__reply-link,
+.rw-latest__ai-suggest {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: #E67E21;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 12px;
+}
+.rw-latest__reply-link .dashicons,
+.rw-latest__ai-suggest .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+}
+/* Hover affordance pattern across the plugin: the *text* of a link picks
+   up an underline on hover; the *icon* (if any) brightens or shifts
+   colour instead of being underlined. Color stays put - no link colour
+   change on hover. Anchored by .rw-link-text spans wrapped around the
+   text portion of each icon-bearing link so the underline doesn't run
+   under the icon. */
+.rw-latest__reply-link,
+.rw-latest__ai-suggest {
+	text-decoration: none;
+}
+.rw-latest__reply-link:hover,
+.rw-latest__ai-suggest:hover {
+	text-decoration: none;
+	color: #E67E21;
+}
+.rw-latest__reply-link:hover .rw-link-text,
+.rw-latest__ai-suggest:hover .rw-link-text {
+	text-decoration: underline;
+}
+.rw-latest__reply-link:hover .dashicons {
+	color: #C56B17;
+}
+
+/* Mirrors the dashboard's .ai-icon::before SVG glyph. The icon is
+ * greyscale by default and goes full-colour on hover when sitting inside
+ * an .ai-link parent. */
+.rw-ai-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	background-image: url('../images/ai.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 16px 16px;
+	filter: grayscale(100%);
+	transition: filter 0.15s ease;
+}
+.ai-link:hover .rw-ai-icon,
+.rw-ai-icon.is-active { filter: none; }
+.rw-latest__ai-loading {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: #6B7280;
+	font-size: 12px;
+}
+.rw-latest__ai-loading .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	animation: rw-spin 0.9s linear infinite;
+}
+
+/* Two-column row for breakdowns (rating + platform). */
+.rw-row-half {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+/* Half/half row for "Latest reviews + AI insights". Same as the
+ * production dashboard's dash-row-latest at >=1100px. */
+.rw-row-2-1 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+@media (max-width: 900px) {
+	.rw-row-half,
+	.rw-row-2-1 { grid-template-columns: 1fr; }
+}
+
+/* AI insights card. Mirrors the production dashboard's gradient
+ * strengths/improvements panels with white item cards inside.
+ * Colour tokens (#15803d / #16a34a green, #d97706 / #f59e0b amber,
+ * #dc2626 red) are copied from repuso-app/css/styles.css so the two
+ * surfaces read as the same product. */
+.rw-ai-card {
+	display: flex;
+	flex-direction: column;
+}
+.rw-ai__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 0;
+}
+.rw-ai__placeholder {
+	padding: 40px 20px;
+	text-align: center;
+	color: #6b7280;
+	font-size: 13px;
+	line-height: 1.55;
+}
+.rw-ai__placeholder a { color: #E67E21; text-decoration: none; }
+.rw-ai__placeholder a:hover { text-decoration: underline; }
+
+/* AI not-supported upgrade prompt. Shown when window.rwAccount.plan_ai
+   is falsey - matches the web's .ai-upgrade-message panel. */
+.rw-ai__upgrade {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	padding: 12px 4px;
+	color: #4b5563;
+}
+.rw-ai__upgrade .dashicons-lock {
+	font-size: 26px;
+	width: 26px;
+	height: 26px;
+	color: #9ca3af;
+}
+.rw-ai__upgrade-text {
+	font-size: 13px;
+	color: #4b5563;
+}
+.rw-ai__upgrade-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 13px; /* 1px less to account for the 1px border */
+	background: #E67E21;
+	color: #fff !important;
+	border: 1px solid #E67E21;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	/* !important needed because the surrounding placeholder has a
+	   generic `.rw-ai__placeholder a:hover { text-decoration: underline }`
+	   rule with one extra element-selector point, which would otherwise
+	   beat this CTA's hover rule on specificity. */
+	text-decoration: none !important;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.rw-ai__upgrade-cta:hover {
+	background: #fff;
+	color: #E67E21 !important;
+	border-color: #E67E21;
+	text-decoration: none !important;
+}
+.rw-ai__upgrade-cta:hover .dashicons { color: #E67E21; }
+.rw-ai__upgrade-cta .dashicons { font-size: 13px; width: 13px; height: 13px; }
+
+.rw-ai__data { display: flex; flex-direction: column; gap: 20px; }
+
+/* Sentiment dial sits in its own white card above the gradient panels,
+ * 12px radius, soft border (the dashboard's pattern exactly). */
+.rw-ai__sentiment {
+	padding: 16px 18px 14px;
+	background: #fff;
+	border: 1px solid #f1f3f5;
+	border-radius: 12px;
+	text-align: center;
+}
+.rw-dial {
+	display: block;
+	width: 100%;
+	max-width: 260px;
+	height: auto;
+	margin: 0 auto;
+	overflow: visible;
+}
+.rw-dial__needle {
+	stroke: #94a3b8;
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	transition: all .5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.rw-dial__hub       { fill: #94a3b8; }
+.rw-dial__hub-inner { fill: #fff; }
+.rw-dial__value {
+	font-size: 22px;
+	font-weight: 700;
+	fill: #1A2233;
+	font-variant-numeric: tabular-nums;
+	paint-order: stroke fill;
+}
+
+.rw-ai__counts {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 8px;
+	margin-top: 4px;
+	font-size: 12px;
+	color: #6b7280;
+}
+.rw-ai__counts > span {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+.rw-ai__counts b { font-weight: 600; color: #1A2233; }
+.rw-ai__dot {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+}
+.rw-ai__dot-pos { background: #16a34a; }
+.rw-ai__dot-neu { background: #f59e0b; }
+.rw-ai__dot-neg { background: #dc2626; }
+
+/* Two strengths/improvements gradient panels, stacked on narrow widths
+ * and side-by-side on wider. .rw-ai__bullets is the grid; the inner
+ * .rw-ai__section is each gradient panel. */
+.rw-ai__bullets {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+}
+@media (min-width: 720px) {
+	.rw-ai__bullets { grid-template-columns: 1fr 1fr; }
+}
+
+.rw-ai__section {
+	border-radius: 14px;
+	padding: 22px 24px;
+}
+.rw-ai__strengths {
+	background: linear-gradient(135deg, rgba(22,163,74,0.08) 0%, rgba(22,163,74,0.02) 100%);
+	border: 1px solid rgba(22,163,74,0.15);
+}
+.rw-ai__improvements {
+	background: linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(245,158,11,0.02) 100%);
+	border: 1px solid rgba(245,158,11,0.18);
+}
+
+.rw-ai__section h4 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 16px;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: none;
+	letter-spacing: 0;
+}
+.rw-ai__strengths h4    { color: #15803d; }
+.rw-ai__improvements h4 { color: #d97706; }
+.rw-ai__section h4 .dashicons { font-size: 16px; width: 16px; height: 16px; }
+.rw-ai__strengths h4 .dashicons    { color: #15803d; }
+.rw-ai__improvements h4 .dashicons { color: #d97706; }
+
+.rw-ai__section ul { margin: 0; padding: 0; list-style: none; }
+.rw-ai__item {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	background: #fff;
+	border-radius: 10px;
+	padding: 12px 14px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 1.45;
+	color: #1A2233;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+	transition: transform .15s ease, box-shadow .15s ease;
+	border: 0;
+}
+.rw-ai__item:last-child { margin-bottom: 0; }
+.rw-ai__item:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+.rw-ai__icon {
+	flex-shrink: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.rw-ai__icon .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+}
+.rw-ai__strengths .rw-ai__icon {
+	background: rgba(22,163,74,0.14);
+	color: #15803d;
+}
+.rw-ai__strengths .rw-ai__icon .dashicons { color: #15803d; }
+.rw-ai__improvements .rw-ai__icon {
+	background: rgba(245,158,11,0.16);
+	color: #d97706;
+}
+.rw-ai__improvements .rw-ai__icon .dashicons { color: #d97706; }
+.rw-ai__improvements .rw-ai__item-recurring .rw-ai__icon {
+	background: rgba(220,38,38,0.14);
+	color: #dc2626;
+}
+.rw-ai__improvements .rw-ai__item-recurring .rw-ai__icon .dashicons { color: #dc2626; }
+.rw-ai__text { flex: 1; padding-top: 4px; }
+.rw-ai__all-clear { color: #6b7280; }
+.rw-ai__all-clear .rw-ai__text { font-style: italic; }
+
+/* Rating distribution card */
+.rw-dist__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 0;
+}
+.rw-dist__empty {
+	padding: 40px 20px;
+	text-align: center;
+	color: #6b7280;
+	font-size: 13px;
+}
+/* Rating distribution rows. Mirrors the dashboard's pill-shaped 8px
+ * bars and tabular-nums labels/counts. */
+.rw-dist__rows { display: flex; flex-direction: column; }
+.rw-dist__row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 8px 0;
+	font-size: 13px;
+}
+.rw-dist__label {
+	width: 40px;
+	color: #6b7280;
+	font-weight: 500;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+.rw-dist__label .dashicons {
+	color: #E67E21;
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+}
+.rw-dist__bar {
+	flex: 1;
+	height: 8px;
+	background: #F1F3F5;
+	border-radius: 999px;
+	overflow: hidden;
+}
+.rw-dist__bar-fill {
+	height: 100%;
+	background: #E67E21;
+	border-radius: 999px;
+	transition: width .4s ease;
+}
+.rw-dist__count {
+	width: 50px;
+	text-align: right;
+	color: #1A2233;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Reviews-over-time chart card. Same chrome as the section cards. */
+.rw-chart-card {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	padding: 24px 24px 20px;
+	text-align: left;
+}
+.rw-chart-card .rw-section__head {
+	margin-bottom: 12px;
+}
+/* Matches the dashboard's ApexCharts height for visual parity. */
+.rw-chart {
+	position: relative;
+	min-height: 280px;
+}
+.rw-chart__canvas {
+	width: 100%;
+	min-height: 280px;
+}
+.rw-chart__loading {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.rw-chart__empty {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+	color: #6b7280;
+	font-size: 13px;
+	line-height: 1.5;
+	max-width: 460px;
+	margin: 0 auto;
+}
+
+/* Skeleton shimmer for the initial empty state on KPI value. */
+.rw-kpi__skeleton {
+	display: inline-block;
+	width: 72px;
+	height: 24px;
+	border-radius: 4px;
+	background: linear-gradient(90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
+	background-size: 200% 100%;
+	animation: rw-shimmer 1.5s ease-in-out infinite;
+}
+@keyframes rw-shimmer {
+	0%   { background-position: 200% 0; }
+	100% { background-position: -200% 0; }
+}
+
+/* ====================================================================
+ * TOP BAR: tabs on the left, account picker + dashboard/disconnect on
+ * the right. Lives at the top of every connected page (main, floating,
+ * overview). Sub-account picker is hidden until the API populates it.
+ * ==================================================================== */
+.rw-topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 0 0 28px;
+	padding: 6px 10px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	text-align: left;
+	flex-wrap: wrap;
+}
+/* Brand logo at the far-left of the top bar. height: 22px keeps the
+   overall bar height identical to before the logo was added (the tab
+   pills inside .rw-topbar__tabs are taller). */
+.rw-topbar__logo {
+	display: inline-flex;
+	align-items: center;
+	flex: 0 0 auto;
+	padding: 0 10px 0 6px;
+	line-height: 0;
+}
+.rw-topbar__logo img {
+	display: block;
+	height: 22px;
+	width: auto;
+}
+.rw-topbar__tabs {
+	display: flex;
+	gap: 2px;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	min-width: 0;
+}
+.rw-topbar__tab {
+	padding: 8px 14px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #555;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: background-color 0.15s ease, color 0.15s ease;
+	white-space: nowrap;
+}
+.rw-topbar__tab:hover { color: #222; background: #f5f5f5; }
+.rw-topbar__tab.is-active {
+	color: #E67E21;
+	background: rgba(230, 126, 33, 0.1);
+	font-weight: 600;
+}
+
+/* Inner section navigation (e.g. Widgets / Floating widget). Underline
+   style keeps it visually distinct from the top-bar pill tabs above. */
+.rw-subnav {
+	display: flex;
+	gap: 24px;
+	margin: 0 0 18px 0;
+	border-bottom: 1px solid #e5e7eb;
+	padding: 0 4px;
+}
+.rw-subnav__tab {
+	display: inline-block;
+	padding: 10px 2px 12px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #6b7280;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+	transition: color 0.15s ease, border-color 0.15s ease;
+}
+.rw-subnav__tab:hover { color: #1A2233; }
+.rw-subnav__tab.is-active {
+	color: #E67E21;
+	border-bottom-color: #E67E21;
+	font-weight: 600;
+}
+.rw-topbar__right {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex: 0 0 auto;
+	flex-wrap: wrap;
+}
+
+/* Language switcher: small flag button + dropdown menu of supported
+   locales. Custom dropdown (not a <select>) so the flag emoji can sit
+   alongside the language label and the active row gets a check mark. */
+.rw-topbar__lang {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+}
+.rw-lang__button {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 5px 8px;
+	background: transparent;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	cursor: pointer;
+	color: #555;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+	font-family: inherit;
+}
+.rw-lang__button:hover {
+	background: #f5f5f5;
+	border-color: #e5e7eb;
+}
+.rw-lang__button .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	color: #9ca3af;
+}
+.rw-lang__flag {
+	font-size: 18px;
+	line-height: 1;
+	display: inline-block;
+	/* Force consistent emoji rendering across OSes. */
+	font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+.rw-lang__menu {
+	position: absolute;
+	top: calc(100% + 4px);
+	right: 0;
+	margin: 0;
+	padding: 6px;
+	list-style: none;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	border: 1px solid #f0f0f0;
+	min-width: 180px;
+	z-index: 50;
+	animation: rw-pop-in 0.15s ease;
+}
+.rw-lang__menu li { margin: 0; padding: 0; }
+.rw-lang__item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 10px;
+	border-radius: 6px;
+	color: #1A2233;
+	text-decoration: none;
+	font-size: 13px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+.rw-lang__item:hover {
+	background: #f5f5f5;
+	color: #1A2233;
+	text-decoration: none;
+}
+.rw-lang__item.is-active {
+	background: rgba(230, 126, 33, 0.08);
+	color: #E67E21;
+	font-weight: 600;
+}
+.rw-lang__item.is-busy {
+	opacity: 0.6;
+	pointer-events: none;
+}
+.rw-lang__label { flex: 1; }
+
+/* Account switcher (a styled native <select>). */
+.rw-topbar__account {
+	display: flex;
+	align-items: center;
+}
+#rw-wrapper select.rw-account-select {
+	min-width: 160px;
+	max-width: 240px;
+	padding: 5px 24px 5px 10px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #333;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 8px center;
+	background-size: 9px 6px;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	box-shadow: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	height: auto;
+	line-height: 1.4;
+}
+#rw-wrapper select.rw-account-select:hover {
+	border-color: #ccc;
+}
+#rw-wrapper select.rw-account-select:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+
+/* Inline select element used in section bodies (e.g. floating widget selector). */
+#rw-wrapper select.rw-select {
+	width: 100%;
+	max-width: 480px;
+	padding: 8px 32px 8px 12px;
+	font-size: 14px;
+	color: #1A2233;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: 10px 7px;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	line-height: 1.4;
+}
+#rw-wrapper select.rw-select:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+#rw-wrapper select.rw-select:disabled {
+	background-color: #fafafa;
+	color: #888;
+	cursor: not-allowed;
+}
+.rw-help-text {
+	margin: 10px 0 0;
+	font-size: 13px;
+	color: #6b7280;
+}
+.rw-help-text a { color: #E67E21; }
+
+/* Inline actions (Dashboard, Disconnect) in the top bar's right side. */
+.rw-topbar__action {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 7px 12px;
+	font-size: 13px;
+	color: #555;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+.rw-topbar__action:hover { background: #f5f5f5; color: #222; }
+.rw-topbar__action-danger:hover { background: #fef2f2; color: #991b1b; }
+.rw-topbar__action .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+#rw-wrapper select.rw-subaccounts__select:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+
+/* Section card. */
+.rw-section {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	padding: 28px 32px;
+	margin: 0 0 24px;
+	text-align: left;
+}
+.rw-section__head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 0 0 20px;
+}
+#rw-wrapper .rw-section__title {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-weight: 600;
+	color: #222;
+}
+#rw-wrapper .rw-section__lede {
+	margin: 4px 0 0;
+	padding: 0;
+	font-size: 13px;
+	color: #6b7280;
+}
+.rw-section__body { display: flex; flex-direction: column; gap: 10px; }
+.rw-section__foot {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid #f0f0f0;
+}
+.rw-section__foot-label {
+	font-size: 11px;
+	font-weight: 600;
+	color: #9ca3af;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	margin: 0 0 12px;
+}
+
+/* Inline buttons sit in section headers next to a heading. They should not
+ * take a full row of width like onboard CTAs do. */
+.rw-button-inline {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px; /* spacing between icon and text regardless of which is first */
+	width: auto;
+	margin: 0;
+	padding: 8px 14px;
+	font-size: 13px;
+	white-space: nowrap;
+}
+.rw-button-inline .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+}
+
+/* Generic row used by widgets + channels */
+.rw-row {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 16px;
+	background: #fafafa;
+	border: 1px solid #f0f0f0;
+	border-radius: 8px;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.rw-row:hover {
+	background: #fff;
+	border-color: #e5e7eb;
+}
+
+/* Property group headers in the channels list. Sits as a small label
+   row before each property's channels (matches the web dashboard's
+   channels.list.html section structure). */
+.rw-channel-group__head {
+	margin: 18px 4px 6px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #4b5563;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+.rw-channel-group__head:first-child { margin-top: 0; }
+.rw-channel-group__head--default .rw-channel-group__name {
+	color: #9ca3af;
+	font-weight: 500;
+}
+.rw-row__icon {
+	flex: 0 0 auto;
+	width: 48px;
+	height: 48px;
+	object-fit: contain;
+	border-radius: 6px;
+}
+.rw-row-widget .rw-row__icon { width: 64px; height: 48px; }
+.rw-row__main { flex: 1 1 auto; min-width: 0; }
+.rw-row__name {
+	font-size: 14px;
+	font-weight: 600;
+	color: #222;
+	margin: 0 0 4px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-width: 0;
+}
+.rw-row__badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	background: rgba(22, 163, 74, 0.12);
+	color: #15803d;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	padding: 2px 8px 2px 6px;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.rw-row__badge .dashicons {
+	font-size: 13px;
+	width: 13px;
+	height: 13px;
+}
+.rw-row-widget.is-selected {
+	background: rgba(22, 163, 74, 0.03);
+}
+.rw-row__shortcode {
+	display: inline-block;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	font-size: 12px;
+	color: #555;
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 4px;
+	padding: 2px 6px;
+	margin: 0;
+}
+.rw-row__actions {
+	flex: 0 0 auto;
+	display: flex;
+	gap: 12px;
+}
+.rw-action {
+	font-size: 13px;
+	color: #E67E21;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+}
+.rw-action,
+.rw-action:hover { text-decoration: none; color: #E67E21; }
+.rw-action:hover .rw-link-text { text-decoration: underline; }
+.rw-action:hover .dashicons { color: #C56B17; }
+.rw-action .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	line-height: 1;
+}
+
+.rw-row__rating {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	color: #555;
+}
+.rw-row__rating-empty { color: #9ca3af; font-size: 12px; }
+.rw-row__score { font-weight: 600; color: #222; }
+.rw-row__count { color: #9ca3af; font-size: 12px; }
+
+/* Star rating: two-layer technique. The grey "base" sits underneath at
+ * 100% width; the orange "fill" sits on top with a width set inline by JS
+ * to the rating percentage. Both layers use the same ★ glyph so the
+ * rendered weight is identical and any fractional rating tracks perfectly. */
+.rw-stars {
+	display: inline-block;
+	position: relative;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	letter-spacing: 1px;
+	white-space: nowrap;
+}
+.rw-stars-base { color: #e5e7eb; }
+.rw-stars-fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	color: #E67E21;
+	white-space: nowrap;
+}
+
+/* All-platforms pill row in the channels footer. */
+.rw-channels-all {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.rw-channel-pill {
+	width: 28px;
+	height: 28px;
+	border-radius: 6px;
+	background: #fafafa;
+	padding: 2px;
+	border: 1px solid #f0f0f0;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.rw-channel-pill:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Review card */
+.rw-review {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 18px 20px;
+	background: #fafafa;
+	border: 1px solid #f0f0f0;
+	border-radius: 8px;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.rw-review:hover {
+	background: #fff;
+	border-color: #e5e7eb;
+}
+.rw-review__head {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.rw-review__avatar {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	object-fit: cover;
+	background: #fff;
+	border: 1px solid #f0f0f0;
+}
+.rw-review__who { flex: 1 1 auto; min-width: 0; }
+.rw-review__name {
+	font-size: 14px;
+	font-weight: 600;
+	color: #222;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.rw-review__meta {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	color: #6b7280;
+	margin-top: 2px;
+}
+.rw-review__source {
+	width: 14px;
+	height: 14px;
+	border-radius: 3px;
+}
+.rw-review__rating { flex: 0 0 auto; }
+.rw-review__text {
+	font-size: 14px;
+	color: #333;
+	line-height: 1.55;
+	margin: 0;
+}
+.rw-review__actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 4px;
+	justify-content: space-between;
+}
+.rw-review__reply-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	flex-wrap: wrap;
+	font-size: 12px;
+}
+.rw-review__mod-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+.rw-review__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 2px;
+}
+
+/* Review media thumbnails. Used by both latest reviews (Dashboard)
+   and the Reviews section. Square 72x72 thumbs with rounded corners.
+   Video thumbnails get a centered play overlay so users can tell them
+   apart from plain photos. Audio falls back to a single icon tile. */
+.rw-review-media {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 8px;
+}
+.rw-review-media__item {
+	position: relative;
+	display: inline-block;
+	width: 72px;
+	height: 72px;
+	border-radius: 6px;
+	overflow: hidden;
+	background: #f3f4f6;
+	border: 1px solid #f0f0f0;
+	transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.rw-review-media__item:hover {
+	border-color: #E67E21;
+	transform: translateY(-1px);
+}
+.rw-review-media__item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.rw-review-media__play {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.25);
+	color: #fff;
+	pointer-events: none;
+}
+.rw-review-media__play .dashicons {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+.rw-review-media__audio {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #6B7280;
+	background: #f9fafb;
+}
+.rw-review-media__audio .dashicons {
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+}
+.rw-action-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	font-size: 12px;
+	font-weight: 600;
+	font-family: inherit;
+	color: #6b7280;
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+.rw-action-pill .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+}
+.rw-action-pill:hover { border-color: #d4d4d8; color: #333; }
+/* Semantic hover preview: approve hovers green, dismiss hovers red,
+   so the user sees what each action will do before clicking. Active
+   (.status1 / .status2) keeps the same palette as a confirmation. */
+.rw-action-pill.rw-approve:hover,
+.rw-action-pill.rw-approve.status1 {
+	background: #ecfdf5;
+	border-color: #a7f3d0;
+	color: #065f46;
+}
+.rw-action-pill.rw-reject:hover,
+.rw-action-pill.rw-reject.status2 {
+	background: #fef2f2;
+	border-color: #fecaca;
+	color: #991b1b;
+}
+
+/* Reviews tabs */
+.rw-tabs {
+	display: flex;
+	gap: 4px;
+	margin: 0 0 18px;
+	padding: 4px;
+	background: #f5f5f5;
+	border-radius: 8px;
+	width: fit-content;
+}
+.rw-tab {
+	padding: 6px 14px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #6b7280;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+.rw-tab:hover { color: #333; }
+.rw-tab.is-current {
+	background: #fff;
+	color: #E67E21;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Loading placeholder used during async section refreshes (e.g. switching
+ * Inbox/Approved/All tabs in Reviews). Centered spinner, no other chrome. */
+.rw-section__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 48px 0;
+}
+.rw-section__spinner {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	border: 3px solid #eee;
+	border-top-color: #E67E21;
+	border-radius: 50%;
+	animation: rw-spin 0.75s linear infinite;
+}
+
+/* Empty state */
+.rw-empty {
+	text-align: center;
+	padding: 36px 20px 16px;
+}
+.rw-empty__icon {
+	width: 56px;
+	height: 56px;
+	margin: 0 auto 12px;
+	display: block;
+}
+.rw-empty__title {
+	margin: 0 0 6px;
+	font-size: 16px;
+	color: #222;
+	font-weight: 600;
+}
+.rw-empty__body {
+	margin: 0 0 18px;
+	font-size: 13px;
+	color: #6b7280;
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Click-to-copy shortcode pill (sits in the widget row). */
+.rw-row__shortcode.rw-copy {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	font-size: 12px;
+	color: #555;
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 4px;
+	padding: 2px 6px;
+	margin: 0;
+	cursor: pointer;
+	position: relative;
+	transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.rw-row__shortcode.rw-copy:hover {
+	border-color: #E67E21;
+	color: #E67E21;
+}
+.rw-row__shortcode.rw-copy.is-copied {
+	border-color: #a7f3d0;
+	background: #ecfdf5;
+	color: #065f46;
+}
+.rw-copy__icon {
+	font-size: 13px !important;
+	width: 13px !important;
+	height: 13px !important;
+}
+.rw-copied-pill {
+	position: absolute;
+	bottom: calc(100% + 6px);
+	left: 50%;
+	transform: translateX(-50%);
+	background: #1f2937;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	padding: 4px 8px;
+	border-radius: 4px;
+	pointer-events: none;
+	white-space: nowrap;
+	z-index: 1;
+}
+.rw-copied-pill::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 4px solid transparent;
+	border-top-color: #1f2937;
+}
+
+/* ====================================================================
+ * CONFIRM DIALOG. Centered modal with icon + title + message + two
+ * buttons (cancel + confirm). Used for destructive actions like
+ * Disconnect so the prompt is actually visible instead of a 13px
+ * inline strip glued to the status pill.
+ * ==================================================================== */
+.rw-confirm-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(15, 23, 42, 0.55);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100002; /* over .rw-modal-overlay AND .rw-imgbox-overlay */
+	padding: 24px;
+	animation: rw-fade-in 0.15s ease;
+}
+.rw-confirm {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+	max-width: 440px;
+	width: 100%;
+	padding: 28px 28px 24px;
+	text-align: center;
+	animation: rw-pop-in 0.18s ease;
+}
+.rw-confirm__icon {
+	width: 56px;
+	height: 56px;
+	margin: 0 auto 14px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(230, 126, 33, 0.12);
+	color: #E67E21;
+}
+.rw-confirm__icon.is-danger {
+	background: rgba(220, 38, 38, 0.10);
+	color: #dc2626;
+}
+.rw-confirm__icon .dashicons {
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+}
+.rw-confirm__title {
+	margin: 0 0 8px;
+	padding: 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1A2233;
+	line-height: 1.3;
+}
+.rw-confirm__message {
+	margin: 0 0 22px;
+	color: #4b5563;
+	font-size: 14px;
+	line-height: 1.55;
+}
+.rw-confirm__actions {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+.rw-confirm__actions .rw-button-inline {
+	min-width: 110px;
+	justify-content: center;
+}
+/* Danger primary button: red instead of brand orange. */
+.rw-button.rw-confirm__yes.is-danger {
+	background: #dc2626;
+	color: #fff !important;
+	border: 1px solid #dc2626;
+}
+.rw-button.rw-confirm__yes.is-danger:hover {
+	background: #fff;
+	color: #dc2626 !important;
+	border-color: #dc2626;
+}
+.rw-button.rw-confirm__yes:not(.is-danger) {
+	background: #E67E21;
+	color: #fff !important;
+	border: 1px solid #E67E21;
+}
+.rw-button.rw-confirm__yes:not(.is-danger):hover {
+	background: #fff;
+	color: #E67E21 !important;
+	border-color: #E67E21;
+}
+
+/* ====================================================================
+ * MODAL (preview + full code). Our own implementation since Thickbox
+ * doesn't pick up dynamically-appended links.
+ * ==================================================================== */
+.rw-modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(15, 23, 42, 0.55);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100000;
+	padding: 24px;
+	animation: rw-fade-in 0.15s ease;
+}
+.rw-modal {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+	max-width: 640px;
+	width: 100%;
+	max-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	animation: rw-pop-in 0.2s ease;
+}
+.rw-modal-wide { max-width: 960px; }
+.rw-modal__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 18px 22px;
+	border-bottom: 1px solid #f0f0f0;
+}
+#rw-wrapper .rw-modal__title {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: #222;
+}
+.rw-modal__close {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	color: #6b7280;
+	width: 32px;
+	height: 32px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+.rw-modal__close:hover { background: #f5f5f5; color: #222; }
+.rw-modal__close .dashicons { font-size: 20px; width: 20px; height: 20px; }
+.rw-modal__body {
+	padding: 20px 22px 22px;
+	overflow: auto;
+	flex: 1 1 auto;
+}
+.rw-modal__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 0;
+}
+.rw-modal__loading .rw-onboard__spinner {
+	width: 28px;
+	height: 28px;
+	border-color: #e5e7eb;
+	border-top-color: #E67E21;
+	margin: 0;
+}
+.rw-modal__empty {
+	padding: 40px 0;
+	text-align: center;
+	color: #6b7280;
+	font-size: 13px;
+}
+.rw-modal__iframe {
+	width: 100%;
+	height: 60vh;
+	min-height: 420px;
+	border: 1px solid #f0f0f0;
+	border-radius: 8px;
+	background: #fff;
+}
+.rw-modal__code {
+	width: 100%;
+	min-height: 240px;
+	max-height: 50vh;
+	padding: 12px 14px;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	font-size: 12px;
+	color: #1f2937;
+	background: #fafafa;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	box-shadow: none;
+	resize: vertical;
+	margin: 0 0 14px;
+}
+.rw-modal__code:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+.rw-modal .rw-button {
+	margin: 0;
+}
+.rw-modal .rw-button .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	margin-right: 4px;
+}
+.rw-modal .rw-button.is-copied {
+	background: #ecfdf5;
+	border-color: #a7f3d0;
+	color: #065f46;
+}
+
+@keyframes rw-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rw-pop-in {
+	from { opacity: 0; transform: translateY(8px) scale(0.98); }
+	to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* Lightbox for clicked review images. Full-viewport dim, the image
+   centers with object-fit:contain so any aspect ratio reads cleanly,
+   capped at 90vw / 90vh so it never disappears off-screen. */
+.rw-imgbox-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.82);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100001; /* one above .rw-modal-overlay so it can stack on top */
+	padding: 32px;
+	cursor: zoom-out;
+	animation: rw-fade-in 0.15s ease;
+}
+.rw-imgbox-img {
+	max-width: 90vw;
+	max-height: 90vh;
+	width: auto;
+	height: auto;
+	display: block;
+	object-fit: contain;
+	border-radius: 6px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	cursor: default;
+	animation: rw-pop-in 0.18s ease;
+}
+.rw-imgbox-close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 0;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+.rw-imgbox-close:hover { background: rgba(0, 0, 0, 0.85); }
+.rw-imgbox-close .dashicons {
+	font-size: 22px;
+	width: 22px;
+	height: 22px;
+}
+
+/* Flash notice after saving the floating-widget settings form. */
+.rw-flash {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 16px;
+	border-radius: 8px;
+	font-size: 13px;
+	margin: 0 0 18px;
+}
+.rw-flash-success {
+	background: #ecfdf5;
+	color: #065f46;
+	border: 1px solid #a7f3d0;
+}
+.rw-flash .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+
+/* ====================================================================
+ * FLOATING WIDGET form: textarea, checkbox grid, URL rules.
+ * Each "section" reuses .rw-section card chrome; only the form-control
+ * variants are local to this page.
+ * ==================================================================== */
+.rw-floating-form .rw-section { margin-bottom: 20px; }
+
+/* Bigger, monospaced textarea for the shortcode paste. */
+#rw-wrapper textarea.rw-textarea {
+	width: 100%;
+	padding: 12px 14px;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	font-size: 13px;
+	color: #1f2937;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: none;
+	resize: vertical;
+	min-height: 96px;
+	box-sizing: border-box;
+}
+#rw-wrapper textarea.rw-textarea:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+
+/* Responsive grid for content-type / page checkboxes. */
+.rw-check-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	gap: 8px;
+}
+.rw-check {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 12px;
+	background: #fafafa;
+	border: 1px solid #f0f0f0;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 13px;
+	color: #333;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.rw-check:hover { background: #fff; border-color: #e5e7eb; }
+.rw-check input[type="checkbox"] {
+	margin: 0;
+	accent-color: #E67E21;
+}
+.rw-check span { line-height: 1.3; }
+
+/* URL rules: one row per rule (select + input). */
+.urls-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 12px;
+}
+.rw-url-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+#rw-wrapper select.rw-url-row__select {
+	flex: 0 0 100px;
+	padding: 8px 32px 8px 12px;
+	font-size: 13px;
+	color: #333;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: 10px 7px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	box-shadow: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+#rw-wrapper select.rw-url-row__select:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+#rw-wrapper input.rw-url-row__input {
+	flex: 1 1 auto;
+	padding: 8px 12px;
+	font-size: 13px;
+	font-family: inherit;
+	color: #333;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	box-shadow: none;
+	box-sizing: border-box;
+}
+#rw-wrapper input.rw-url-row__input:focus {
+	outline: none;
+	border-color: #E67E21;
+	box-shadow: 0 0 0 3px rgba(230, 126, 33, 0.12);
+}
+
+/* Form footer with the Save button, centered. */
+.rw-form-footer {
+	display: flex;
+	justify-content: center;
+	margin-top: 8px;
+}
+.rw-form-footer .rw-button-inline {
+	min-width: 180px;
+	font-size: 14px;
+	padding: 10px 24px;
+}
+
+/* ====================================================================
+ * VIDEO GUIDES page: stack of section cards, each containing a 16:9 embed.
+ * Reuses .rw-marketing__video for the responsive iframe wrapper.
+ * ==================================================================== */
+/* Two-column layout on the Help page: chat + FAQ stacked at 1/3 on
+   the left, videos at 2/3 on the right. Collapses to a stack at narrow
+   widths so neither column gets cramped. */
+.rw-help-grid {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 24px;
+	align-items: start;
+}
+.rw-help-grid > .rw-help-left,
+.rw-help-grid > .rw-video-grid { margin: 0; }
+.rw-help-left {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+@media (max-width: 900px) {
+	.rw-help-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.rw-video-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.rw-video-card .rw-section__head { margin-bottom: 18px; }
+
+/* FAQ accordion using native <details>/<summary>. Each item collapses
+   to a single-line summary and expands to show the answer. Chevron
+   rotates to indicate open/closed state. No JS needed for the toggle. */
+.rw-faq__list {
+	display: flex !important;
+	flex-direction: column;
+	gap: 8px;
+}
+.rw-faq__item {
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	background: #fff;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.rw-faq__item[open] {
+	border-color: #E67E21;
+	box-shadow: 0 2px 8px rgba(230, 126, 33, 0.08);
+}
+.rw-faq__q {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 14px 16px;
+	cursor: pointer;
+	list-style: none;
+	font-weight: 600;
+	font-size: 14px;
+	color: #1A2233;
+	user-select: none;
+}
+.rw-faq__q::-webkit-details-marker { display: none; }
+.rw-faq__q:hover { color: #E67E21; }
+.rw-faq__q-text { flex: 1; }
+.rw-faq__chevron {
+	flex: 0 0 auto;
+	transition: transform 0.15s ease;
+	color: #9ca3af;
+}
+.rw-faq__item[open] .rw-faq__chevron {
+	transform: rotate(180deg);
+	color: #E67E21;
+}
+.rw-faq__a {
+	padding: 0 16px 16px;
+	font-size: 13px;
+	line-height: 1.6;
+	color: #4b5563;
+}
+
+.rw-overview-footer {
+	margin-top: 32px;
+	text-align: center;
+	font-size: 13px;
+	color: #6b7280;
+}
+.rw-overview-footer a {
+	color: #E67E21;
+	text-decoration: none;
+}
+.rw-overview-footer a:hover { text-decoration: underline; }
+
+/* Tablet. Two-up KPIs read better than three at 700-900px since 32px
+   values + sparklines need horizontal room. Help grid also collapses
+   here already (declared above) so the layout flows cleanly. */
+@media (max-width: 900px) {
+	.rw-kpis { grid-template-columns: repeat(2, 1fr); }
+	.rw-overview-toolbar { gap: 8px; }
+}
+
+/* Mobile. */
+@media (max-width: 720px) {
+	#rw-wrapper { padding: 0 12px; margin: 12px 0 32px; }
+
+	/* Onboard / marketing cards already use flex - collapse to a stack. */
+	.rw-cards { flex-direction: column; }
+	.rw-marketing { padding: 24px; }
+	.rw-section { padding: 18px; }
+	.rw-section__head { flex-direction: column; align-items: stretch; gap: 10px; }
+
+	/* Topbar: tighter spacing, keep tabs scrollable horizontally if they
+	   overflow rather than wrapping into multiple rows, hide the action
+	   text labels (Dashboard / Disconnect) - the icons keep meaning. */
+	.rw-topbar { gap: 8px; padding: 6px; }
+	.rw-topbar__logo { padding: 0 4px 0 2px; }
+	.rw-topbar__logo img { height: 18px; }
+	.rw-topbar__tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+	.rw-topbar__tabs::-webkit-scrollbar { display: none; }
+	.rw-topbar__tab { padding: 6px 10px; font-size: 12px; }
+	.rw-topbar__right { gap: 4px; flex-wrap: wrap; }
+	.rw-topbar__action { padding: 6px 8px; }
+	.rw-lang__button { padding: 5px 6px; }
+	.rw-lang__menu { right: -8px; min-width: 160px; }
+	.rw-topbar__action-text { display: none; }
+	#rw-wrapper select.rw-account-select { min-width: 120px; max-width: 160px; font-size: 12px; }
+
+	/* Sub-nav (Widgets / Floating widget): tighter padding. */
+	.rw-subnav { gap: 14px; padding: 0 2px; }
+	.rw-subnav__tab { padding: 8px 0 10px; font-size: 12px; }
+
+	/* KPI cards: stack so values aren't cramped at 1/3 width. */
+	.rw-kpis { grid-template-columns: 1fr; gap: 12px; }
+	.rw-kpi { padding: 18px 20px; min-height: 110px; }
+	#rw-wrapper .rw-kpi__value { font-size: 28px; }
+
+	/* Pending banner: stack icon/text/CTA vertically, full-width tap target. */
+	.rw-action-banner { flex-direction: column; align-items: stretch; text-align: center; padding: 14px 16px; gap: 8px; }
+	.rw-action-banner__icon { margin: 0 auto; }
+	.rw-action-banner__cta { width: 100%; justify-content: center; }
+
+	/* Generic row pattern (widget list, channel list). The desktop
+	   layout is icon + main + rating + actions in one row; on mobile
+	   wrap actions onto their own line so neither name nor rating
+	   gets squeezed. */
+	.rw-row { flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
+	.rw-row__icon { width: 40px; height: 40px; }
+	.rw-row-widget .rw-row__icon { width: 48px; height: 36px; }
+	.rw-row__actions { width: 100%; justify-content: flex-end; gap: 8px; }
+
+	/* Setup + outreach steps: same idea - icon + body on top, CTA full
+	   width below. Stops the CTA from squeezing the title into 1 word. */
+	.rw-setup__step, .rw-outreach__step { flex-wrap: wrap; gap: 10px; padding: 12px 0; }
+	.rw-setup__step-body, .rw-outreach__step-body { flex: 1 1 calc(100% - 50px); min-width: 0; }
+	.rw-setup__step-cta, .rw-outreach__step-cta { flex: 1 0 100%; justify-content: center; padding: 8px 12px; }
+	.rw-setup__step-waiting { flex: 1 0 100%; justify-content: center; padding: 6px 0; }
+
+	/* Latest reviews (Dashboard): avatar smaller, actions wrap. */
+	.rw-latest__row { gap: 10px; padding: 12px 0; }
+	.rw-latest__avatar-wrap, .rw-latest__avatar, .rw-latest__avatar-placeholder { width: 36px; height: 36px; }
+	.rw-latest__platform-badge { width: 14px; height: 14px; }
+	.rw-latest__actions { flex-direction: column; align-items: stretch; gap: 8px; }
+	.rw-latest__reply-actions { gap: 10px; }
+	.rw-latest__mod-actions { justify-content: flex-end; }
+
+	/* Reviews section rows. Same treatment as latest reviews. */
+	.rw-review { padding: 14px 16px; }
+	.rw-review__head { flex-wrap: wrap; }
+	.rw-review__actions { flex-direction: column; align-items: stretch; gap: 10px; }
+	.rw-review__mod-actions { justify-content: flex-end; }
+
+	/* AI insights inside its own card: tighter gap. */
+	.rw-ai__data { gap: 14px; }
+	.rw-ai__sentiment { padding: 12px 14px 10px; }
+	.rw-ai__counts { gap: 12px; font-size: 12px; }
+
+	/* Platforms table: tighter columns, hide the per-row logo margin
+	   so the platform name doesn't push the numeric columns off-screen. */
+	.rw-platforms__table th, .rw-platforms__table td { padding: 8px 0; font-size: 12px; }
+	.rw-platforms__logo { width: 18px; height: 18px; margin-right: 6px; }
+
+	/* Floating widget settings: URL rules already wrap (kept from old
+	   rules); also allow the page-type / hide-page check grid to flow
+	   into a single column when each item alone is wide. */
+	.rw-url-row { flex-wrap: wrap; }
+	#rw-wrapper select.rw-url-row__select { flex: 0 0 100%; }
+	.rw-check-grid { grid-template-columns: 1fr; }
+
+	/* Modal: keep enough vertical real estate for the iframe. */
+	.rw-modal__iframe { height: 50vh; min-height: 320px; }
+
+	/* Help page videos / FAQ already stack via .rw-help-grid 900px
+	   breakpoint - just tighten the open-FAQ chevron spacing. */
+	.rw-faq__q { padding: 12px 14px; font-size: 13px; }
+	.rw-faq__a { padding: 0 14px 14px; }
+
+	/* Setup placeholder skeleton: keep icon column narrower. */
+	.rw-setup__step.is-skeleton .rw-setup__step-icon { width: 30px; height: 30px; }
+}
+
+/* Very small phones (iPhone SE etc.). */
+@media (max-width: 380px) {
+	.rw-topbar__tab { padding: 5px 8px; font-size: 11px; }
+	#rw-wrapper .rw-kpi__value { font-size: 24px; }
+	.rw-section { padding: 14px; }
+	.rw-row__name { font-size: 13px; }
+}

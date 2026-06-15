@@ -1,16 +1,21 @@
-=== Plugin Name ===
+=== Reviews Widgets for Google & 45+ platforms by Repuso ===
 Contributors: neran
 Donate link: https://repuso.com
-Tags: testimonials, reviews, badge, reviews badge, testimonial feed, testimonial widget, testimonials widget, testimonial slider, random reviews, review feed, reviews widget, social reviews, social testimonials, instagram reviews, facebook reviews, google reviews, appstore reviews, twitter reviews, tripadvisor reviews, airbnb reviews, healthgrades reviews, yellow pages reviews, Vrbo reviews, HomeAway reviews, Expedia reviews, SEO, star rating, search results, zillow reviews, video reviews, video testimonials, elfsight, brightlocal, grade.us, endorsal, birdeye, nicejob, trustindex, Realtor
-Requires at least: 3.0.1
+Tags: reviews, testimonials, google reviews, social proof, star rating
+Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 5.32
+Requires PHP: 7.2.2
+Stable tag: 6.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
 Author URI: https://repuso.com
 
 Collect social proof reviews, showcase on your website. Boost your website sales and conversion rate.
+
+== Languages ==
+
+This plugin ships translated into English, French, Spanish, Portuguese, German and Italian. WordPress will load the right translation automatically based on your site's language setting.
 
 == Description ==
 
@@ -112,6 +117,12 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 6.0.0 =
+Major release: new dashboard with KPIs, AI insights, latest reviews and rating trend. Multi-language (EN/FR/ES/PT/DE/IT) with in-app switcher. Role-aware access, refreshed Channels and Widgets, trial countdown and a help center with video guides.
+
+= 5.34 =
+New onboarding: one-click signup, modernised UI, status pill, inline disconnect, security hardening.
 
 = 5.33 =
 WP v7.0 support
@@ -386,14 +397,23 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 
 == Screenshots ==
 
-1. Some of our widgets
-2. Easy implementation
-3. Monitor social reviews and ratings
-4. Easily organize your testimonials
-5. Social proof increase conversion rate
-6. Social proof widgets to increase conversion
+1. Dashboard inside WordPress: average rating, total reviews, new reviews this month, latest reviews, and AI sentiment insights, all in one view.
+2. Connect 45+ review platforms (Google, TripAdvisor, Facebook, Capterra, G2, Realtor, and more) with a single click.
+3. Approve, reply to, and moderate reviews from every channel without leaving WordPress. AI suggests reply drafts.
+4. Pick a widget, copy its shortcode, and embed it anywhere on your site. Preview and edit straight from WP admin.
+5. Floating widget settings: choose a widget, target content types, and add URL show/hide rules. No code required.
+6. A dozen widget styles to choose from: image badges, sliders, masonry grids, floating badges, email signatures, photo galleries, and more.
+7. Inline testimonials embedded on a product page. Social proof exactly where customers decide to buy.
+8. Showcase your best reviews with stunning widgets designed to grab attention and build trust.
 
 == Changelog ==
+
+= 5.34 =
+* New one-click signup (just email; password generated and emailed)
+* Redesigned admin: two-card layout, Repuso branding, status pill, inline disconnect confirm
+* Configurable API/dashboard URLs via REPUSO_API_URL / REPUSO_APP_URL constants
+* Logo served locally; extracted inline JS into dedicated files
+* Security hardening: sanitized all $_POST/$_GET access, switched AJAX handlers to wp_send_json, restricted hook proxy to a method whitelist
 
 = 5.33 =
 WP v7.0 support

@@ -1,3 +1,104 @@
+/* Polished review-request notice. WP renders the surrounding
+ * .notice.is-dismissible wrapper; we override the inner copy. */
+.rw-review-notice {
+	border-left-color: #E67E21 !important;
+	padding: 18px 22px;
+}
+.rw-review-notice__row {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+}
+.rw-review-notice__icon {
+	flex: 0 0 auto;
+	width: 56px;
+	height: 56px;
+	border-radius: 10px;
+}
+.rw-review-notice__body { flex: 1 1 auto; min-width: 0; }
+.rw-review-notice__lede {
+	margin: 0 0 4px;
+	font-size: 15px;
+	color: #1f2937;
+}
+.rw-review-notice__text {
+	margin: 0 0 12px;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #4b5563;
+}
+.rw-review-notice__actions {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	flex-wrap: wrap;
+	margin: 0;
+}
+.rw-review-notice__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 14px;
+	background: #E67E21;
+	color: #fff !important;
+	border: 1px solid #E67E21;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+.rw-review-notice__cta,
+.rw-review-notice__cta:hover {
+	text-decoration: none !important;
+}
+.rw-review-notice__cta:hover {
+	background: #fff;
+	color: #E67E21 !important;
+}
+/* Plain inline so the star sits flush against the "5". Inline-flex
+   here was creating a 4px flex gap between every child (including the
+   adjacent text nodes), which read as "★ 5" instead of "★5". */
+.rw-review-notice__cta-text {
+	display: inline;
+}
+/* Inline gold star right before the "5" in the CTA. Unicode glyph (★)
+   styled with an explicit colour so it stays gold even when the parent
+   CTA flips between white-on-orange and orange-on-white on hover
+   (currentColor in an inline SVG was rendering as the CTA's colour,
+   which read as black-on-light-grey in the screenshot). */
+.rw-review-notice__cta-star {
+	color: #fff !important;
+	font-size: 12px;
+	line-height: 1;
+}
+.rw-review-notice__cta:hover .rw-review-notice__cta-star {
+	color: #fbbc04 !important;
+}
+.rw-review-notice__cta .dashicons {
+	font-size: 14px !important;
+	width: 14px !important;
+	height: 14px !important;
+}
+.rw-review-notice__thanks {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-style: italic;
+	color: #4b5563;
+}
+.rw-review-notice__pray {
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1;
+}
+.rw-review-notice__link {
+	font-size: 13px;
+	color: #6b7280;
+	text-decoration: none;
+}
+.rw-review-notice__link:hover { color: #1f2937; text-decoration: underline; }
+
 #rw-wrapper #iframe{
     width: 100%;
     margin-top: 20px;
@@ -132,4 +233,16 @@
 #rw-wrapper #rw-reviews .dashicons-yes-alt.status1 {
 	color: green;
 	opacity: 1;
+}
+
+/* Mobile: review notice on small screens. Stack icon above body so
+   the message stays readable; the CTA + dismiss links wrap onto
+   their own line(s) instead of being pushed off-screen. */
+@media (max-width: 720px) {
+	.rw-review-notice { padding: 14px 16px; }
+	.rw-review-notice__row { flex-direction: column; align-items: flex-start; gap: 10px; }
+	.rw-review-notice__icon { width: 44px; height: 44px; }
+	.rw-review-notice__actions { flex-direction: column; align-items: stretch; gap: 8px; }
+	.rw-review-notice__cta { justify-content: center; }
+	.rw-review-notice__link { text-align: center; }
 }
