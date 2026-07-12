@@ -3,9 +3,9 @@ Contributors: neran
 Donate link: https://repuso.com
 Tags: reviews, testimonials, google reviews, social proof, star rating
 Requires at least: 6.0
-Tested up to: 7.0
+Tested up to: 7.0.1
 Requires PHP: 7.2.2
-Stable tag: 6.0.0
+Stable tag: 6.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
@@ -117,6 +117,9 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 6.0.1 =
+Reviews export
 
 = 6.0.0 =
 Major release: new dashboard with KPIs, AI insights, latest reviews and rating trend. Multi-language (EN/FR/ES/PT/DE/IT) with in-app switcher. Role-aware access, refreshed Channels and Widgets, trial countdown and a help center with video guides.
@@ -407,6 +410,12 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 8. Showcase your best reviews with stunning widgets designed to grab attention and build trust.
 
 == Changelog ==
+
+= 6.0.1 =
+Reviews export
+
+= 6.0.0 =
+Major release: new dashboard with KPIs, AI insights, latest reviews and rating trend. Multi-language (EN/FR/ES/PT/DE/IT) with in-app switcher. Role-aware access, refreshed Channels and Widgets, trial countdown and a help center with video guides.
 
 = 5.34 =
 * New one-click signup (just email; password generated and emailed)
