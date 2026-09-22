@@ -3,7 +3,7 @@
  * Plugin Name:       Reviews Widgets for Google & 45+ platforms by Repuso
  * Plugin URI:        https://repuso.com/integrations-wordpress/
  * Description:       Social testimonials & reviews on your own website as social proof. Increase your website's sales and conversion rate with Repuso.
- * Version:           6.0.2
+ * Version:           6.0.3
  * Requires at least: 6.0
  * Requires PHP:      7.2.2
  * Author:            Repuso

@@ -5,7 +5,7 @@ Tags: reviews, testimonials, google reviews, social proof, star rating
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.2.2
-Stable tag: 6.0.2
+Stable tag: 6.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
@@ -117,6 +117,9 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 6.0.3 =
+Connecting an existing account now offers the emailed login code first, with the password option still one click away.
 
 = 6.0.2 =
 WP v7.1
@@ -413,6 +416,9 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 8. Showcase your best reviews with stunning widgets designed to grab attention and build trust.
 
 == Changelog ==
+
+= 6.0.3 =
+Connecting an existing account now offers the emailed login code first, with the password option still one click away.
 
 = 6.0.2 =
 WP v7.1

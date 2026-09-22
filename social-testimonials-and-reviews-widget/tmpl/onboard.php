@@ -98,9 +98,10 @@ $rw_onboard_visible = isset( $rw_onboard_visible ) ? (bool) $rw_onboard_visible 
 					     mismatched height vs the signup card next to it. -->
 					<div class="rw-login__steps">
 
-					<!-- Default step: email + password. Bottom link swaps the
-					     bottom of the form to the OTP request step. -->
-					<div class="rw-login__step is-current" data-login-step="password">
+					<!-- Password step. Not the default any more - the code step
+					     below is - but kept as the fallback for anyone who
+					     prefers it, reachable from "Use password instead". -->
+					<div class="rw-login__step" data-login-step="password">
 						<div class="rw-field">
 							<label class="rw-field__label" for="rw-login-password"><?php esc_html_e( 'Password', 'social-testimonials-and-reviews-widget' ); ?></label>
 							<input id="rw-login-password" class="rw-field__input" type="password" name="password" autocomplete="current-password" />
@@ -116,9 +117,11 @@ $rw_onboard_visible = isset( $rw_onboard_visible ) ? (bool) $rw_onboard_visible 
 						</p>
 					</div>
 
-					<!-- OTP step 1: send the code. Bottom link goes back to
-					     the password form. -->
-					<div class="rw-login__step" data-login-step="code-request">
+					<!-- Default step: request a login code. Most people
+					     connecting a site do not have the Repuso password to
+					     hand, so asking for one first is the slower path.
+					     Bottom link goes to the password form. -->
+					<div class="rw-login__step is-current" data-login-step="code-request">
 						<p class="rw-step__intro"><?php esc_html_e( "We'll email you a 6-digit code. Enter it here to sign in - no password needed.", 'social-testimonials-and-reviews-widget' ); ?></p>
 
 						<button type="button" class="rw-button rw-button-outline" data-action="send-login-code">

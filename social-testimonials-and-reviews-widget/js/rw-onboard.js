@@ -445,7 +445,7 @@
 		// "Signing in…", OTP step still showing, error text, etc.)
 		// when the user disconnects after a successful login.
 		window.rwResetOnboardLoginForm = function () {
-			showStep('password');
+			showStep('code-request');
 			hideStatus(statusNode);
 			if (codeInput)  codeInput.value = '';
 			if (codeError)  codeError.textContent = '';
