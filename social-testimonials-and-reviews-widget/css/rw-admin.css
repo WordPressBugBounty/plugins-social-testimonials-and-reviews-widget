@@ -246,3 +246,24 @@
 	.rw-review-notice__cta { justify-content: center; }
 	.rw-review-notice__link { text-align: center; }
 }
+
+/* Google reply from WordPress */
+.rw-review__reply-text { margin: 8px 0 0; padding: 8px 12px; border-left: 3px solid #E07B1A; background: #fdf6ef; font-size: 13px; white-space: pre-wrap; }
+.rw-review__gbp-note { color: #757575; font-size: 12px; margin-right: 12px; }
+.rw-review__reply-actions .rw-latest__reply-link + .rw-latest__reply-link { margin-left: 12px; }
+#rw-reviews .rw-latest__ai-reply-text {
+	min-height: 96px;
+	padding: 10px 12px;
+	margin-bottom: 10px;
+	background: #fff;
+	border: 1px solid #d5d9e0;
+	border-radius: 6px;
+	font-size: 14px;
+	cursor: text;
+}
+#rw-reviews .rw-latest__ai-reply-text:focus { border-color: #E07B1A; box-shadow: 0 0 0 2px rgba(224, 123, 26, 0.2); }
+#rw-reviews .rw-latest__ai-reply-text:empty:before { content: attr(data-placeholder); color: #9aa1ab; }
+#rw-reviews .rw-latest__ai-reply:not(.rw-latest__ai-reply-error) { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+#rw-reviews .rw-latest__ai-reply-text { flex: 1 1 100%; }
+#rw-reviews .rw-review__post-reply { margin-left: auto; }
+#rw-reviews .rw-review__post-reply:disabled { opacity: .6; cursor: wait; }

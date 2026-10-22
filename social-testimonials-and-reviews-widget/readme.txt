@@ -5,13 +5,13 @@ Tags: reviews, testimonials, google reviews, social proof, star rating
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.2.2
-Stable tag: 6.0.3
+Stable tag: 6.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: Repuso <hello@repuso.com>
 Author URI: https://repuso.com
 
-Collect social proof reviews, showcase on your website. Boost your website sales and conversion rate.
+Collect reviews, reply to Google reviews and showcase social proof on your website. Boost your website sales and conversion rate.
 
 == Languages ==
 
@@ -29,6 +29,9 @@ Repuso monitors all your social media channels for reviews by your customers. Re
 
 = Organize your reviews =
 Select your favorite reviews in the dashboard at your Wordpress admin for display in the widgets. Get notified and do this in real-time via our app!
+
+= Reply to Google reviews from WordPress =
+Connect your Google Business Profile in Repuso and answer your Google reviews right from the Reviews page in your WordPress admin. Write a reply or start from an AI suggestion, edit it, and post it to Google in one click. You can edit or delete replies later, and see which reviews are already answered.
 
 = Showcase reviews on your website to build trust =
 Increase your website's conversion by showing the selected reviews in the floating widget or inline on your most important pages.
@@ -117,6 +120,9 @@ Visit our website for more information about this plugin [Repuso](https://repuso
 1. Go to Testimonials -> Repuso Dashboard to get started
 
 == Upgrade Notice ==
+
+= 6.1.0 =
+Reply to Google reviews right from WordPress.
 
 = 6.0.3 =
 Connecting an existing account now offers the emailed login code first, with the password option still one click away.
@@ -416,6 +422,9 @@ We offer a free trial period, afterwards it'll require to select a paid plan: [R
 8. Showcase your best reviews with stunning widgets designed to grab attention and build trust.
 
 == Changelog ==
+
+= 6.1.0 =
+Reply to Google reviews from the Reviews page: write a reply or post the AI suggestion, edit or delete an existing reply. Requires Google connected in Repuso and a plan with replies.
 
 = 6.0.3 =
 Connecting an existing account now offers the emailed login code first, with the password option still one click away.

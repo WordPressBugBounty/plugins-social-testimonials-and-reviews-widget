@@ -1290,3 +1290,63 @@ msgstr "Affichez des avis de Google, Facebook, TripAdvisor, Airbnb et plus de 45
 #: admin notice (connect)
 msgid "Connect"
 msgstr "Connecter"
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Post reply on Google"
+msgstr "Publier la réponse sur Google"
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Edit reply"
+msgstr "Modifier la réponse"
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Delete reply"
+msgstr "Supprimer la réponse"
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Delete this reply from Google?"
+msgstr "Supprimer cette réponse de Google ?"
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Your reply"
+msgstr "Votre réponse"
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Not matched to Google yet"
+msgstr "Pas encore associé à Google"
+
+#: social-testimonials-and-reviews-widget.php
+msgid "You don't have permission to reply here."
+msgstr "Vous n'avez pas l'autorisation de répondre ici."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "This review is not on Google yet. Try again in a few minutes."
+msgstr "Cet avis n'est pas encore disponible sur Google. Réessayez dans quelques minutes."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Google access expired. Reconnect Google on the Repuso dashboard."
+msgstr "L'accès Google a expiré. Reconnectez Google dans le tableau de bord Repuso."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "The reply is too long for Google."
+msgstr "La réponse est trop longue pour Google."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Write a reply first."
+msgstr "Écrivez d'abord une réponse."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "This review was answered meanwhile. Nothing was posted."
+msgstr "Cet avis a reçu une réponse entre-temps. Rien n'a été publié."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Google is busy right now. Please try again in a minute."
+msgstr "Google est très sollicité en ce moment. Réessayez dans une minute."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Google did not accept the reply. Please try again."
+msgstr "Google n'a pas accepté la réponse. Veuillez réessayer."
+
+#: social-testimonials-and-reviews-widget.php
+msgid "Write your reply..."
+msgstr "Écrivez votre réponse..."

@@ -3,7 +3,7 @@
  * Plugin Name:       Reviews Widgets for Google & 45+ platforms by Repuso
  * Plugin URI:        https://repuso.com/integrations-wordpress/
  * Description:       Social testimonials & reviews on your own website as social proof. Increase your website's sales and conversion rate with Repuso.
- * Version:           6.0.3
+ * Version:           6.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.2.2
  * Author:            Repuso
@@ -258,6 +258,21 @@ class RepusoIntegration {
             'dismiss_tooltip'       => __( 'Dismiss (hidden in widgets)', 'social-testimonials-and-reviews-widget' ),
             'reply'                 => __( 'Reply', 'social-testimonials-and-reviews-widget' ),
             'replied'               => __( 'Replied', 'social-testimonials-and-reviews-widget' ),
+            'reply_placeholder'     => __( 'Write your reply...', 'social-testimonials-and-reviews-widget' ),
+            'post_reply'            => __( 'Post reply on Google', 'social-testimonials-and-reviews-widget' ),
+            'edit_reply'            => __( 'Edit reply', 'social-testimonials-and-reviews-widget' ),
+            'delete_reply'          => __( 'Delete reply', 'social-testimonials-and-reviews-widget' ),
+            'delete_reply_confirm'  => __( 'Delete this reply from Google?', 'social-testimonials-and-reviews-widget' ),
+            'your_reply'            => __( 'Your reply', 'social-testimonials-and-reviews-widget' ),
+            'reply_unmatched'       => __( 'Not matched to Google yet', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_not_allowed' => __( 'You don\'t have permission to reply here.', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_not_linked'  => __( 'This review is not on Google yet. Try again in a few minutes.', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_reconnect'   => __( 'Google access expired. Reconnect Google on the Repuso dashboard.', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_too_long'    => __( 'The reply is too long for Google.', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_empty'       => __( 'Write a reply first.', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_already'     => __( 'This review was answered meanwhile. Nothing was posted.', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_busy'        => __( 'Google is busy right now. Please try again in a minute.', 'social-testimonials-and-reviews-widget' ),
+            'reply_err_failed'      => __( 'Google did not accept the reply. Please try again.', 'social-testimonials-and-reviews-widget' ),
             'ai_suggest_reply'      => __( 'AI suggest reply', 'social-testimonials-and-reviews-widget' ),
             'ai_suggesting'         => __( 'Suggesting…', 'social-testimonials-and-reviews-widget' ),
             'copy_reply'            => __( 'Copy reply', 'social-testimonials-and-reviews-widget' ),

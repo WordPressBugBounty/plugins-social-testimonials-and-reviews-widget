@@ -1222,10 +1222,13 @@
 							// populates it). Matches the latest-reviews layout
 							// so the same suggestAiReply helper works here.
 							'<div class="rw-latest__ai-reply" data-ai-reply style="display:none;">' +
-								'<div class="rw-latest__ai-reply-text" data-ai-reply-text contenteditable></div>' +
+								'<div class="rw-latest__ai-reply-text" data-ai-reply-text contenteditable data-placeholder="' + escAttr(rwT('reply_placeholder', 'Write your reply...')) + '"></div>' +
 								'<a class="rw-latest__ai-reply-copy" href="#" data-copy-reply>' +
 									'<span class="dashicons dashicons-clipboard"></span> <span class="rw-link-text">Copy reply</span>' +
 								'</a>' +
+								'<button type="button" class="rw-button rw-button-inline rw-review__post-reply" data-post-reply style="display:none;">' +
+									esc(rwT('post_reply', 'Post reply on Google')) +
+								'</button>' +
 							'</div>' +
 							'<div class="rw-latest__ai-reply rw-latest__ai-reply-error" data-ai-reply-error style="display:none;">' +
 								'<span class="dashicons dashicons-warning"></span> <span data-ai-reply-error-text></span>' +
@@ -1251,6 +1254,7 @@
 						'</div>'
 					);
 				});
+				gbpDecorate($list, response.items);
 			} else {
 				$list.append(emptyState(
 					rwT('no_reviews_title', 'No reviews yet'),
@@ -1551,6 +1555,127 @@
 			$row.find('[data-ai-reply-error-text]').text(reason);
 			$row.find('[data-ai-reply-error]').show();
 		});
+	}
+
+	// Reply on Google from WordPress. Same rule as the dashboard
+	// (posts.js canPostReply): plan/role allow it (google/connections
+	// can_reply), the review is Google, its channel is linked to a Google
+	// connection and the review is matched to its Google review.
+	var gbpCache = {};
+	function gbpLoad() {
+		var key = String(subAccount || 0);
+		if (gbpCache[key]) return gbpCache[key];
+		var d = $.Deferred();
+		var state = { ok: false, linked: {} };
+		var parse = function (r) { if (typeof r === 'string') { try { r = JSON.parse(r); } catch (e) { r = {}; } } return r || {}; };
+		hookGet('google/connections?website=' + encodeURIComponent(subAccount)).done(function (res) {
+			res = parse(res);
+			state.ok = !!(res.can_reply && res.can_reply.ok);
+			if (!state.ok) return d.resolve(state);
+			hookGet('channels?website=' + encodeURIComponent(subAccount)).done(function (ch) {
+				(parse(ch).items || []).forEach(function (c) {
+					if (Number(c.google_connection_id) > 0) state.linked[c.id] = true;
+				});
+			}).always(function () { d.resolve(state); });
+		}).fail(function () { d.resolve(state); });
+		// ponytail: cached per page load; reconnecting Google needs a reload
+		return (gbpCache[key] = d.promise());
+	}
+
+	function plainText(html) {
+		return new DOMParser().parseFromString(String(html || ''), 'text/html').body.textContent || '';
+	}
+
+	function gbpDecorate($list, items) {
+		gbpLoad().done(function (state) {
+			if (!state.ok) return;
+			(items || []).forEach(function (p) {
+				if (p.type !== 'googleplace' || !state.linked[p.channel_id]) return;
+				var $row = $list.find('[data-review-id="' + p.id + '"]');
+				$row.data('rw-post', p);
+				gbpRenderRow($row, p);
+			});
+		});
+	}
+
+	function gbpRenderRow($row, p) {
+		var $actions = $row.find('.rw-review__reply-actions');
+		$row.find('.rw-review__gbp').remove();
+		if (!p.external_ref) {
+			$actions.prepend('<span class="rw-review__gbp rw-review__gbp-note">' + esc(rwT('reply_unmatched', 'Not matched to Google yet')) + '</span>');
+			return;
+		}
+		$row.find('[data-post-reply]').show();
+		$actions.find('.rw-latest__reply-link, .rw-latest__replied-badge').remove();
+		var hasReply = !!(p.reply && String(p.reply).trim());
+		$row.find('[data-ai-suggest]').toggle(!hasReply);
+		if (hasReply) {
+			$actions.prepend('<span class="rw-review__gbp rw-latest__replied-badge"><span class="dashicons dashicons-yes-alt"></span> ' + esc(rwT('replied', 'Replied')) + '</span>');
+			$row.find('.rw-review__text').after(
+				'<div class="rw-review__gbp rw-review__reply-text"><strong>' + esc(rwT('your_reply', 'Your reply')) + ':</strong> ' + esc(plainText(p.reply)) + '</div>'
+			);
+			$actions.append(
+				'<a class="rw-review__gbp rw-latest__reply-link" href="#" data-edit-reply><span class="dashicons dashicons-edit"></span> <span class="rw-link-text">' + esc(rwT('edit_reply', 'Edit reply')) + '</span></a>' +
+				'<a class="rw-review__gbp rw-latest__reply-link" href="#" data-delete-reply><span class="dashicons dashicons-trash"></span> <span class="rw-link-text">' + esc(rwT('delete_reply', 'Delete reply')) + '</span></a>'
+			);
+		} else {
+			$actions.prepend(
+				'<a class="rw-review__gbp rw-latest__reply-link" href="#" data-edit-reply><span class="dashicons dashicons-format-chat"></span> <span class="rw-link-text">' + esc(rwT('reply', 'Reply')) + '</span></a>'
+			);
+		}
+	}
+
+	function gbpOpenEditor($row) {
+		var p = $row.data('rw-post') || {};
+		$row.find('[data-ai-reply-error]').hide();
+		$row.find('[data-ai-reply-text]').text(plainText(p.reply));
+		$row.find('[data-ai-reply]').show();
+		$row.find('[data-ai-reply-text]').trigger('focus');
+	}
+
+	function gbpReplyError(res) {
+		var msg = String((res && res.msg) || '');
+		if (msg.indexOf('not_allowed') === 0) return rwT('reply_err_not_allowed', "You don't have permission to reply here.");
+		var map = {
+			not_linked:         ['reply_err_not_linked', 'This review is not on Google yet. Try again in a few minutes.'],
+			reconnect_required: ['reply_err_reconnect',  'Google access expired. Reconnect Google on the Repuso dashboard.'],
+			not_connected:      ['reply_err_reconnect',  'Google access expired. Reconnect Google on the Repuso dashboard.'],
+			too_long:           ['reply_err_too_long',   'The reply is too long for Google.'],
+			empty:              ['reply_err_empty',      'Write a reply first.'],
+			already_replied:    ['reply_err_already',    'This review was answered meanwhile. Nothing was posted.'],
+			quota_exceeded:     ['reply_err_busy',       'Google is busy right now. Please try again in a minute.']
+		}[msg] || ['reply_err_failed', 'Google did not accept the reply. Please try again.'];
+		return rwT(map[0], map[1]);
+	}
+
+	function gbpSend($row, remove) {
+		var p = $row.data('rw-post');
+		if (!p || $row.data('rw-sending')) return;
+		var text = remove ? '' : String(($row.find('[data-ai-reply-text]')[0] || {}).innerText || '').trim();
+		var showErr = function (m) {
+			$row.find('[data-ai-reply-error-text]').text(m);
+			$row.find('[data-ai-reply-error]').show();
+		};
+		if (!remove && !text) return showErr(rwT('reply_err_empty', 'Write a reply first.'));
+		$row.data('rw-sending', true);
+		$row.find('[data-post-reply]').prop('disabled', true);
+		$row.find('[data-ai-reply-error]').hide();
+		hookRequest({
+			path:   'posts/' + p.id + '/reply',
+			method: remove ? 'DELETE' : 'PUT',
+			body:   remove ? { website: parseInt(subAccount, 10) || 0 } : { text: text, website: parseInt(subAccount, 10) || 0 },
+			extraHeaders: { 'Content-Type': 'application/json' }
+		}).done(function (res) {
+			if (typeof res === 'string') { try { res = JSON.parse(res); } catch (e) { res = {}; } }
+			if (!res || !res.success) return showErr(gbpReplyError(res));
+			p.reply = res.reply || '';
+			p.reply_date = res.reply_date;
+			$row.find('[data-ai-reply]').hide();
+			gbpRenderRow($row, p);
+			window.rwCache.invalidate('reviews_');
+		}).fail(function () {
+			showErr(rwT('reply_err_failed', 'Google did not accept the reply. Please try again.'));
+		}).always(function () { $row.data('rw-sending', false); $row.find('[data-post-reply]').prop('disabled', false); });
 	}
 
 	function copyAiReplyAdmin($link) {
@@ -1925,6 +2050,24 @@
 		$(document).on('click', '#rw-reviews [data-copy-reply]', function (e) {
 			e.preventDefault();
 			copyAiReplyAdmin($(this));
+		});
+		$(document).on('click', '#rw-reviews [data-edit-reply]', function (e) {
+			e.preventDefault();
+			gbpOpenEditor($(this).closest('[data-review-id]'));
+		});
+		$(document).on('click', '#rw-reviews [data-post-reply]', function (e) {
+			e.preventDefault();
+			gbpSend($(this).closest('[data-review-id]'), false);
+		});
+		$(document).on('click', '#rw-reviews [data-delete-reply]', function (e) {
+			e.preventDefault();
+			var $row = $(this).closest('[data-review-id]');
+			window.rwConfirm({
+				title:        rwT('delete_reply_confirm', 'Delete this reply from Google?'),
+				confirmLabel: rwT('delete_reply', 'Delete reply'),
+				danger:       true,
+				onConfirm:    function () { gbpSend($row, true); }
+			});
 		});
 
 		// Open review-media images in a lightbox. Video items skip the
