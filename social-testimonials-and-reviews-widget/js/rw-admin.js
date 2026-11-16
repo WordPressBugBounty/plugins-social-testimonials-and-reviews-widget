@@ -742,11 +742,18 @@
 		// Auto-apply on change (no submit button in the new design).
 		$select.off('change').on('change', function () {
 			subAccount = $select.val();
-			$.post(ajax_var.url, {
+			var saving = $.post(ajax_var.url, {
 				action: 'rw_store_subaccount',
 				account: subAccount,
 				nonce: ajax_var.nonce
 			});
+			// Pages with server-rendered parts for the sub-account (AI Visibility page and card, the
+			// "AI and search engines" tab, the public review page card): reload once the choice is saved.
+			var section = $('#rw-wrapper').data('rw-section');
+			if (section === 'ai' || section === 'widgets-ai' || section === 'widgets' || section === 'overview') {
+				saving.always(function () { window.location.reload(); });
+				return;
+			}
 			loadCurrentSection();
 		});
 	}
@@ -768,7 +775,7 @@
 			loadReviews('/inbox');
 		} else if (section === 'floating') {
 			loadFloatingSelector();
-		} else {
+		} else if (section === 'widgets' || section === '' || typeof section === 'undefined') {
 			loadWidgets();
 		}
 	}

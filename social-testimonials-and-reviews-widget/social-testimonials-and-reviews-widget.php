@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Reviews Widgets for Google & 45+ platforms by Repuso
+ * Plugin Name:       Reviews Widgets for Google & 50+ platforms by Repuso
  * Plugin URI:        https://repuso.com/integrations-wordpress/
- * Description:       Social testimonials & reviews on your own website as social proof. Increase your website's sales and conversion rate with Repuso.
- * Version:           6.1.0
+ * Description:       Show reviews from Google and 50+ platforms on your website with widgets, and see whether ChatGPT, Gemini and other AI assistants recommend you or your competitors.
+ * Version:           6.2.0
  * Requires at least: 6.0
  * Requires PHP:      7.2.2
  * Author:            Repuso
@@ -30,6 +30,9 @@ if (!defined('REPUSO_APP_URL')) define('REPUSO_APP_URL', 'https://repuso.com/app
 // surface as cURL-28 timeouts. Set REPUSO_MAX_CONCURRENT=1 in
 // wp-config.php for local dev to avoid that.
 if (!defined('REPUSO_MAX_CONCURRENT')) define('REPUSO_MAX_CONCURRENT', 4);
+if (!defined('RW_PLUGIN_VERSION')) define('RW_PLUGIN_VERSION', '6.2.0');
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-repuso-ai-visibility.php';
 
 class RepusoIntegration {
 
@@ -471,6 +474,7 @@ class RepusoIntegration {
             'rw_widgets',
             'rw_overview',
             'pagewide_widget',
+            'rw_ai_visibility',
         );
         if ( ! in_array( $page, $rw_pages, true ) ) {
             // On non-plugin admin pages we still want the review-request
@@ -482,7 +486,7 @@ class RepusoIntegration {
                 $plugin_dir = plugin_dir_path( __FILE__ );
                 $rel        = 'css/rw-admin.css';
                 $abs        = $plugin_dir . $rel;
-                $ver        = file_exists( $abs ) ? (string) filemtime( $abs ) : '6.0.0';
+                $ver        = file_exists( $abs ) ? (string) filemtime( $abs ) : RW_PLUGIN_VERSION;
                 wp_enqueue_style( 'rw_css_admin_notice', $this->plugin_url . $rel, array(), $ver );
             }
             return;
@@ -495,7 +499,7 @@ class RepusoIntegration {
         $plugin_dir = plugin_dir_path( __FILE__ );
         $ver = function ( $rel ) use ( $plugin_dir ) {
             $abs = $plugin_dir . $rel;
-            return file_exists( $abs ) ? (string) filemtime( $abs ) : '6.0.0';
+            return file_exists( $abs ) ? (string) filemtime( $abs ) : RW_PLUGIN_VERSION;
         };
 
         wp_enqueue_style(  'rw_css_admin',   $this->plugin_url . 'css/rw-admin.css',   array(),         $ver( 'css/rw-admin.css' ) );
@@ -578,7 +582,7 @@ class RepusoIntegration {
 		// "Reviews" label, not the slug "rw_dashboard").
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only screen identifier from WP's own admin URL, not form data.
 		$current_page  = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( (string) $_GET['page'] ) ) : '';
-		$plugin_pages  = array( 'rw_dashboard', 'rw_reviews', 'rw_channels', 'rw_widgets', 'pagewide_widget', 'rw_overview' );
+		$plugin_pages  = array( 'rw_dashboard', 'rw_reviews', 'rw_channels', 'rw_widgets', 'pagewide_widget', 'rw_overview', 'rw_ai_visibility' );
 		$is_plugin_page = in_array( $current_page, $plugin_pages, true );
 		if ( $is_plugin_page ) {
 			$email = $current_user ? $current_user->user_email : '';
@@ -614,6 +618,12 @@ class RepusoIntegration {
         // registered so its URL still resolves.
         add_submenu_page(null,           'Floating Widget', 'Floating widget',  'manage_options', 'pagewide_widget', array($this, 'pagewide_widget'));
         add_submenu_page('rw_dashboard', 'Help',            'Help',             'manage_options', 'rw_overview',     array($this, 'rw_overview'));
+    }
+
+    /** Reviews > AI Visibility for connected sites, inside the plugin chrome (body: Repuso_AI_Visibility::page_body()). */
+    function ai_page() {
+        $this->currentSection = 'ai';
+        require_once dirname(__FILE__) . '/tmpl/main.php';
     }
 
     function overview_dashboard() {
@@ -709,7 +719,9 @@ class RepusoIntegration {
     // phpcs:enable WordPress.Security.NonceVerification.Missing,WordPress.Security.NonceVerification.Recommended
 
     function widgets() {
-	    $this->currentSection = "widgets";
+	    // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only tab switch.
+	    $tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : '';
+	    $this->currentSection = ( 'ai' === $tab ) ? 'widgets-ai' : 'widgets';
 	    require_once dirname(__FILE__) . '/tmpl/main.php';
     }
     
@@ -1227,9 +1239,12 @@ class RepusoIntegration {
             $handle,
             'https://repuso.com/widgets/2.0/rw-widget-' . sanitize_key( $type ) . '.js',
             array(),
-            '6.0.0',
+            RW_PLUGIN_VERSION,
             true
         );
+
+        // "Let AI read your reviews": latest reviews inside the tag (hidden by the widget), review data after it.
+        list( $rw_inside, $rw_after ) = isset( $GLOBALS['rw_ai'] ) ? $GLOBALS['rw_ai']->for_widget( sanitize_key( $type ), $id ) : array( '', '' );
 
         ob_start();
         ?>
@@ -1240,7 +1255,8 @@ class RepusoIntegration {
                 printf( ' %s="%s"', esc_attr( $key ), esc_attr( $value ) );
             }
         }
-        ?>></rw-widget-<?php echo esc_attr( $type ); ?>>
+        ?>><?php echo $rw_inside; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- every field escaped in Repuso_AI_Visibility::plain_list(). ?></rw-widget-<?php echo esc_attr( $type ); ?>>
+        <?php echo $rw_after; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_inline_script_tag() of wp_json_encode() data. ?>
         <!-- End widget code -->
         <?php
         return ob_get_clean();
@@ -1265,7 +1281,7 @@ class RepusoIntegration {
         // inline (the rw-trial banner / onboard cards on the Dashboard).
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only routing check.
         $page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
-        $rw_pages = array( 'rw_dashboard', 'rw_reviews', 'rw_channels', 'rw_widgets', 'rw_overview', 'pagewide_widget' );
+        $rw_pages = array( 'rw_dashboard', 'rw_reviews', 'rw_channels', 'rw_widgets', 'rw_overview', 'pagewide_widget', 'rw_ai_visibility' );
         if ( in_array( $page, $rw_pages, true ) ) {
             return;
         }
@@ -1363,7 +1379,14 @@ class RepusoIntegration {
                 esc_html__( '%s: connect to display reviews on your site', 'social-testimonials-and-reviews-widget' ),
                 $brand
             );
-            $sub = esc_html__( 'Showcase reviews from Google, Facebook, TripAdvisor, Airbnb and 45+ other platforms. Free 14-day trial.', 'social-testimonials-and-reviews-widget' );
+            $sub = esc_html__( 'Showcase reviews from Google, Facebook, TripAdvisor, Airbnb and 50+ other platforms. Free 14-day trial.', 'social-testimonials-and-reviews-widget' );
+            $ai_check = Repuso_AI_Visibility::free_check_link( 'connect-notice' );
+            $ai_name  = Repuso_AI_Visibility::site_name();
+            $ai_label = sprintf(
+                /* translators: %s: business name or website. */
+                __( 'Check %s free', 'social-testimonials-and-reviews-widget' ),
+                '' !== $ai_name ? $ai_name : Repuso_AI_Visibility::domain()
+            );
             /* translators: admin-notice CTA that opens the Repuso plugin page where the user can sign up or sign in. */
             $cta = esc_html__( 'Connect', 'social-testimonials-and-reviews-widget' );
             $dismiss_js = $build_dismiss_js( $notice_id, 'connect', 30 );
@@ -1374,6 +1397,11 @@ class RepusoIntegration {
                     <strong style="<?php echo esc_attr( $headline_st ); ?>"><?php echo esc_html( $headline ); ?></strong>
                     <span style="<?php echo esc_attr( $sub_style ); ?>"><?php echo esc_html( $sub ); ?></span>
                     <a href="<?php echo esc_url( $dashboard_url ); ?>" class="button button-primary" style="<?php echo esc_attr( $cta_style ); ?>"><?php echo esc_html( $cta ); ?></a>
+                </p>
+                <p style="margin:2px 0 6px 50px;font-size:13px;">
+                    <span style="background:#d63638;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;font-weight:700;margin-right:4px;"><?php esc_html_e( 'New', 'social-testimonials-and-reviews-widget' ); ?></span>
+                    <?php esc_html_e( 'Does AI recommend you, or your competitors?', 'social-testimonials-and-reviews-widget' ); ?>
+                    <a href="<?php echo esc_url( $ai_check ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $ai_label ); ?> <span class="dashicons dashicons-external" aria-hidden="true" style="font-size:14px;width:14px;height:14px;vertical-align:-2px;"></span></a>
                 </p>
             </div>
             <?php
@@ -1750,6 +1778,9 @@ $widget_shortcodes = [
 ];
 
 $da = new RepusoIntegration();
+$GLOBALS['rw_ai'] = new Repuso_AI_Visibility( $da );
+register_activation_hook( __FILE__, array( 'Repuso_AI_Visibility', 'activate' ) );
+register_deactivation_hook( __FILE__, array( 'Repuso_AI_Visibility', 'deactivate' ) );
 add_action('init', array($da, 'init'));
 add_action('wp_footer', array($da, 'execute_sidewide_widget'));
 foreach($widget_shortcodes as $shortcode)

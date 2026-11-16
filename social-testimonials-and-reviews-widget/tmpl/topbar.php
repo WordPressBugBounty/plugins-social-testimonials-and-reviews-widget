@@ -29,12 +29,13 @@ $rw_topbar_hidden = empty( $this->apiKey );
 
 $current = isset( $this->currentSection ) ? $this->currentSection : '';
 // Floating-widget pages should highlight the "Widgets" tab.
-$active_tab_key = ( $current === 'floating' ) ? 'widgets' : $current;
+$active_tab_key = in_array( $current, array( 'floating', 'widgets-ai' ), true ) ? 'widgets' : $current;
 $tabs           = array(
 	'overview' => array( 'label' => __( 'Dashboard', 'social-testimonials-and-reviews-widget' ), 'page' => 'rw_dashboard' ),
 	'reviews'  => array( 'label' => __( 'Reviews',   'social-testimonials-and-reviews-widget' ), 'page' => 'rw_reviews' ),
 	'channels' => array( 'label' => __( 'Channels',  'social-testimonials-and-reviews-widget' ), 'page' => 'rw_channels' ),
 	'widgets'  => array( 'label' => __( 'Widgets',   'social-testimonials-and-reviews-widget' ), 'page' => 'rw_widgets' ),
+	'ai'       => array( 'label' => __( 'AI Visibility', 'social-testimonials-and-reviews-widget' ), 'page' => 'rw_ai_visibility' ),
 	'guides'   => array( 'label' => __( 'Help',      'social-testimonials-and-reviews-widget' ), 'page' => 'rw_overview' ),
 );
 ?>

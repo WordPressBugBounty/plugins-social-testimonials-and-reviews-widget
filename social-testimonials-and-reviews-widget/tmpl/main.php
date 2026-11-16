@@ -50,15 +50,31 @@ if (!defined('ABSPATH')) exit;
 		// Sub-nav for the Widgets section (Widgets / Floating widget). Sits
 		// outside the section card so it reads as page-level navigation,
 		// matching the placement on tmpl/floating.php.
-		if ( $this->currentSection === 'widgets' ) :
+		if ( in_array( $this->currentSection, array( 'widgets', 'widgets-ai' ), true ) ) :
 			$widgets_url  = admin_url( 'admin.php?page=rw_widgets' );
 			$floating_url = admin_url( 'admin.php?page=pagewide_widget' );
+			$ai_tab_url   = admin_url( 'admin.php?page=rw_widgets&tab=ai' );
+			$on_ai_tab    = ( $this->currentSection === 'widgets-ai' );
 		?>
 		<nav class="rw-subnav" aria-label="<?php esc_attr_e( 'Widget types', 'social-testimonials-and-reviews-widget' ); ?>">
-			<a href="<?php echo esc_url( $widgets_url ); ?>" class="rw-subnav__tab is-active"><?php esc_html_e( 'Widgets', 'social-testimonials-and-reviews-widget' ); ?></a>
+			<a href="<?php echo esc_url( $widgets_url ); ?>" class="rw-subnav__tab<?php echo $on_ai_tab ? '' : ' is-active'; ?>"><?php esc_html_e( 'Widgets', 'social-testimonials-and-reviews-widget' ); ?></a>
 			<a href="<?php echo esc_url( $floating_url ); ?>" class="rw-subnav__tab"><?php esc_html_e( 'Floating widget', 'social-testimonials-and-reviews-widget' ); ?></a>
+			<a href="<?php echo esc_url( $ai_tab_url ); ?>" class="rw-subnav__tab<?php echo $on_ai_tab ? ' is-active' : ''; ?>"><?php esc_html_e( 'AI and search engines', 'social-testimonials-and-reviews-widget' ); ?></a>
 		</nav>
 		<?php endif; ?>
+
+		<?php
+		// AI Visibility page and the Widgets "AI and search engines" tab (includes/class-repuso-ai-visibility.php).
+		if ( $this->currentSection === 'ai' && isset( $GLOBALS['rw_ai'] ) ) {
+			$GLOBALS['rw_ai']->page_body();
+		}
+		if ( $this->currentSection === 'widgets-ai' && isset( $GLOBALS['rw_ai'] ) ) {
+			$GLOBALS['rw_ai']->tab_body();
+		}
+		if ( $this->currentSection === 'widgets' ) {
+			do_action( 'rw_widgets_before_list' ); // public review page card
+		}
+		?>
 
 		<!-- ===== Widgets ===== -->
 		<section id="rw-widgets" class="rw-section" style="display:none;">

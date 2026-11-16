@@ -152,6 +152,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		</div>
 
+		<?php do_action( 'rw_overview_after_kpis' ); // AI Visibility card (includes/class-repuso-ai-visibility.php) ?>
+
 		<!-- "Reviews waiting for approval" action banner. Hidden until JS
 		     finds at least one pending review; populated by rw-overview.js.
 		     Sits between KPIs and the Latest reviews row so the call-out

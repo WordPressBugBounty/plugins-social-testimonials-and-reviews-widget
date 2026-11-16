@@ -4,7 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: social-testimonials-and-reviews-widget\n"
-"POT-Creation-Date: 2026-06-13 06:50+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-13 15:34+0200\n"
 "PO-Revision-Date: 2026-06-13 06:50+0000\n"
 "Language-Team: Repuso\n"
 "Language: fr_FR\n"
@@ -14,1339 +15,1910 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Domain: social-testimonials-and-reviews-widget\n"
 
-#: tmpl/onboard.php:116
-msgid "12+ widget styles:"
-msgstr "Plus de 12 styles de widgets :"
-
-#: tmpl/overview-dashboard.php:100
-msgid "1y"
-msgstr "1a"
-
-#: tmpl/overview-dashboard.php:101
-msgid "2y"
-msgstr "2a"
-
-#: tmpl/overview-dashboard.php:98
-msgid "30d"
-msgstr "30j"
-
-#: tmpl/onboard.php:115
-msgid "50+ review platforms:"
-msgstr "Plus de 50 plateformes :"
-
-#: tmpl/overview-dashboard.php:99
-msgid "90d"
-msgstr "90j"
-
-#: tmpl/overview.php:10
-msgid "A 90-second overview of how Repuso collects reviews and turns them into widgets for your website."
-msgstr "Aperçu en 90 secondes de la façon dont Repuso collecte les avis et les transforme en widgets pour votre site."
-
-#: tmpl/overview.php:100
-msgid "A property is a set of all channels, one per kind (1 x Google, 1 x Facebook, 1 x TripAdvisor etc). Usually used for multiple locations, services or rental properties of the same business. Reviews from different properties can be displayed together in widgets."
-msgstr "Une propriété est un ensemble de canaux, un par type (1 Google, 1 Facebook, 1 TripAdvisor, etc.). Généralement utilisée pour plusieurs sites, services ou logements en location d'une même entreprise. Les avis de différentes propriétés peuvent être affichés ensemble dans les widgets."
-
-#: social-testimonials-and-reviews-widget.php:579
-msgid "A quick 5-star Google review would mean the world. It takes 30 seconds and helps other businesses discover Repuso."
-msgstr "Un rapide avis Google 5 étoiles compterait beaucoup pour nous. Cela prend 30 secondes et aide d'autres entreprises à découvrir Repuso."
-
-#: tmpl/overview.php:104
-msgid "A sub account is a standalone account, usually used for a new business, service or client. It can have multiple properties and has its own Collect page and widgets."
-msgstr "Un sous-compte est un compte autonome, généralement utilisé pour une nouvelle activité, un service ou un client. Il peut contenir plusieurs propriétés et dispose de sa propre page Collecte et de ses propres widgets."
-
-#: tmpl/overview.php:16
-msgid "A walkthrough of the Repuso dashboard - channels, widgets, the Collect page, and review moderation."
-msgstr "Une visite guidée du tableau de bord Repuso - canaux, widgets, la page Collecte et la modération des avis."
-
-#: tmpl/overview-dashboard.php:187
-msgid "AI insights"
-msgstr "Analyses IA"
-
-#: social-testimonials-and-reviews-widget.php:235
-msgid "AI is not enabled for this sub-account."
-msgstr "L'IA n'est pas activée pour ce sous-compte."
-
-#: social-testimonials-and-reviews-widget.php:234
-msgid "AI is not supported on your current plan."
-msgstr "L'IA n'est pas prise en charge par votre forfait actuel."
-
-#: social-testimonials-and-reviews-widget.php:240
-msgid "AI replies are not on your plan yet."
-msgstr "Les réponses IA ne sont pas incluses dans votre forfait."
-
-#: social-testimonials-and-reviews-widget.php:226
-msgid "AI suggest reply"
-msgstr "IA suggérer une réponse"
-
-#: tmpl/onboard.php:62
-msgid "Account created"
-msgstr "Compte créé"
-
-#: tmpl/topbar.php:57
-msgid "Active website"
-msgstr "Site actif"
-
-#: tmpl/floating.php:139
-msgid "Add another rule"
-msgstr "Ajouter une règle"
-
-#: social-testimonials-and-reviews-widget.php:261
-msgid "Add review sources so customers can leave reviews in a few taps."
-msgstr "Ajoutez des sources d'avis pour que les clients en laissent en quelques clics."
-
-#: tmpl/main.php:138
-msgid "All"
-msgstr "Tous"
-
-#: tmpl/overview.php:92
-msgid "All major credit cards via Stripe."
-msgstr "Toutes les principales cartes de crédit via Stripe."
-
-#: tmpl/main.php:112
-msgid "All supported platforms"
-msgstr "Toutes les plateformes supportées"
-
-#: social-testimonials-and-reviews-widget.php:220
-msgid "Approve"
-msgstr "Approuver"
-
-#: social-testimonials-and-reviews-widget.php:222
-msgid "Approve (displayed in widgets)"
-msgstr "Approuver (affiché dans les widgets)"
-
-#: social-testimonials-and-reviews-widget.php:254
-msgid "Approve a review"
-msgstr "Approuver un avis"
-
-#: tmpl/main.php:122
-msgid "Approve the reviews you want to feature in your widgets."
-msgstr "Approuvez les avis à afficher dans vos widgets."
-
-#: social-testimonials-and-reviews-widget.php:255
-msgid "Approve the reviews you want to feature in your widgets. Pending reviews stay hidden until you approve them."
-msgstr "Approuvez les avis à afficher dans vos widgets. Les avis en attente restent masqués jusqu'à approbation."
-
-#: tmpl/main.php:137
-msgid "Approved"
-msgstr "Approuvés"
-
-#: tmpl/overview.php:59
-msgid "Are new reviews pulled in automatically?"
-msgstr "Les nouveaux avis sont-ils récupérés automatiquement ?"
-
-#: tmpl/main.php:24 tmpl/overview-dashboard.php:30
-msgid "Are you sure?"
-msgstr "Êtes-vous sûr ?"
-
-#: tmpl/overview-dashboard.php:113
-msgid "Average rating"
-msgstr "Note moyenne"
-
-#: tmpl/onboard.php:117
-msgid "Built-in collection:"
-msgstr "Collecte intégrée :"
-
-#: tmpl/overview.php:87
-msgid "Can I cancel my subscription?"
-msgstr "Puis-je annuler mon abonnement ?"
-
-#: tmpl/overview.php:71
-msgid "Can the same widget be used on multiple WordPress sites?"
-msgstr "Le même widget peut-il être utilisé sur plusieurs sites WordPress ?"
-
-#: tmpl/main.php:96 tmpl/overview-dashboard.php:309 tmpl/topbar.php:34
-msgid "Channels"
-msgstr "Canaux"
-
-#: tmpl/overview.php:114
-msgid "Chat with our team"
-msgstr "Discuter avec notre équipe"
-
-#: social-testimonials-and-reviews-widget.php:196 tmpl/main.php:22 tmpl/main.php:42 tmpl/overview-dashboard.php:28
-msgid "Checking connection…"
-msgstr "Vérification de la connexion…"
-
-#: tmpl/overview-dashboard.php:48
-msgid "Checking…"
-msgstr "Vérification…"
-
-#: tmpl/floating.php:50
-msgid "Choose which of your Repuso widgets should appear as the floating widget on your site."
-msgstr "Choisissez le widget Repuso à afficher comme widget flottant sur votre site."
-
-#: social-testimonials-and-reviews-widget.php:542
-msgid "Click to connect"
-msgstr "Cliquez pour vous connecter"
-
-#: social-testimonials-and-reviews-widget.php:217
-msgid "Click to copy"
-msgstr "Cliquer pour copier"
-
-#: social-testimonials-and-reviews-widget.php:238
-msgid "Collect 5+ reviews with written feedback to unlock AI insights."
-msgstr "Collectez au moins 5 avis avec commentaires écrits pour débloquer les analyses IA."
-
-#: social-testimonials-and-reviews-widget.php:266
-msgid "Collect reviews in person"
-msgstr "Collectez des avis en personne"
-
-#: tmpl/overview-dashboard.php:47 tmpl/overview-dashboard.php:80
-msgid "Complete your setup"
-msgstr "Finalisez votre configuration"
-
-#: tmpl/onboard.php:24
-msgid "Connect Repuso to start showing social proof"
-msgstr "Connectez Repuso pour afficher des avis sociaux"
-
-#: social-testimonials-and-reviews-widget.php:204 tmpl/main.php:104
-msgid "Connect a channel"
-msgstr "Connecter un canal"
-
-#: social-testimonials-and-reviews-widget.php:953
-msgid "Connect to Repuso"
-msgstr "Se connecter à Repuso"
-
-#: social-testimonials-and-reviews-widget.php:250
-msgid "Connect your first channel"
-msgstr "Connectez votre premier canal"
-
-#: social-testimonials-and-reviews-widget.php:203
-msgid "Connect your first review platform on the Repuso dashboard to start collecting reviews."
-msgstr "Connectez votre première plateforme d'avis sur le tableau de bord Repuso pour commencer à recueillir des avis."
-
-#: social-testimonials-and-reviews-widget.php:193
-msgid "Connected to Repuso"
-msgstr "Connecté à Repuso"
-
-#: social-testimonials-and-reviews-widget.php:195
-msgid "Connecting…"
-msgstr "Connexion…"
-
-#: social-testimonials-and-reviews-widget.php:229
-msgid "Copied!"
-msgstr "Copié !"
-
-#: social-testimonials-and-reviews-widget.php:228
-msgid "Copy reply"
-msgstr "Copier la réponse"
-
-#: social-testimonials-and-reviews-widget.php:207
-msgid "Could not load reviews"
-msgstr "Impossible de charger les avis"
-
-#: social-testimonials-and-reviews-widget.php:272
-msgid "Could not load widgets - try refreshing."
-msgstr "Impossible de charger les widgets - essayez d'actualiser."
-
-#: social-testimonials-and-reviews-widget.php:242
-msgid "Could not reach the AI service."
-msgstr "Impossible de joindre le service IA."
-
-#: tmpl/floating.php:72
-msgid "Create floating widget"
-msgstr "Créer un widget flottant"
-
-#: tmpl/onboard.php:46
-msgid "Create my Repuso account"
-msgstr "Créer mon compte Repuso"
-
-#: tmpl/main.php:80
-msgid "Create new widget"
-msgstr "Créer un nouveau widget"
-
-#: tmpl/floating.php:70
-msgid "Create one on the Repuso dashboard (Floating, Flash, or Floating badge), then pick it here."
-msgstr "Créez-en un dans le tableau de bord Repuso (Flottant, Flash ou Badge flottant), puis sélectionnez-le ici."
-
-#: social-testimonials-and-reviews-widget.php:201
-msgid "Create widget"
-msgstr "Créer un widget"
-
-#: social-testimonials-and-reviews-widget.php:252
-msgid "Create your first widget"
-msgstr "Créez votre premier widget"
-
-#: social-testimonials-and-reviews-widget.php:200
-msgid "Create your first widget on the Repuso dashboard, then embed it here."
-msgstr "Créez votre premier widget sur le tableau de bord Repuso, puis intégrez-le ici."
-
-#: tmpl/overview-dashboard.php:257
-msgid "Customer outreach"
-msgstr "Sensibilisation client"
-
-#: tmpl/topbar.php:32
-msgid "Dashboard"
-msgstr "Tableau de bord"
-
-#: tmpl/topbar.php:68
-msgid "Disconnect"
-msgstr "Déconnexion"
-
-#: tmpl/topbar.php:66
-msgid "Disconnect this site from Repuso"
-msgstr "Déconnecter ce site de Repuso"
-
-#: social-testimonials-and-reviews-widget.php:221 social-testimonials-and-reviews-widget.php:544 social-testimonials-and-reviews-widget.php:628
-msgid "Dismiss"
-msgstr "Ignorer"
-
-#: social-testimonials-and-reviews-widget.php:223
-msgid "Dismiss (hidden in widgets)"
-msgstr "Ignorer (caché dans les widgets)"
-
-#: tmpl/overview.php:83
-msgid "Do you offer a free trial?"
-msgstr "Proposez-vous un essai gratuit ?"
-
-#: tmpl/overview.php:68
-msgid "Each widget has a designer in the Repuso dashboard - click Edit on the widget row in the Widgets tab to open it. You can change colors, fonts, layout, density, and more without touching code. On the Standard and Ultimate plans you can also add Custom CSS for fine-grained tweaks."
-msgstr "Chaque widget dispose d'un éditeur dans le tableau de bord Repuso - cliquez sur Modifier sur la ligne du widget dans l'onglet Widgets pour l'ouvrir. Vous pouvez changer les couleurs, polices, mise en page, densité et plus encore sans toucher au code. Sur les plans Standard et Ultimate, vous pouvez aussi ajouter du CSS personnalisé pour des ajustements fins."
-
-#: social-testimonials-and-reviews-widget.php:213
-msgid "Edit"
-msgstr "Modifier"
-
-#: social-testimonials-and-reviews-widget.php:214
-msgid "Edit on Repuso dashboard"
-msgstr "Modifier sur le tableau de bord Repuso"
-
-#: tmpl/onboard.php:40 tmpl/onboard.php:79
-msgid "Email"
-msgstr "E-mail"
-
-#: tmpl/main.php:73
-msgid "Embed any of your widgets on your site using the shortcode."
-msgstr "Intégrez n'importe lequel de vos widgets sur votre site avec le shortcode."
-
-#: social-testimonials-and-reviews-widget.php:237
-msgid "Enable AI for this site"
-msgstr "Activer l'IA pour ce site"
-
-#: social-testimonials-and-reviews-widget.php:265
-msgid "Enable invites"
-msgstr "Activer les invitations"
-
-#: tmpl/shortcodes.php:11
-msgid "Find and copy the shortcode for the widget:"
-msgstr "Trouvez et copiez le shortcode du widget :"
-
-#: tmpl/overview.php:177
-msgid "Find out more at our website: %s"
-msgstr "En savoir plus sur notre site : %s"
-
-#: social-testimonials-and-reviews-widget.php:274
-msgid "Flash"
-msgstr "Flash"
-
-#: social-testimonials-and-reviews-widget.php:273
-msgid "Floating"
-msgstr "Flottant"
-
-#: social-testimonials-and-reviews-widget.php:275
-msgid "Floating badge 1"
-msgstr "Badge flottant 1"
-
-#: social-testimonials-and-reviews-widget.php:276
-msgid "Floating badge 2"
-msgstr "Badge flottant 2"
-
-#: tmpl/floating.php:21 tmpl/floating.php:25 tmpl/main.php:64
-msgid "Floating widget"
-msgstr "Widget flottant"
-
-#: tmpl/onboard.php:94
-msgid "Forgot your password?"
-msgstr "Mot de passe oublié ?"
-
-#: tmpl/onboard.php:49
-msgid "Free trial. No credit card. Cancel anytime."
-msgstr "Essai gratuit. Sans carte bancaire. Annulez à tout moment."
-
-#: tmpl/overview.php:129
-msgid "Frequently asked questions"
-msgstr "Questions fréquentes"
-
-#: tmpl/topbar.php:63
-msgid "Full Dashboard"
-msgstr "Tableau de bord complet"
-
-#: social-testimonials-and-reviews-widget.php:212
-msgid "Full code"
-msgstr "Code complet"
-
-#: tmpl/onboard.php:115
-msgid "Google, Facebook, Airbnb, TripAdvisor, Booking.com and many more."
-msgstr "Google, Facebook, Airbnb, TripAdvisor, Booking.com et bien d'autres."
-
-#: tmpl/onboard.php:25
-msgid "Google, Facebook, TripAdvisor, Airbnb and 45+ more, embedded on your site in a few clicks."
-msgstr "Google, Facebook, TripAdvisor, Airbnb et plus de 45 autres, intégrés sur votre site en quelques clics."
-
-#: social-testimonials-and-reviews-widget.php:251
-msgid "Google, Facebook, Tripadvisor or any of 45+ supported platforms."
-msgstr "Google, Facebook, Tripadvisor ou l'une des plus de 45 plateformes supportées."
-
-#: tmpl/overview.php:32 tmpl/topbar.php:36
-msgid "Help"
-msgstr "Aide"
-
-#: tmpl/floating.php:121 tmpl/floating.php:132
+#: includes/class-repuso-ai-visibility.php:346
+#: includes/class-repuso-ai-visibility.php:350
+#: includes/class-repuso-ai-visibility.php:525
+#: includes/class-repuso-ai-visibility.php:542 tmpl/ai-visibility.php:18
+#: tmpl/ai-visibility.php:24 tmpl/ai-visibility.php:98 tmpl/topbar.php:38
+msgid "AI Visibility"
+msgstr "AI Visibility"
+
+#: includes/class-repuso-ai-visibility.php:348
+#: social-testimonials-and-reviews-widget.php:1402 tmpl/ai-unconnected.php:16
+#: tmpl/ai-visibility.php:60
+msgid "New"
+msgstr "Nouveau"
+
+#: includes/class-repuso-ai-visibility.php:387
+msgid "Copied"
+msgstr "Copié"
+
+#: includes/class-repuso-ai-visibility.php:397
+#: includes/class-repuso-ai-visibility.php:461 tmpl/ai-biztabs.php:15
+msgid "Not tracked"
+msgstr "Non suivi"
+
+#: includes/class-repuso-ai-visibility.php:400
+msgid "Tracked daily"
+msgstr "Suivi quotidien"
+
+#: includes/class-repuso-ai-visibility.php:401
+msgid "Tracked twice a week"
+msgstr "Suivi deux fois par semaine"
+
+#: includes/class-repuso-ai-visibility.php:402
+msgid "Tracked weekly"
+msgstr "Suivi hebdomadaire"
+
+#: includes/class-repuso-ai-visibility.php:403
+msgid "Tracked monthly"
+msgstr "Suivi mensuel"
+
+#: includes/class-repuso-ai-visibility.php:405 tmpl/ai-biztabs.php:15
+msgid "Tracked"
+msgstr "Suivi"
+
+#. translators: %d: percent of AI answers that name the business.
+#. translators: %d: percent.
+#: includes/class-repuso-ai-visibility.php:412 tmpl/ai-visibility.php:121
+#, php-format
+msgid "%d%% of AI answers recommend you"
+msgstr "%d %% des réponses de l'IA vous recommandent"
+
+#. translators: %s: signed change in percentage points, like +8 or -3.
+#. translators: %s: signed change in points.
+#: includes/class-repuso-ai-visibility.php:417 tmpl/ai-visibility.php:137
+#, php-format
+msgid "%s pts"
+msgstr "%s pts"
+
+#: includes/class-repuso-ai-visibility.php:441
+#: social-testimonials-and-reviews-widget.php:1403 tmpl/ai-unconnected.php:17
+#: tmpl/ai-visibility.php:61
+msgid "Does AI recommend you, or your competitors?"
+msgstr "L'IA vous recommande-t-elle, ou vos concurrents ?"
+
+#. translators: %s: business name or website.
+#: includes/class-repuso-ai-visibility.php:444
+#, php-format
+msgid "See how often ChatGPT, Gemini and Google Maps name %s when customers ask for a business like yours, and who they name instead."
+msgstr "Découvrez à quelle fréquence ChatGPT, Gemini et Google Maps citent %s quand des clients cherchent une entreprise comme la vôtre, et qui ils citent à la place."
+
+#. translators: %s: business name or website.
+#: includes/class-repuso-ai-visibility.php:448
+#: social-testimonials-and-reviews-widget.php:1387 tmpl/ai-visibility.php:79
+#, php-format
+msgid "Check %s free"
+msgstr "Vérifier %s gratuitement"
+
+#: includes/class-repuso-ai-visibility.php:450
+#: social-testimonials-and-reviews-widget.php:812
+msgid "Don't show again"
+msgstr "Ne plus afficher"
+
+#. translators: 1: answers naming the business, 2: all answers.
+#: includes/class-repuso-ai-visibility.php:460 tmpl/ai-visibility.php:130
+#, php-format
+msgid "AI recommends you in %1$d of %2$d answers"
+msgstr "L'IA vous recommande dans %1$d réponses sur %2$d"
+
+#. translators: %s: date of the last check.
+#: includes/class-repuso-ai-visibility.php:465 tmpl/ai-visibility.php:106
+#, php-format
+msgid "checked %s"
+msgstr "vérifié le %s"
+
+#. translators: 1: competitor name, 2: times named.
+#: includes/class-repuso-ai-visibility.php:471
+#, php-format
+msgid "%1$s is named %2$d&times; instead of you"
+msgstr "%1$s est cité %2$d&times; à votre place"
+
+#: includes/class-repuso-ai-visibility.php:480 tmpl/ai-visibility.php:167
+msgid "AI answers change every week"
+msgstr "Les réponses de l'IA changent chaque semaine"
+
+#: includes/class-repuso-ai-visibility.php:480 tmpl/ai-visibility.php:167
+msgid "Your free checks have ended"
+msgstr "Vos vérifications gratuites sont terminées"
+
+#. translators: 1: business name, 2: competitor name.
+#. translators: 1: business, 2: competitor.
+#: includes/class-repuso-ai-visibility.php:484 tmpl/ai-visibility.php:171
+#, php-format
+msgid "Track %1$s weekly to see if you're gaining on %2$s, and get the fixes that move your score."
+msgstr "Suivez %1$s chaque semaine pour voir si vous rattrapez %2$s, et obtenez les améliorations qui font progresser votre score."
+
+#. translators: %s: business name.
+#. translators: %s: business.
+#: includes/class-repuso-ai-visibility.php:488 tmpl/ai-visibility.php:172
+#, php-format
+msgid "Track %s weekly to see where you stand, and get the fixes that move your score."
+msgstr "Suivez %s chaque semaine pour savoir où vous en êtes, et obtenez les améliorations qui font progresser votre score."
+
+#: includes/class-repuso-ai-visibility.php:490 tmpl/ai-visibility.php:176
+msgid "Start tracking"
+msgstr "Commencer le suivi"
+
+#: includes/class-repuso-ai-visibility.php:491
+msgid "See the result"
+msgstr "Voir le résultat"
+
+#: includes/class-repuso-ai-visibility.php:493
+msgid "Run your next free check"
+msgstr "Lancer la prochaine vérification gratuite"
+
+#: includes/class-repuso-ai-visibility.php:500
+msgid "First fix: let AI read your reviews"
+msgstr "Première amélioration : laissez l'IA lire vos avis"
+
+#: includes/class-repuso-ai-visibility.php:500 tmpl/ai-public-page.php:36
+#: tmpl/ai-visibility.php:208
+msgid "Turn it on"
+msgstr "Activer"
+
+#: includes/class-repuso-ai-visibility.php:500
+msgid "Your reviews load with JavaScript, so ChatGPT and other AI assistants can't see them."
+msgstr "Vos avis se chargent en JavaScript, donc ChatGPT et les autres assistants IA ne les voient pas."
+
+#: includes/class-repuso-ai-visibility.php:502 tmpl/ai-visibility.php:160
+msgid "Full report"
+msgstr "Rapport complet"
+
+#: includes/class-repuso-ai-visibility.php:502
+msgid "See the summary"
+msgstr "Voir le résumé"
+
+#: includes/class-repuso-ai-visibility.php:510
+msgid "Loading…"
+msgstr "Chargement…"
+
+#: includes/class-repuso-ai-visibility.php:542 tmpl/floating.php:121
+#: tmpl/floating.php:132
 msgid "Hide"
 msgstr "Masquer"
 
-#: tmpl/floating.php:149
-msgid "Hide on these pages"
-msgstr "Masquer sur ces pages"
+#: includes/class-repuso-ai-visibility.php:542
+msgid "How often AI assistants recommend your business."
+msgstr "À quelle fréquence les assistants IA recommandent votre entreprise."
 
-#: tmpl/overview-dashboard.php:272
-msgid "How customer ratings break down by stars."
-msgstr "Répartition des notes clients par étoile."
+#: includes/class-repuso-ai-visibility.php:602
+msgid "Not allowed."
+msgstr "Action non autorisée."
 
-#: tmpl/overview.php:51
-msgid "How do I connect a new review channel (Google, Facebook, etc.)?"
-msgstr "Comment connecter un nouveau canal d'avis (Google, Facebook, etc.) ?"
+#: includes/class-repuso-ai-visibility.php:707 tmpl/ai-public-page.php:10
+msgid "Read our reviews"
+msgstr "Lisez nos avis"
 
-#: tmpl/overview.php:67
-msgid "How do I customize how my widgets look?"
-msgstr "Comment personnaliser l'apparence de mes widgets ?"
+#. translators: %s: star rating out of 5, like 4.5.
+#: includes/class-repuso-ai-visibility.php:829
+#, php-format
+msgid "%s out of 5 stars"
+msgstr "%s étoiles sur 5"
 
-#: tmpl/overview.php:75
-msgid "How do I show the floating widget only on certain pages?"
-msgstr "Comment afficher le widget flottant seulement sur certaines pages ?"
+#: social-testimonials-and-reviews-widget.php:227
+msgid "Connected to Repuso"
+msgstr "Connecté à Repuso"
 
-#: tmpl/overview.php:79
-msgid "How do I switch between sub-accounts?"
-msgstr "Comment basculer entre les sous-comptes ?"
-
-#: tmpl/overview.php:55
-msgid "How long until reviews appear after I connect a channel?"
-msgstr "Combien de temps faut-il pour que les avis apparaissent après la connexion d'un canal ?"
-
-#: tmpl/overview.php:21
-msgid "How to embed a reviews widget on a WordPress website"
-msgstr "Comment intégrer un widget d'avis sur un site WordPress"
-
-#: tmpl/onboard.php:72
-msgid "I already have a Repuso account"
-msgstr "J'ai déjà un compte Repuso"
-
-#: tmpl/overview-dashboard.php:235
-msgid "Improvements"
-msgstr "Améliorations"
-
-#: tmpl/main.php:136
-msgid "Inbox"
-msgstr "Boîte de réception"
-
-#: social-testimonials-and-reviews-widget.php:263
-msgid "Invite customers to leave reviews"
-msgstr "Invitez vos clients à laisser des avis"
-
-#: social-testimonials-and-reviews-widget.php:284 tmpl/overview-dashboard.php:105
-msgid "Just updated"
-msgstr "Mis à jour"
-
-#: tmpl/overview-dashboard.php:326
-msgid "Last 12 months, by platform."
-msgstr "Les 12 derniers mois, par plateforme."
-
-#: tmpl/overview-dashboard.php:164
-msgid "Latest reviews"
-msgstr "Derniers avis"
-
-#: tmpl/onboard.php:52
-msgid "Learn more about Repuso →"
-msgstr "En savoir plus sur Repuso →"
-
-#: social-testimonials-and-reviews-widget.php:576
-msgid "Loving Repuso so far?"
-msgstr "Vous aimez Repuso ?"
-
-#: social-testimonials-and-reviews-widget.php:260
-msgid "Make leaving a review effortless"
-msgstr "Rendez la dépose d'avis simple"
-
-#: tmpl/main.php:129
-msgid "Manage all reviews"
-msgstr "Gérer tous les avis"
-
-#: social-testimonials-and-reviews-widget.php:599
-msgid "Maybe later"
-msgstr "Plus tard"
-
-#: tmpl/overview.php:48
-msgid "Most often this is a caching plugin holding the page contents. Clear your site cache and reload. Also check that the widget on Repuso has at least one approved review and a connected channel. Some widget types only render once the underlying script loads in the browser - if your theme strips scripts on certain pages, switch the widget to a different layout."
-msgstr "Le plus souvent, un plugin de cache retient le contenu de la page. Videz le cache de votre site et rechargez. Vérifiez aussi que le widget Repuso a au moins un avis approuvé et un canal connecté. Certains types de widgets ne s'affichent qu'une fois le script chargé - si votre thème supprime les scripts sur certaines pages, choisissez une autre mise en page."
-
-#: tmpl/overview-dashboard.php:165
-msgid "Most recent reviews across every connected platform."
-msgstr "Avis les plus récents sur toutes les plateformes connectées."
-
-#: tmpl/overview-dashboard.php:131
-msgid "New this month"
-msgstr "Nouveaux ce mois-ci"
-
-#: tmpl/main.php:26 tmpl/overview-dashboard.php:32
-msgid "No"
-msgstr "Non"
-
-#: social-testimonials-and-reviews-widget.php:202
-msgid "No channels yet"
-msgstr "Aucun canal"
-
-#: tmpl/floating.php:69
-msgid "No floating widgets yet"
-msgstr "Aucun widget flottant"
-
-#: tmpl/overview-dashboard.php:300
-msgid "No platforms with reviews yet."
-msgstr "Aucune plateforme avec des avis."
-
-#: tmpl/overview-dashboard.php:336
-msgid "No reviews collected yet. Once reviews start coming in this chart will show monthly volume per platform."
-msgstr "Aucun avis collecté pour le moment. Dès que des avis arrivent, ce graphique affichera le volume mensuel par plateforme."
-
-#: tmpl/overview-dashboard.php:281
-msgid "No reviews in this range yet."
-msgstr "Aucun avis dans cette période."
-
-#: social-testimonials-and-reviews-widget.php:279
-msgid "No reviews to show yet."
-msgstr "Aucun avis à afficher."
-
-#: social-testimonials-and-reviews-widget.php:205
-msgid "No reviews yet"
-msgstr "Aucun avis"
-
-#: tmpl/overview-dashboard.php:178
-msgid "No reviews yet."
-msgstr "Aucun avis."
-
-#: social-testimonials-and-reviews-widget.php:199
-msgid "No widgets yet"
-msgstr "Aucun widget"
-
-#: social-testimonials-and-reviews-widget.php:271
-msgid "None - disable floating widget"
-msgstr "Aucun - désactiver le widget flottant"
-
-#: social-testimonials-and-reviews-widget.php:194
+#: social-testimonials-and-reviews-widget.php:228
 msgid "Not connected"
 msgstr "Non connecté"
 
-#: tmpl/overview-dashboard.php:258
-msgid "Nudge customers to leave reviews - one less reason to wait."
-msgstr "Encouragez vos clients à laisser des avis - une raison de moins d'attendre."
+#: social-testimonials-and-reviews-widget.php:229
+msgid "Connecting…"
+msgstr "Connexion…"
 
-#: tmpl/onboard.php:64
-msgid "Open my Repuso dashboard"
-msgstr "Ouvrir mon tableau de bord Repuso"
+#: social-testimonials-and-reviews-widget.php:230 tmpl/main.php:22
+#: tmpl/main.php:37 tmpl/overview-dashboard.php:21
+msgid "Checking connection…"
+msgstr "Vérification de la connexion…"
 
-#: tmpl/overview.php:64
-msgid "Open the Reviews tab in the plugin. Anything in the Inbox is pending approval and will not display in widgets until you approve it. Reviews you dismissed are hidden by design. Approved reviews appear in widgets within a few seconds (your widget may also have its own filters like minimum star rating)."
-msgstr "Ouvrez l'onglet Avis du plugin. Tout ce qui se trouve dans la Boîte de réception est en attente d'approbation et ne s'affichera pas dans les widgets tant que vous ne l'aurez pas approuvé. Les avis rejetés sont masqués volontairement. Les avis approuvés apparaissent dans les widgets en quelques secondes (votre widget peut aussi avoir ses propres filtres, comme une note minimum)."
+#: social-testimonials-and-reviews-widget.php:233 tmpl/floating.php:20
+#: tmpl/main.php:60 tmpl/main.php:83 tmpl/topbar.php:37
+msgid "Widgets"
+msgstr "Widgets"
 
-#: tmpl/overview.php:76
-msgid "Open the Widgets → Floating widget tab. There you can pick the widget to use, restrict it to specific WordPress content types, exclude individual pages, and add Show/Hide rules by URL pattern."
-msgstr "Ouvrez l'onglet Widgets → Widget flottant. Vous pouvez y choisir le widget à utiliser, le restreindre à certains types de contenu WordPress, exclure des pages individuelles et ajouter des règles Afficher/Masquer par motif d'URL."
+#: social-testimonials-and-reviews-widget.php:234 tmpl/main.php:107
+#: tmpl/overview-dashboard.php:327 tmpl/topbar.php:36
+msgid "Channels"
+msgstr "Canaux"
 
-#: tmpl/topbar.php:61
-msgid "Open the full Repuso dashboard"
-msgstr "Ouvrir le tableau de bord Repuso complet"
+#: social-testimonials-and-reviews-widget.php:237
+msgid "No widgets yet"
+msgstr "Aucun widget"
 
-#: social-testimonials-and-reviews-widget.php:268
-msgid "Order NFC tags"
-msgstr "Commander des étiquettes NFC"
+#: social-testimonials-and-reviews-widget.php:238
+msgid "Create your first widget on the Repuso dashboard, then embed it here."
+msgstr "Créez votre premier widget sur le tableau de bord Repuso, puis intégrez-le ici."
 
-#: social-testimonials-and-reviews-widget.php:267
-msgid "Order NFC tags so customers can tap to leave a review."
-msgstr "Commandez des étiquettes NFC pour que vos clients laissent un avis en un geste."
+#: social-testimonials-and-reviews-widget.php:239
+msgid "Create widget"
+msgstr "Créer un widget"
 
-#: tmpl/onboard.php:84
-msgid "Password"
-msgstr "Mot de passe"
+#: social-testimonials-and-reviews-widget.php:240
+msgid "No channels yet"
+msgstr "Aucun canal"
 
-#: tmpl/shortcodes.php:12
-msgid "Paste the shortcode anywhere on your posts or pages:"
-msgstr "Collez le shortcode dans vos articles ou pages :"
+#: social-testimonials-and-reviews-widget.php:241
+msgid "Connect your first review platform on the Repuso dashboard to start collecting reviews."
+msgstr "Connectez votre première plateforme d'avis sur le tableau de bord Repuso pour commencer à recueillir des avis."
 
-#: social-testimonials-and-reviews-widget.php:253
-msgid "Pick a layout and embed it on your site using the shortcode."
-msgstr "Choisissez une mise en page et intégrez-la avec le shortcode."
+#: social-testimonials-and-reviews-widget.php:242 tmpl/main.php:115
+msgid "Connect a channel"
+msgstr "Connecter un canal"
 
-#: tmpl/floating.php:49
-msgid "Pick a widget"
-msgstr "Choisir un widget"
+#: social-testimonials-and-reviews-widget.php:243
+#: social-testimonials-and-reviews-widget.php:343
+msgid "No reviews yet"
+msgstr "Aucun avis"
 
-#: tmpl/overview.php:22
-msgid "Pick a widget, copy the shortcode, paste it into any page or post - reviews appear instantly."
-msgstr "Choisissez un widget, copiez le shortcode, collez-le dans n'importe quelle page ou article - les avis apparaissent immédiatement."
+#: social-testimonials-and-reviews-widget.php:244
+msgid "When customers leave reviews on your connected channels they appear here for you to approve."
+msgstr "Lorsque les clients laissent des avis sur vos canaux connectés, ils apparaissent ici pour être approuvés."
 
-#: tmpl/overview-dashboard.php:306
-msgid "Platform"
-msgstr "Plateforme"
+#: social-testimonials-and-reviews-widget.php:245
+msgid "Could not load reviews"
+msgstr "Impossible de charger les avis"
 
-#: tmpl/overview-dashboard.php:290
-msgid "Platform breakdown"
-msgstr "Répartition par plateforme"
+#: social-testimonials-and-reviews-widget.php:246
+msgid "Something went wrong fetching reviews. Try switching tabs again or reload the page."
+msgstr "Un problème est survenu lors de la récupération des avis. Essayez de changer d'onglet ou rechargez la page."
 
-#: social-testimonials-and-reviews-widget.php:211
+#: social-testimonials-and-reviews-widget.php:249 tmpl/ai-readable.php:67
 msgid "Preview"
 msgstr "Aperçu"
 
-#: tmpl/overview.php:15
-msgid "Product overview"
-msgstr "Aperçu du produit"
+#: social-testimonials-and-reviews-widget.php:250
+msgid "Full code"
+msgstr "Code complet"
 
-#: tmpl/overview.php:130
-msgid "Quick answers to the things people ask most. Still stuck? Use the chat above."
-msgstr "Réponses rapides aux questions les plus courantes. Toujours bloqué ? Utilisez le chat ci-dessus."
+#: social-testimonials-and-reviews-widget.php:251
+msgid "Edit"
+msgstr "Modifier"
 
-#: tmpl/overview.php:33
-msgid "Quick walkthroughs of what Repuso does and how to get the most out of it."
-msgstr "Aperçus rapides de ce que fait Repuso et de comment en tirer le meilleur parti."
+#: social-testimonials-and-reviews-widget.php:252
+msgid "Edit on Repuso dashboard"
+msgstr "Modifier sur le tableau de bord Repuso"
 
-#: social-testimonials-and-reviews-widget.php:592
-msgid "Rate us %s5 on Google"
-msgstr "Notez-nous %s5 sur Google"
-
-#: tmpl/overview-dashboard.php:308
-msgid "Rating"
-msgstr "Note"
-
-#: tmpl/overview-dashboard.php:271
-msgid "Rating distribution"
-msgstr "Répartition des notes"
-
-#: social-testimonials-and-reviews-widget.php:230
-msgid "Read more"
-msgstr "Lire la suite"
-
-#: tmpl/overview.php:115
-msgid "Real humans, real fast. Drop us a message and we will reply during business hours."
-msgstr "De vraies personnes, très rapidement. Envoyez-nous un message et nous répondrons pendant nos heures d'ouverture."
-
-#: social-testimonials-and-reviews-widget.php:283 tmpl/main.php:100 tmpl/main.php:125 tmpl/main.php:76
-msgid "Refresh"
-msgstr "Actualiser"
-
-#: tmpl/main.php:100
-msgid "Refresh channels"
-msgstr "Actualiser les canaux"
-
-#: tmpl/overview-dashboard.php:103
-msgid "Refresh dashboard"
-msgstr "Actualiser le tableau de bord"
-
-#: tmpl/main.php:125
-msgid "Refresh reviews"
-msgstr "Actualiser les avis"
-
-#: tmpl/main.php:76
-msgid "Refresh widgets"
-msgstr "Actualiser les widgets"
-
-#: social-testimonials-and-reviews-widget.php:225
-msgid "Replied"
-msgstr "Répondu"
-
-#: social-testimonials-and-reviews-widget.php:224
-msgid "Reply"
-msgstr "Répondre"
-
-#: tmpl/onboard.php:109 tmpl/onboard.php:19 tmpl/topbar.php:40 tmpl/topbar.php:41
-msgid "Repuso"
-msgstr "Repuso"
-
-#: tmpl/topbar.php:39
-msgid "Repuso plugin navigation"
-msgstr "Navigation du plugin Repuso"
-
-#: tmpl/onboard.php:126
-msgid "Repuso product overview"
-msgstr "Aperçu du produit Repuso"
-
-#: social-testimonials-and-reviews-widget.php:241
-msgid "Request timed out. The AI service is taking longer than usual."
-msgstr "La requête a expiré. Le service IA prend plus de temps que d'habitude."
-
-#: tmpl/main.php:97
-msgid "Review platforms connected to your account."
-msgstr "Plateformes d'avis connectées à votre compte."
-
-#: social-testimonials-and-reviews-widget.php:627 tmpl/overview-dashboard.php:152
-msgid "Review them"
-msgstr "Examiner"
-
-#: tmpl/main.php:121 tmpl/topbar.php:33
-msgid "Reviews"
-msgstr "Avis"
-
-#: tmpl/overview-dashboard.php:325
-msgid "Reviews over time"
-msgstr "Avis dans le temps"
-
-#: tmpl/floating.php:171
-msgid "Save settings"
-msgstr "Enregistrer les paramètres"
-
-#: tmpl/overview-dashboard.php:168
-msgid "See all reviews"
-msgstr "Voir tous les avis"
-
-#: social-testimonials-and-reviews-widget.php:215
+#: social-testimonials-and-reviews-widget.php:253
 msgid "Selected for site"
 msgstr "Sélectionné pour le site"
 
-#: social-testimonials-and-reviews-widget.php:264
-msgid "Send review invites by email & SMS."
-msgstr "Envoyez des invitations par e-mail et SMS."
+#: social-testimonials-and-reviews-widget.php:254
+msgid "This widget is set as the floating widget for this site."
+msgstr "Ce widget est défini comme widget flottant pour ce site."
+
+#: social-testimonials-and-reviews-widget.php:255
+msgid "Click to copy"
+msgstr "Cliquer pour copier"
+
+#: social-testimonials-and-reviews-widget.php:258
+msgid "Approve"
+msgstr "Approuver"
+
+#: social-testimonials-and-reviews-widget.php:259
+#: social-testimonials-and-reviews-widget.php:863
+msgid "Dismiss"
+msgstr "Ignorer"
+
+#: social-testimonials-and-reviews-widget.php:260
+msgid "Approve (displayed in widgets)"
+msgstr "Approuver (affiché dans les widgets)"
+
+#: social-testimonials-and-reviews-widget.php:261
+msgid "Dismiss (hidden in widgets)"
+msgstr "Ignorer (caché dans les widgets)"
 
 #: social-testimonials-and-reviews-widget.php:262
+msgid "Reply"
+msgstr "Répondre"
+
+#: social-testimonials-and-reviews-widget.php:263
+msgid "Replied"
+msgstr "Répondu"
+
+#: social-testimonials-and-reviews-widget.php:264
+msgid "Write your reply..."
+msgstr "Écrivez votre réponse..."
+
+#: social-testimonials-and-reviews-widget.php:265
+msgid "Post reply on Google"
+msgstr "Publier la réponse sur Google"
+
+#: social-testimonials-and-reviews-widget.php:266
+msgid "Edit reply"
+msgstr "Modifier la réponse"
+
+#: social-testimonials-and-reviews-widget.php:267
+msgid "Delete reply"
+msgstr "Supprimer la réponse"
+
+#: social-testimonials-and-reviews-widget.php:268
+msgid "Delete this reply from Google?"
+msgstr "Supprimer cette réponse de Google ?"
+
+#: social-testimonials-and-reviews-widget.php:269
+msgid "Your reply"
+msgstr "Votre réponse"
+
+#: social-testimonials-and-reviews-widget.php:270
+msgid "Not matched to Google yet"
+msgstr "Pas encore associé à Google"
+
+#: social-testimonials-and-reviews-widget.php:271
+msgid "You don't have permission to reply here."
+msgstr "Vous n'avez pas l'autorisation de répondre ici."
+
+#: social-testimonials-and-reviews-widget.php:272
+msgid "This review is not on Google yet. Try again in a few minutes."
+msgstr "Cet avis n'est pas encore disponible sur Google. Réessayez dans quelques minutes."
+
+#: social-testimonials-and-reviews-widget.php:273
+msgid "Google access expired. Reconnect Google on the Repuso dashboard."
+msgstr "L'accès Google a expiré. Reconnectez Google dans le tableau de bord Repuso."
+
+#: social-testimonials-and-reviews-widget.php:274
+msgid "The reply is too long for Google."
+msgstr "La réponse est trop longue pour Google."
+
+#: social-testimonials-and-reviews-widget.php:275
+msgid "Write a reply first."
+msgstr "Écrivez d'abord une réponse."
+
+#: social-testimonials-and-reviews-widget.php:276
+msgid "This review was answered meanwhile. Nothing was posted."
+msgstr "Cet avis a reçu une réponse entre-temps. Rien n'a été publié."
+
+#: social-testimonials-and-reviews-widget.php:277
+msgid "Google is busy right now. Please try again in a minute."
+msgstr "Google est très sollicité en ce moment. Réessayez dans une minute."
+
+#: social-testimonials-and-reviews-widget.php:278
+msgid "Google did not accept the reply. Please try again."
+msgstr "Google n'a pas accepté la réponse. Veuillez réessayer."
+
+#: social-testimonials-and-reviews-widget.php:279
+msgid "AI suggest reply"
+msgstr "IA suggérer une réponse"
+
+#: social-testimonials-and-reviews-widget.php:280
+msgid "Suggesting…"
+msgstr "Suggestion en cours…"
+
+#: social-testimonials-and-reviews-widget.php:281
+msgid "Copy reply"
+msgstr "Copier la réponse"
+
+#: social-testimonials-and-reviews-widget.php:282
+msgid "Copied!"
+msgstr "Copié !"
+
+#: social-testimonials-and-reviews-widget.php:283
+msgid "Read more"
+msgstr "Lire la suite"
+
+#: social-testimonials-and-reviews-widget.php:284
+msgid "Show less"
+msgstr "Réduire"
+
+#: social-testimonials-and-reviews-widget.php:287
+msgid "AI is not supported on your current plan."
+msgstr "L'IA n'est pas prise en charge par votre forfait actuel."
+
+#: social-testimonials-and-reviews-widget.php:288
+msgid "AI is not enabled for this sub-account."
+msgstr "L'IA n'est pas activée pour ce sous-compte."
+
+#: social-testimonials-and-reviews-widget.php:289
+msgid "Upgrade plan"
+msgstr "Mettre à niveau le forfait"
+
+#: social-testimonials-and-reviews-widget.php:290
+msgid "Enable AI for this site"
+msgstr "Activer l'IA pour ce site"
+
+#: social-testimonials-and-reviews-widget.php:291
+msgid "Collect 5+ reviews with written feedback to unlock AI insights."
+msgstr "Collectez au moins 5 avis avec commentaires écrits pour débloquer les analyses IA."
+
+#: social-testimonials-and-reviews-widget.php:292
+msgid "Couldn't load AI insights right now."
+msgstr "Impossible de charger les analyses IA pour le moment."
+
+#: social-testimonials-and-reviews-widget.php:293
+msgid "AI replies are not on your plan yet."
+msgstr "Les réponses IA ne sont pas incluses dans votre forfait."
+
+#: social-testimonials-and-reviews-widget.php:294
+msgid "Request timed out. The AI service is taking longer than usual."
+msgstr "La requête a expiré. Le service IA prend plus de temps que d'habitude."
+
+#: social-testimonials-and-reviews-widget.php:295
+msgid "Could not reach the AI service."
+msgstr "Impossible de joindre le service IA."
+
+#: social-testimonials-and-reviews-widget.php:298
+#: tmpl/overview-dashboard.php:233
+msgid "positive"
+msgstr "positifs"
+
+#: social-testimonials-and-reviews-widget.php:299
+#: tmpl/overview-dashboard.php:234
+msgid "neutral"
+msgstr "neutres"
+
+#: social-testimonials-and-reviews-widget.php:300
+#: tmpl/overview-dashboard.php:235
+msgid "negative"
+msgstr "négatifs"
+
+#: social-testimonials-and-reviews-widget.php:303
+msgid "Connect your first channel"
+msgstr "Connectez votre premier canal"
+
+#: social-testimonials-and-reviews-widget.php:304
+msgid "Google, Facebook, Tripadvisor or any of 45+ supported platforms."
+msgstr "Google, Facebook, Tripadvisor ou l'une des plus de 45 plateformes supportées."
+
+#: social-testimonials-and-reviews-widget.php:305
+msgid "Create your first widget"
+msgstr "Créez votre premier widget"
+
+#: social-testimonials-and-reviews-widget.php:306
+msgid "Pick a layout and embed it on your site using the shortcode."
+msgstr "Choisissez une mise en page et intégrez-la avec le shortcode."
+
+#: social-testimonials-and-reviews-widget.php:307
+msgid "Approve a review"
+msgstr "Approuver un avis"
+
+#: social-testimonials-and-reviews-widget.php:308
+msgid "Approve the reviews you want to feature in your widgets. Pending reviews stay hidden until you approve them."
+msgstr "Approuvez les avis à afficher dans vos widgets. Les avis en attente restent masqués jusqu'à approbation."
+
+#: social-testimonials-and-reviews-widget.php:309
+msgid "View reviews"
+msgstr "Voir les avis"
+
+#: social-testimonials-and-reviews-widget.php:310
+msgid "Waiting for your first review to arrive"
+msgstr "En attente de votre premier avis"
+
+#: social-testimonials-and-reviews-widget.php:313
+msgid "Make leaving a review effortless"
+msgstr "Rendez la dépose d'avis simple"
+
+#: social-testimonials-and-reviews-widget.php:314
+msgid "Add review sources so customers can leave reviews in a few taps."
+msgstr "Ajoutez des sources d'avis pour que les clients en laissent en quelques clics."
+
+#: social-testimonials-and-reviews-widget.php:315
 msgid "Set up Collect"
 msgstr "Configurer Collect"
 
-#: social-testimonials-and-reviews-widget.php:952
+#: social-testimonials-and-reviews-widget.php:316
+msgid "Invite customers to leave reviews"
+msgstr "Invitez vos clients à laisser des avis"
+
+#: social-testimonials-and-reviews-widget.php:317
+msgid "Send review invites by email & SMS."
+msgstr "Envoyez des invitations par e-mail et SMS."
+
+#: social-testimonials-and-reviews-widget.php:318
+msgid "Enable invites"
+msgstr "Activer les invitations"
+
+#: social-testimonials-and-reviews-widget.php:319
+msgid "Collect reviews in person"
+msgstr "Collectez des avis en personne"
+
+#: social-testimonials-and-reviews-widget.php:320
+msgid "Order NFC tags so customers can tap to leave a review."
+msgstr "Commandez des étiquettes NFC pour que vos clients laissent un avis en un geste."
+
+#: social-testimonials-and-reviews-widget.php:321
+msgid "Order NFC tags"
+msgstr "Commander des étiquettes NFC"
+
+#: social-testimonials-and-reviews-widget.php:324
+msgid "None - disable floating widget"
+msgstr "Aucun - désactiver le widget flottant"
+
+#: social-testimonials-and-reviews-widget.php:325
+msgid "Could not load widgets - try refreshing."
+msgstr "Impossible de charger les widgets - essayez d'actualiser."
+
+#: social-testimonials-and-reviews-widget.php:326
+msgid "Floating"
+msgstr "Flottant"
+
+#: social-testimonials-and-reviews-widget.php:327
+msgid "Flash"
+msgstr "Flash"
+
+#: social-testimonials-and-reviews-widget.php:328
+msgid "Floating badge 1"
+msgstr "Badge flottant 1"
+
+#: social-testimonials-and-reviews-widget.php:329
+msgid "Floating badge 2"
+msgstr "Badge flottant 2"
+
+#: social-testimonials-and-reviews-widget.php:332
+msgid "No reviews to show yet."
+msgstr "Aucun avis à afficher."
+
+#: social-testimonials-and-reviews-widget.php:333
+msgid "Couldn't load latest reviews."
+msgstr "Impossible de charger les derniers avis."
+
+#: social-testimonials-and-reviews-widget.php:336
+msgid "last 30 days"
+msgstr "30 derniers jours"
+
+#: social-testimonials-and-reviews-widget.php:337
+msgid "last 90 days"
+msgstr "90 derniers jours"
+
+#: social-testimonials-and-reviews-widget.php:338
+msgid "last year"
+msgstr "année dernière"
+
+#: social-testimonials-and-reviews-widget.php:339
+msgid "last 2 years"
+msgstr "2 dernières années"
+
+#: social-testimonials-and-reviews-widget.php:342
+msgid "n/a"
+msgstr "n/a"
+
+#. translators: %d: number of platforms (singular).
+#: social-testimonials-and-reviews-widget.php:345
+#, php-format
+msgid "across %d platform"
+msgstr "sur %d plateforme"
+
+#. translators: %d: number of platforms (plural).
+#: social-testimonials-and-reviews-widget.php:347
+#, php-format
+msgid "across %d platforms"
+msgstr "sur %d plateformes"
+
+#. translators: %s: human-readable range label (e.g. "last 90 days").
+#: social-testimonials-and-reviews-widget.php:349
+#, php-format
+msgid "New reviews (%s)"
+msgstr "Nouveaux avis (%s)"
+
+#: social-testimonials-and-reviews-widget.php:350
+msgid "No new reviews in range"
+msgstr "Aucun nouvel avis sur la période"
+
+#: social-testimonials-and-reviews-widget.php:351
+msgid "vs first half of range"
+msgstr "vs première moitié de la période"
+
+#: social-testimonials-and-reviews-widget.php:352
+msgid "Couldn't load"
+msgstr "Échec du chargement"
+
+#: social-testimonials-and-reviews-widget.php:355
+msgid "Your Repuso account is disabled"
+msgstr "Votre compte Repuso est désactivé"
+
+#: social-testimonials-and-reviews-widget.php:356
+msgid "Choose a plan to reactivate your account and bring your widgets back online."
+msgstr "Choisissez un plan pour réactiver votre compte et remettre vos widgets en ligne."
+
+#: social-testimonials-and-reviews-widget.php:357
+msgid "Free trial ends today"
+msgstr "L'essai gratuit se termine aujourd'hui"
+
+#: social-testimonials-and-reviews-widget.php:358
+msgid "1 day left in your free trial"
+msgstr "Il reste 1 jour à votre essai gratuit"
+
+#. translators: %d: number of days remaining in the free trial (always >= 2).
+#: social-testimonials-and-reviews-widget.php:360
+#, php-format
+msgid "%d days left in your free trial"
+msgstr "%d jours restants dans votre essai gratuit"
+
+#: social-testimonials-and-reviews-widget.php:361
+msgid "Choose your plan to avoid interruptions, remaining trial days are not billed."
+msgstr "Choisissez votre plan pour éviter toute interruption, les jours d'essai restants ne sont pas facturés."
+
+#: social-testimonials-and-reviews-widget.php:364
+msgid "Chart library failed to load."
+msgstr "Échec du chargement de la bibliothèque graphique."
+
+#: social-testimonials-and-reviews-widget.php:365
+msgid "Couldn't load chart data."
+msgstr "Impossible de charger les données du graphique."
+
+#: social-testimonials-and-reviews-widget.php:366
+#: tmpl/overview-dashboard.php:379
+msgid "No rating data for the selected period."
+msgstr "Aucune donnée de note pour la période sélectionnée."
+
+#: social-testimonials-and-reviews-widget.php:367
+#: tmpl/overview-dashboard.php:127
+msgid "Average rating"
+msgstr "Note moyenne"
+
+#: social-testimonials-and-reviews-widget.php:370
+msgid "No improvement themes detected. Customers are happy!"
+msgstr "Aucun thème d'amélioration détecté. Vos clients sont satisfaits !"
+
+#. translators: %s: short diagnostic detail from the API/transport layer.
+#: social-testimonials-and-reviews-widget.php:372
+#, php-format
+msgid "AI reply unavailable - %s"
+msgstr "Réponse IA indisponible - %s"
+
+#. translators: %s: error message from the AI service.
+#: social-testimonials-and-reviews-widget.php:374
+#, php-format
+msgid "AI service: %s"
+msgstr "Service IA : %s"
+
+#: social-testimonials-and-reviews-widget.php:375
+msgid "unknown error"
+msgstr "erreur inconnue"
+
+#. translators: %d: number of platforms shown when collapsed.
+#: social-testimonials-and-reviews-widget.php:379
+#, php-format
+msgid "Show top %d"
+msgstr "Voir les %d premières"
+
+#. translators: %d: total number of platforms in the full list.
+#: social-testimonials-and-reviews-widget.php:381
+#, php-format
+msgid "Show all %d platforms"
+msgstr "Voir les %d plateformes"
+
+#. translators: %d: seconds (short form).
+#: social-testimonials-and-reviews-widget.php:385
+#, php-format
+msgid "%ds ago"
+msgstr "il y a %ds"
+
+#. translators: %d: minutes (short form).
+#: social-testimonials-and-reviews-widget.php:387
+#, php-format
+msgid "%dm ago"
+msgstr "il y a %dm"
+
+#. translators: %d: hours (short form).
+#: social-testimonials-and-reviews-widget.php:389
+#, php-format
+msgid "%dh ago"
+msgstr "il y a %dh"
+
+#. translators: %d: days (short form).
+#: social-testimonials-and-reviews-widget.php:391
+#, php-format
+msgid "%dd ago"
+msgstr "il y a %dj"
+
+#. translators: %d: weeks (short form).
+#: social-testimonials-and-reviews-widget.php:393
+#, php-format
+msgid "%dw ago"
+msgstr "il y a %dsem"
+
+#. translators: %d: months (short form).
+#: social-testimonials-and-reviews-widget.php:395
+#, php-format
+msgid "%dmo ago"
+msgstr "il y a %dmois"
+
+#. translators: %d: years (short form).
+#: social-testimonials-and-reviews-widget.php:397
+#, php-format
+msgid "%dy ago"
+msgstr "il y a %da"
+
+#. translators: %d: seconds (long form, shown on refresh label).
+#: social-testimonials-and-reviews-widget.php:399
+#, php-format
+msgid "%d s ago"
+msgstr "il y a %d s"
+
+#. translators: %d: minutes (long form, shown on refresh label).
+#: social-testimonials-and-reviews-widget.php:401
+#, php-format
+msgid "%d min ago"
+msgstr "il y a %d min"
+
+#. translators: %d: hours (long form, shown on refresh label).
+#: social-testimonials-and-reviews-widget.php:403
+#, php-format
+msgid "%d h ago"
+msgstr "il y a %d h"
+
+#. translators: %d: days (long form, shown on refresh label).
+#: social-testimonials-and-reviews-widget.php:405
+#, php-format
+msgid "%d d ago"
+msgstr "il y a %d j"
+
+#: social-testimonials-and-reviews-widget.php:408
+msgid "Widget preview"
+msgstr "Aperçu du widget"
+
+#: social-testimonials-and-reviews-widget.php:409
+msgid "Widget code"
+msgstr "Code du widget"
+
+#: social-testimonials-and-reviews-widget.php:410
+msgid "No preview available."
+msgstr "Aucun aperçu disponible."
+
+#: social-testimonials-and-reviews-widget.php:411
+msgid "Could not load the widget. Please try again."
+msgstr "Impossible de charger le widget. Veuillez réessayer."
+
+#: social-testimonials-and-reviews-widget.php:412
+msgid "Copy code"
+msgstr "Copier le code"
+
+#: social-testimonials-and-reviews-widget.php:415 tmpl/main.php:87
+#: tmpl/main.php:111 tmpl/main.php:136 tmpl/overview-dashboard.php:117
+msgid "Refresh"
+msgstr "Actualiser"
+
+#: social-testimonials-and-reviews-widget.php:416
+#: tmpl/overview-dashboard.php:119
+msgid "Just updated"
+msgstr "Mis à jour"
+
+#: social-testimonials-and-reviews-widget.php:421 tmpl/onboard.php:54
+msgid "Create my Repuso account"
+msgstr "Créer mon compte Repuso"
+
+#: social-testimonials-and-reviews-widget.php:422 tmpl/onboard.php:112
+msgid "Sign in"
+msgstr "Se connecter"
+
+#: social-testimonials-and-reviews-widget.php:423 tmpl/onboard.php:128
+msgid "Email me a code"
+msgstr "M'envoyer un code par e-mail"
+
+#: social-testimonials-and-reviews-widget.php:424 tmpl/onboard.php:148
+msgid "Sign in with code"
+msgstr "Se connecter avec le code"
+
+#: social-testimonials-and-reviews-widget.php:426
+msgid "Email is required."
+msgstr "L'e-mail est obligatoire."
+
+#: social-testimonials-and-reviews-widget.php:427
+msgid "Enter a valid email address."
+msgstr "Saisissez une adresse e-mail valide."
+
+#: social-testimonials-and-reviews-widget.php:428
+msgid "Use a real email address, not a reserved placeholder domain."
+msgstr "Utilisez une vraie adresse e-mail, pas un domaine fictif réservé."
+
+#: social-testimonials-and-reviews-widget.php:429
+msgid "Use a real email address, not a local or reserved-TLD domain."
+msgstr "Utilisez une vraie adresse e-mail, pas un domaine local ou un TLD réservé."
+
+#: social-testimonials-and-reviews-widget.php:430
+msgid "An account with this email already exists. Use the \"I already have a Repuso account\" form to sign in."
+msgstr "Un compte existe déjà avec cet e-mail. Utilisez le formulaire « J'ai déjà un compte Repuso » pour vous connecter."
+
+#: social-testimonials-and-reviews-widget.php:431
+msgid "We could not create your account. Try again."
+msgstr "Impossible de créer votre compte. Réessayez."
+
+#: social-testimonials-and-reviews-widget.php:432
+msgid "Creating your account…"
+msgstr "Création de votre compte…"
+
+#: social-testimonials-and-reviews-widget.php:433
+msgid "Invalid email or password"
+msgstr "E-mail ou mot de passe invalide"
+
+#: social-testimonials-and-reviews-widget.php:434
+msgid "Password is required."
+msgstr "Le mot de passe est obligatoire."
+
+#: social-testimonials-and-reviews-widget.php:435
+msgid "Signing in…"
+msgstr "Connexion…"
+
+#: social-testimonials-and-reviews-widget.php:436
+msgid "Sending…"
+msgstr "Envoi…"
+
+#: social-testimonials-and-reviews-widget.php:437
+msgid "Couldn't send the code. Please try again."
+msgstr "Impossible d'envoyer le code. Veuillez réessayer."
+
+#. translators: %s: the email address the code was sent to.
+#: social-testimonials-and-reviews-widget.php:439
+#, php-format
+msgid "We emailed a 6-digit code to %s. It expires in 10 minutes."
+msgstr "Nous avons envoyé un code à 6 chiffres à %s. Il expire dans 10 minutes."
+
+#: social-testimonials-and-reviews-widget.php:440
+msgid "Enter the 6-digit code from your email."
+msgstr "Saisissez le code à 6 chiffres reçu par e-mail."
+
+#: social-testimonials-and-reviews-widget.php:441
+msgid "Invalid or expired code. Try again or request a new one."
+msgstr "Code invalide ou expiré. Réessayez ou demandez-en un nouveau."
+
+#: social-testimonials-and-reviews-widget.php:444
+msgid "Are you sure?"
+msgstr "Êtes-vous sûr ?"
+
+#: social-testimonials-and-reviews-widget.php:445
+msgid "Yes, do it"
+msgstr "Oui, continuer"
+
+#: social-testimonials-and-reviews-widget.php:446
+msgid "Cancel"
+msgstr "Annuler"
+
+#: social-testimonials-and-reviews-widget.php:447
+msgid "Disconnect from Repuso?"
+msgstr "Se déconnecter de Repuso ?"
+
+#: social-testimonials-and-reviews-widget.php:448
+msgid "You can reconnect anytime by signing back in. Your data on Repuso isn't affected - only this site's link to it is removed."
+msgstr "Vous pouvez vous reconnecter à tout moment. Vos données sur Repuso ne sont pas affectées - seul le lien de ce site est supprimé."
+
+#: social-testimonials-and-reviews-widget.php:449
+msgid "Yes, disconnect"
+msgstr "Oui, déconnecter"
+
+#: social-testimonials-and-reviews-widget.php:453
+msgid "Not available for your role"
+msgstr "Indisponible pour votre rôle"
+
+#. translators: %s: the section name the current role can't access (e.g. "Channels" or "Widgets").
+#: social-testimonials-and-reviews-widget.php:455
+#, php-format
+msgid "Your account role doesn't have access to %s. Ask an admin on your Repuso account to grant access, or sign in with an admin user."
+msgstr "Votre rôle de compte n'a pas accès à %s. Demandez à un administrateur de votre compte Repuso de vous accorder l'accès, ou connectez-vous avec un utilisateur administrateur."
+
+#: social-testimonials-and-reviews-widget.php:788
+msgid "Loving Repuso so far?"
+msgstr "Vous aimez Repuso ?"
+
+#: social-testimonials-and-reviews-widget.php:791
+msgid "A quick 5-star Google review would mean the world. It takes 30 seconds and helps other businesses discover Repuso."
+msgstr "Un rapide avis Google 5 étoiles compterait beaucoup pour nous. Cela prend 30 secondes et aide d'autres entreprises à découvrir Repuso."
+
+#: social-testimonials-and-reviews-widget.php:795
+msgid "Thank you very much in advance!"
+msgstr "Merci beaucoup d'avance !"
+
+#. translators: %s: gold star icon shown inline with the text.
+#: social-testimonials-and-reviews-widget.php:804
+#, php-format
+msgid "Rate us %s5 on Google"
+msgstr "Notez-nous %s5 sur Google"
+
+#: social-testimonials-and-reviews-widget.php:811
+msgid "Maybe later"
+msgstr "Plus tard"
+
+#: social-testimonials-and-reviews-widget.php:861
+msgid "reviews waiting for your approval on Repuso."
+msgstr "avis en attente de votre approbation sur Repuso."
+
+#: social-testimonials-and-reviews-widget.php:862
+#: tmpl/overview-dashboard.php:168
+msgid "Review them"
+msgstr "Examiner"
+
+#: social-testimonials-and-reviews-widget.php:1295
+msgid "Repuso review widgets"
+msgstr "Repuso review widgets"
+
+#. translators: %s: the plugin brand name "Repuso review widgets".
+#: social-testimonials-and-reviews-widget.php:1379
+#, php-format
+msgid "%s: connect to display reviews on your site"
+msgstr "%s : connectez-vous pour afficher des avis sur votre site"
+
+#: social-testimonials-and-reviews-widget.php:1382
+msgid "Showcase reviews from Google, Facebook, TripAdvisor, Airbnb and 50+ other platforms. Free 14-day trial."
+msgstr "Affichez les avis de Google, Facebook, TripAdvisor, Airbnb et plus de 50 autres plateformes. Essai gratuit de 14 jours."
+
+#. translators: admin-notice CTA that opens the Repuso plugin page where the user can sign up or sign in.
+#: social-testimonials-and-reviews-widget.php:1391
+msgid "Connect"
+msgstr "Connecter"
+
+#. translators: %s: the plugin brand name "Repuso review widgets".
+#: social-testimonials-and-reviews-widget.php:1430
+#, php-format
+msgid "%s: your account is disabled"
+msgstr "%s : votre compte est désactivé"
+
+#: social-testimonials-and-reviews-widget.php:1433
+msgid "Choose a plan to reactivate your account and bring your review widgets back online."
+msgstr "Choisissez un plan pour réactiver votre compte et remettre vos widgets d'avis en ligne."
+
+#. translators: short admin-notice CTA that opens the Repuso plugin dashboard.
+#: social-testimonials-and-reviews-widget.php:1435
+#: social-testimonials-and-reviews-widget.php:1487
+msgid "Check"
+msgstr "Vérifier"
+
+#. translators: %s: the plugin brand name "Repuso review widgets".
+#: social-testimonials-and-reviews-widget.php:1468
+#, php-format
+msgid "%s: free trial ends today"
+msgstr "%s : l'essai gratuit se termine aujourd'hui"
+
+#. translators: %s: the plugin brand name "Repuso review widgets".
+#: social-testimonials-and-reviews-widget.php:1474
+#, php-format
+msgid "%s: 1 day left in your free trial"
+msgstr "%s : il reste 1 jour à votre essai gratuit"
+
+#. translators: 1: the plugin brand name "Repuso review widgets". 2: number of days (always >= 2).
+#: social-testimonials-and-reviews-widget.php:1480
+#, php-format
+msgid "%1$s: %2$d days left in your free trial"
+msgstr "%1$s : %2$d jours restants dans votre essai gratuit"
+
+#: social-testimonials-and-reviews-widget.php:1485
+msgid "Showcase reviews from 45+ platforms on your site. Choose your plan to avoid interruptions; remaining trial days are not billed."
+msgstr "Affichez des avis provenant de plus de 45 plateformes sur votre site. Choisissez votre plan pour éviter les interruptions ; les jours d'essai restants ne sont pas facturés."
+
+#: social-testimonials-and-reviews-widget.php:1619
 msgid "Settings"
 msgstr "Paramètres"
 
-#: tmpl/floating.php:39
-msgid "Settings saved."
-msgstr "Paramètres enregistrés."
+#: social-testimonials-and-reviews-widget.php:1620
+msgid "Connect to Repuso"
+msgstr "Se connecter à Repuso"
 
-#: tmpl/overview-dashboard.php:307
-msgid "Share"
-msgstr "Part"
+#: tmpl/ai-biztabs.php:12
+msgid "Businesses"
+msgstr "Entreprises"
 
-#: tmpl/overview-dashboard.php:291
-msgid "Share of reviews, rating and connected channels per platform."
-msgstr "Part des avis, note et canaux connectés par plateforme."
+#: tmpl/ai-public-page.php:16
+msgid "Your public review page"
+msgstr "Votre page d'avis publique"
 
-#: tmpl/shortcodes.php:5
-msgid "Shortcodes"
-msgstr "Shortcodes"
+#: tmpl/ai-public-page.php:17 tmpl/ai-readable.php:51
+msgid "Off"
+msgstr "Désactivée"
 
-#: tmpl/floating.php:120 tmpl/floating.php:131
-msgid "Show"
-msgstr "Afficher"
+#: tmpl/ai-public-page.php:17 tmpl/ai-readable.php:51
+msgid "On"
+msgstr "Activée"
+
+#: tmpl/ai-public-page.php:19
+msgid "Your reviews on one page that customers, Google and AI assistants can read. Always up to date, nothing to install."
+msgstr "Vos avis sur une seule page que les clients, Google et les assistants IA peuvent lire. Toujours à jour, rien à installer."
+
+#. translators: %s: page views.
+#: tmpl/ai-public-page.php:23
+#, php-format
+msgid "%s views, last 30 days"
+msgstr "%s vues, 30 derniers jours"
+
+#. translators: %s: crawler visits.
+#: tmpl/ai-public-page.php:24
+#, php-format
+msgid "%s visits from Google and AI crawlers"
+msgstr "%s visites de Google et des robots IA"
+
+#. translators: %s: number of reviews.
+#: tmpl/ai-public-page.php:25
+#, php-format
+msgid "%s reviews"
+msgstr "%s avis"
+
+#: tmpl/ai-public-page.php:28
+msgid "Link it from your site"
+msgstr "Ajoutez un lien depuis votre site"
+
+#: tmpl/ai-public-page.php:29
+msgid "AI assistants find your review page through your website. Add this shortcode to your footer or About page:"
+msgstr "Les assistants IA trouvent votre page d'avis via votre site. Ajoutez ce shortcode dans votre pied de page ou votre page À propos :"
+
+#: tmpl/ai-public-page.php:36
+msgid "Edit page"
+msgstr "Modifier la page"
+
+#: tmpl/ai-public-page.php:40
+msgid "Open"
+msgstr "Ouvrir"
+
+#: tmpl/ai-public-page.php:41
+msgid "Copy link"
+msgstr "Copier le lien"
+
+#: tmpl/ai-readable.php:22
+msgid "Saved."
+msgstr "Enregistré."
+
+#: tmpl/ai-readable.php:25 tmpl/main.php:62
+msgid "AI and search engines"
+msgstr "IA et moteurs de recherche"
+
+#: tmpl/ai-readable.php:32
+msgid "Let AI read your reviews"
+msgstr "Laisser l'IA lire vos avis"
+
+#: tmpl/ai-readable.php:33
+msgid "Your widgets load reviews with JavaScript, which ChatGPT, Claude and Perplexity don't run. With this on, each widget also carries its latest 10 reviews as plain text in the page code, hidden from visitors. Visitors see the same widget as today."
+msgstr "Vos widgets chargent les avis en JavaScript, que ChatGPT, Claude et Perplexity n'exécutent pas. Avec cette option, chaque widget contient aussi ses 10 derniers avis en texte brut dans le code de la page, invisibles pour les visiteurs. Les visiteurs voient le même widget qu'aujourd'hui."
+
+#: tmpl/ai-readable.php:39
+msgid "Review data for search engines"
+msgstr "Données d'avis pour les moteurs de recherche"
+
+#: tmpl/ai-readable.php:41
+msgid "Edit in Repuso"
+msgstr "Modifier dans Repuso"
+
+#: tmpl/ai-readable.php:46
+msgid "Business"
+msgstr "Entreprise"
+
+#: tmpl/ai-readable.php:47
+msgid "Type"
+msgstr "Type"
+
+#. translators: 1: average rating, 2: number of reviews.
+#: tmpl/ai-readable.php:49
+#, php-format
+msgid "%1$s from %2$s reviews"
+msgstr "%1$s sur %2$s avis"
+
+#: tmpl/ai-readable.php:49 tmpl/overview-dashboard.php:326
+msgid "Rating"
+msgstr "Note"
+
+#: tmpl/ai-readable.php:51
+msgid "Review items"
+msgstr "Avis individuels"
+
+#: tmpl/ai-readable.php:53
+msgid "From the widget's schema settings in Repuso. With the setting on, it is added to the page code, so crawlers read it without JavaScript."
+msgstr "Issues des réglages de schéma du widget dans Repuso. Avec l'option activée, elles sont ajoutées au code de la page, pour que les robots les lisent sans JavaScript."
+
+#: tmpl/ai-readable.php:55
+msgid "Review data: Off. Turn it on in the widget's settings in Repuso."
+msgstr "Données d'avis : désactivées. Activez-les dans les réglages du widget dans Repuso."
+
+#: tmpl/ai-readable.php:59
+msgid "Google doesn't show review stars for reviews collected from other sites. The plain-text list is for AI assistants and other crawlers reading them. Use the widget shortcodes: widgets pasted as embed code keep loading with JavaScript only."
+msgstr "Google n'affiche pas d'étoiles pour les avis provenant d'autres sites. La liste en texte brut sert aux assistants IA et aux autres robots. Utilisez les shortcodes des widgets : les widgets collés en code d'intégration continuent de se charger uniquement en JavaScript."
+
+#: tmpl/ai-readable.php:60
+msgid "Save changes"
+msgstr "Enregistrer les modifications"
+
+#: tmpl/ai-readable.php:71
+msgid "Widget"
+msgstr "Widget"
+
+#: tmpl/ai-readable.php:81
+msgid "for AI and search engines only"
+msgstr "uniquement pour l'IA et les moteurs de recherche"
+
+#: tmpl/ai-readable.php:84
+msgid "Create a widget first. The preview shows what is added for it."
+msgstr "Créez d'abord un widget. L'aperçu montre ce qui est ajouté pour lui."
+
+#: tmpl/ai-readable.php:87
+msgid "Today: what AI and search engines read"
+msgstr "Aujourd'hui : ce que lisent l'IA et les moteurs de recherche"
+
+#: tmpl/ai-readable.php:89
+msgid "No reviews in the page. AI reads nothing here."
+msgstr "Aucun avis dans la page. L'IA ne lit rien ici."
+
+#: tmpl/ai-readable.php:92
+msgid "With the setting on: what AI and search engines read"
+msgstr "Avec l'option activée : ce que lisent l'IA et les moteurs de recherche"
+
+#: tmpl/ai-readable.php:93
+msgid "Hidden from visitors. People still see your widget exactly as today."
+msgstr "Invisible pour les visiteurs. Ils voient votre widget exactement comme aujourd'hui."
+
+#: tmpl/ai-readable.php:99
+msgid "This widget type shows a rating, not a list of reviews: only the review data is added."
+msgstr "Ce type de widget affiche une note, pas une liste d'avis : seules les données d'avis sont ajoutées."
+
+#: tmpl/ai-unconnected.php:18
+msgid "Customers ask ChatGPT, Gemini and Google Maps for a business like yours. See how often they name you, who they name instead, and what to fix first. Free, no account needed."
+msgstr "Les clients demandent à ChatGPT, Gemini et Google Maps une entreprise comme la vôtre. Découvrez à quelle fréquence ils vous citent, qui ils citent à la place et quoi améliorer en premier. Gratuit, sans compte."
+
+#: tmpl/ai-unconnected.php:20
+msgid "Business name or website"
+msgstr "Nom de l'entreprise ou site web"
+
+#: tmpl/ai-unconnected.php:27
+msgid "Check free"
+msgstr "Vérifier gratuitement"
+
+#: tmpl/ai-unconnected.php:29
+msgid "Opens repuso.com in a new tab. About 2 minutes."
+msgstr "Ouvre repuso.com dans un nouvel onglet. Environ 2 minutes."
+
+#: tmpl/ai-unconnected.php:34
+msgid "Already use Repuso?"
+msgstr "Vous utilisez déjà Repuso ?"
+
+#: tmpl/ai-unconnected.php:35
+msgid "Connect this site to see your AI Visibility score here, track it every week, and show your reviews with widgets."
+msgstr "Connectez ce site pour voir ici votre score AI Visibility, le suivre chaque semaine et afficher vos avis avec des widgets."
+
+#: tmpl/ai-unconnected.php:37
+msgid "Connect Repuso"
+msgstr "Connecter Repuso"
+
+#: tmpl/ai-visibility.php:19
+msgid "AI Visibility is managed by your Repuso account admin. Ask them to share the results with you."
+msgstr "AI Visibility est géré par l'administrateur de votre compte Repuso. Demandez-lui de partager les résultats avec vous."
+
+#: tmpl/ai-visibility.php:25
+msgid "No AI Visibility results for this site yet."
+msgstr "Pas encore de résultats AI Visibility pour ce site."
+
+#: tmpl/ai-visibility.php:32
+msgid "The first check hasn't finished yet. Results show here once it's done."
+msgstr "La première vérification n'est pas encore terminée. Les résultats s'affichent ici dès qu'elle l'est."
+
+#: tmpl/ai-visibility.php:33
+msgid "Open in AI Visibility"
+msgstr "Ouvrir dans AI Visibility"
+
+#. translators: %s: business name or website.
+#: tmpl/ai-visibility.php:43
+#, php-format
+msgid "Track %s in AI Visibility"
+msgstr "Suivre %s dans AI Visibility"
+
+#: tmpl/ai-visibility.php:49
+msgid "See how often ChatGPT, Gemini, Claude, Perplexity and Google Maps recommend this business, who they name instead, and what to fix first. Results show here once the first check runs."
+msgstr "Découvrez à quelle fréquence ChatGPT, Gemini, Claude, Perplexity et Google Maps recommandent cette entreprise, qui ils citent à la place et quoi améliorer en premier. Les résultats s'affichent ici après la première vérification."
+
+#: tmpl/ai-visibility.php:52
+msgid "Add to AI Visibility"
+msgstr "Ajouter à AI Visibility"
+
+#. translators: %s: business name or website.
+#: tmpl/ai-visibility.php:67
+#, php-format
+msgid "Customers ask ChatGPT, Gemini and Google Maps for a business like yours. See how often they name %s, who they name instead, which sites they read, and what to fix first."
+msgstr "Les clients demandent à ChatGPT, Gemini et Google Maps une entreprise comme la vôtre. Découvrez à quelle fréquence ils citent %s, qui ils citent à la place, quels sites ils lisent et quoi améliorer en premier."
+
+#: tmpl/ai-visibility.php:86
+msgid "About 2 minutes. No card needed."
+msgstr "Environ 2 minutes. Sans carte bancaire."
+
+#: tmpl/ai-visibility.php:122
+msgid "of answers"
+msgstr "des réponses"
+
+#. translators: %d: number of questions.
+#: tmpl/ai-visibility.php:146
+#, php-format
+msgid "%d question gets no mention of you at all."
+msgid_plural "%d questions get no mention of you at all."
+msgstr[0] "%d question ne vous mentionne pas du tout."
+msgstr[1] "%d questions ne vous mentionnent pas du tout."
+
+#: tmpl/ai-visibility.php:182
+msgid "Questions"
+msgstr "Questions"
+
+#. translators: %d: questions asked.
+#: tmpl/ai-visibility.php:183
+#, php-format
+msgid "of %d"
+msgstr "sur %d"
+
+#: tmpl/ai-visibility.php:184
+msgid "questions never name you"
+msgstr "questions ne vous citent jamais"
+
+#: tmpl/ai-visibility.php:185
+msgid "Review the questions"
+msgstr "Voir les questions"
+
+#: tmpl/ai-visibility.php:188
+msgid "Competitors"
+msgstr "Concurrents"
+
+#. translators: 1: competitor name, 2: times named.
+#: tmpl/ai-visibility.php:195
+#, php-format
+msgid "%1$s named %2$d&times; in your answers"
+msgstr "%1$s cité %2$d&times; dans vos réponses"
+
+#: tmpl/ai-visibility.php:202
+msgid "See why AI prefers them"
+msgstr "Voir pourquoi l'IA les préfère"
+
+#: tmpl/ai-visibility.php:206 tmpl/ai-visibility.php:212
+msgid "Improve"
+msgstr "Améliorer"
+
+#: tmpl/ai-visibility.php:207
+msgid "Start with: let AI read your reviews. This plugin can do it for you."
+msgstr "Commencez par : laissez l'IA lire vos avis. Cette extension s'en charge pour vous."
+
+#: tmpl/ai-visibility.php:213
+msgid "Your reviews are readable by AI. See what else moves your score."
+msgstr "Vos avis sont lisibles par l'IA. Découvrez ce qui peut encore améliorer votre score."
+
+#: tmpl/ai-visibility.php:214
+msgid "See what to fix"
+msgstr "Voir quoi améliorer"
+
+#: tmpl/ai-visibility.php:228
+msgid "How AI talks about you"
+msgstr "Comment l'IA parle de vous"
+
+#. translators: 1: positive percent, 2: neutral percent, 3: negative percent.
+#: tmpl/ai-visibility.php:235
+#, php-format
+msgid "%1$d%% positive, %2$d%% neutral, %3$d%% negative"
+msgstr "%1$d %% positif, %2$d %% neutre, %3$d %% négatif"
+
+#: tmpl/ai-visibility.php:245
+msgid "Praised"
+msgstr "Points forts"
+
+#: tmpl/ai-visibility.php:252
+msgid "Criticized"
+msgstr "Critiques"
+
+#: tmpl/floating.php:19 tmpl/main.php:59
+msgid "Widget types"
+msgstr "Types de widgets"
+
+#: tmpl/floating.php:21 tmpl/floating.php:25 tmpl/main.php:61
+msgid "Floating widget"
+msgstr "Widget flottant"
 
 #: tmpl/floating.php:26
 msgid "Show a floating reviews badge on your site. Choose which pages it appears on below."
 msgstr "Affichez un badge d'avis flottant sur votre site. Choisissez ci-dessous sur quelles pages il apparaît."
 
-#: social-testimonials-and-reviews-widget.php:231
-msgid "Show less"
-msgstr "Réduire"
+#: tmpl/floating.php:39
+msgid "Settings saved."
+msgstr "Paramètres enregistrés."
+
+#: tmpl/floating.php:49
+msgid "Pick a widget"
+msgstr "Choisir un widget"
+
+#: tmpl/floating.php:50
+msgid "Choose which of your Repuso widgets should appear as the floating widget on your site."
+msgstr "Choisissez le widget Repuso à afficher comme widget flottant sur votre site."
+
+#: tmpl/floating.php:69
+msgid "No floating widgets yet"
+msgstr "Aucun widget flottant"
+
+#: tmpl/floating.php:70
+msgid "Create one on the Repuso dashboard (Floating, Flash, or Floating badge), then pick it here."
+msgstr "Créez-en un dans le tableau de bord Repuso (Flottant, Flash ou Badge flottant), puis sélectionnez-le ici."
+
+#: tmpl/floating.php:72
+msgid "Create floating widget"
+msgstr "Créer un widget flottant"
 
 #: tmpl/floating.php:83
 msgid "Show on these content types"
 msgstr "Afficher sur ces types de contenu"
 
-#: tmpl/floating.php:107
-msgid "Show or hide by URL"
-msgstr "Afficher ou masquer par URL"
-
-#: tmpl/onboard.php:90
-msgid "Sign in"
-msgstr "Se connecter"
-
-#: tmpl/onboard.php:73
-msgid "Sign in to connect your existing account."
-msgstr "Connectez-vous pour lier votre compte existant."
-
-#: social-testimonials-and-reviews-widget.php:208
-msgid "Something went wrong fetching reviews. Try switching tabs again or reload the page."
-msgstr "Un problème est survenu lors de la récupération des avis. Essayez de changer d'onglet ou rechargez la page."
-
-#: tmpl/overview.php:121
-msgid "Start a chat"
-msgstr "Démarrer une discussion"
-
-#: tmpl/overview-dashboard.php:227
-msgid "Strengths"
-msgstr "Points forts"
-
-#: tmpl/overview-dashboard.php:188
-msgid "Strengths and suggested improvements, summarised from your reviews."
-msgstr "Points forts et améliorations suggérées, résumés à partir de vos avis."
-
-#: social-testimonials-and-reviews-widget.php:227
-msgid "Suggesting…"
-msgstr "Suggestion en cours…"
-
-#: social-testimonials-and-reviews-widget.php:583
-msgid "Thank you very much in advance!"
-msgstr "Merci beaucoup d'avance !"
-
-#: tmpl/floating.php:150
-msgid "The floating widget will not appear on any page you check here."
-msgstr "Le widget flottant n'apparaîtra pas sur les pages que vous cochez ici."
-
-#: social-testimonials-and-reviews-widget.php:216
-msgid "This widget is set as the floating widget for this site."
-msgstr "Ce widget est défini comme widget flottant pour ce site."
-
 #: tmpl/floating.php:84
 msgid "Tick the WordPress page types where the floating widget should appear."
 msgstr "Cochez les types de pages WordPress où le widget flottant doit apparaître."
 
-#: tmpl/overview-dashboard.php:97
-msgid "Time range"
-msgstr "Plage temporelle"
-
-#: tmpl/overview-dashboard.php:122
-msgid "Total reviews"
-msgstr "Total des avis"
-
-#: social-testimonials-and-reviews-widget.php:236
-msgid "Upgrade plan"
-msgstr "Mettre à niveau le forfait"
+#: tmpl/floating.php:107
+msgid "Show or hide by URL"
+msgstr "Afficher ou masquer par URL"
 
 #: tmpl/floating.php:108
 msgid "Use * as a wildcard. Leave a URL blank to remove that rule."
 msgstr "Utilisez * comme caractère générique. Laissez une URL vide pour supprimer la règle."
 
-#: tmpl/overview.php:80
-msgid "Use the account dropdown on the right side of the top bar inside the plugin. The dropdown only shows when you have more than one sub-account on Repuso. Switching there updates the data shown on every plugin page (Dashboard, Reviews, Channels, Widgets)."
-msgstr "Utilisez le menu déroulant des comptes à droite de la barre supérieure du plugin. Il n'apparaît que si vous avez plus d'un sous-compte sur Repuso. Le changement met à jour les données affichées sur toutes les pages du plugin (Tableau de bord, Avis, Canaux, Widgets)."
+#: tmpl/floating.php:120 tmpl/floating.php:131
+msgid "Show"
+msgstr "Afficher"
 
-#: tmpl/overview.php:56
-msgid "Usually a matter of minutes, but it can take up to 24 hours depending on the channel and how many reviews are being imported. After the initial fetch, Repuso checks for new reviews automatically on a regular schedule."
-msgstr "Généralement quelques minutes, mais cela peut prendre jusqu'à 24 heures selon le canal et le nombre d'avis importés. Après la première collecte, Repuso vérifie les nouveaux avis automatiquement à intervalles réguliers."
+#: tmpl/floating.php:139
+msgid "Add another rule"
+msgstr "Ajouter une règle"
 
-#: social-testimonials-and-reviews-widget.php:256
-msgid "View reviews"
-msgstr "Voir les avis"
+#: tmpl/floating.php:149
+msgid "Hide on these pages"
+msgstr "Masquer sur ces pages"
 
-#: social-testimonials-and-reviews-widget.php:257
-msgid "Waiting for your first review to arrive"
-msgstr "En attente de votre premier avis"
+#: tmpl/floating.php:150
+msgid "The floating widget will not appear on any page you check here."
+msgstr "Le widget flottant n'apparaîtra pas sur les pages que vous cochez ici."
+
+#: tmpl/floating.php:171
+msgid "Save settings"
+msgstr "Enregistrer les paramètres"
+
+#: tmpl/lang-switcher.php:23
+msgid "Change language"
+msgstr "Changer de langue"
+
+#: tmpl/main.php:84
+msgid "Embed any of your widgets on your site using the shortcode."
+msgstr "Intégrez n'importe lequel de vos widgets sur votre site avec le shortcode."
+
+#: tmpl/main.php:87
+msgid "Refresh widgets"
+msgstr "Actualiser les widgets"
+
+#: tmpl/main.php:91
+msgid "Create new widget"
+msgstr "Créer un nouveau widget"
+
+#: tmpl/main.php:108
+msgid "Review platforms connected to your account."
+msgstr "Plateformes d'avis connectées à votre compte."
+
+#: tmpl/main.php:111
+msgid "Refresh channels"
+msgstr "Actualiser les canaux"
+
+#: tmpl/main.php:123
+msgid "All supported platforms"
+msgstr "Toutes les plateformes supportées"
+
+#: tmpl/main.php:132 tmpl/topbar.php:35
+msgid "Reviews"
+msgstr "Avis"
+
+#: tmpl/main.php:133
+msgid "Approve the reviews you want to feature in your widgets."
+msgstr "Approuvez les avis à afficher dans vos widgets."
+
+#: tmpl/main.php:136
+msgid "Refresh reviews"
+msgstr "Actualiser les avis"
+
+#: tmpl/main.php:140
+msgid "Manage all reviews"
+msgstr "Gérer tous les avis"
+
+#: tmpl/main.php:147
+msgid "Inbox"
+msgstr "Boîte de réception"
+
+#: tmpl/main.php:148
+msgid "Approved"
+msgstr "Approuvés"
+
+#: tmpl/main.php:149
+msgid "All"
+msgstr "Tous"
+
+#: tmpl/onboard.php:27 tmpl/onboard.php:172 tmpl/topbar.php:62
+#: tmpl/topbar.php:63
+msgid "Repuso"
+msgstr "Repuso"
+
+#: tmpl/onboard.php:32
+msgid "Connect Repuso to start showing social proof"
+msgstr "Connectez Repuso pour afficher des avis sociaux"
+
+#: tmpl/onboard.php:33
+msgid "Google, Facebook, TripAdvisor, Airbnb and 45+ more, embedded on your site in a few clicks."
+msgstr "Google, Facebook, TripAdvisor, Airbnb et plus de 45 autres, intégrés sur votre site en quelques clics."
+
+#: tmpl/onboard.php:41
+msgid "I'm new to Repuso"
+msgstr "Je découvre Repuso"
+
+#: tmpl/onboard.php:42
+msgid "One-click signup. We'll email you your login details."
+msgstr "Inscription en un clic. Nous vous enverrons vos identifiants de connexion par e-mail."
+
+#: tmpl/onboard.php:48 tmpl/onboard.php:90
+msgid "Email"
+msgstr "E-mail"
+
+#: tmpl/onboard.php:57
+msgid "Free trial. No credit card. Cancel anytime."
+msgstr "Essai gratuit. Sans carte bancaire. Annulez à tout moment."
+
+#: tmpl/onboard.php:60
+msgid "Learn more about Repuso →"
+msgstr "En savoir plus sur Repuso →"
+
+#: tmpl/onboard.php:70
+msgid "Account created"
+msgstr "Compte créé"
+
+#: tmpl/onboard.php:71
+msgid "We've emailed you your login details."
+msgstr "Nous vous avons envoyé vos identifiants par e-mail."
+
+#: tmpl/onboard.php:74
+msgid "Redirecting to your dashboard…"
+msgstr "Redirection vers votre tableau de bord…"
+
+#: tmpl/onboard.php:83
+msgid "I already have a Repuso account"
+msgstr "J'ai déjà un compte Repuso"
+
+#: tmpl/onboard.php:84
+msgid "Sign in to connect your existing account."
+msgstr "Connectez-vous pour lier votre compte existant."
+
+#: tmpl/onboard.php:106
+msgid "Password"
+msgstr "Mot de passe"
+
+#: tmpl/onboard.php:116
+msgid "Email me a login code instead"
+msgstr "M'envoyer plutôt un code de connexion par e-mail"
+
+#: tmpl/onboard.php:125
+msgid "We'll email you a 6-digit code. Enter it here to sign in - no password needed."
+msgstr "Nous vous enverrons un code à 6 chiffres par e-mail. Saisissez-le ici pour vous connecter, sans mot de passe."
+
+#: tmpl/onboard.php:132 tmpl/onboard.php:154
+msgid "Use password instead"
+msgstr "Utiliser le mot de passe à la place"
+
+#: tmpl/onboard.php:142
+msgid "6-digit code"
+msgstr "Code à 6 chiffres"
+
+#: tmpl/onboard.php:152
+msgid "Resend code"
+msgstr "Renvoyer le code"
+
+#: tmpl/onboard.php:178
+msgid "50+ review platforms:"
+msgstr "Plus de 50 plateformes :"
+
+#: tmpl/onboard.php:178
+msgid "Google, Facebook, Airbnb, TripAdvisor, Booking.com and many more."
+msgstr "Google, Facebook, Airbnb, TripAdvisor, Booking.com et bien d'autres."
+
+#: tmpl/onboard.php:179
+msgid "12+ widget styles:"
+msgstr "Plus de 12 styles de widgets :"
+
+#: tmpl/onboard.php:179
+msgid "grid, slider, badges, floating widget. Drop them anywhere with a shortcode."
+msgstr "grille, slider, badges, widget flottant. Insérez-les n'importe où avec un shortcode."
+
+#: tmpl/onboard.php:180
+msgid "Built-in collection:"
+msgstr "Collecte intégrée :"
+
+#: tmpl/onboard.php:180
+msgid "request reviews by email, SMS, QR or NFC card."
+msgstr "demandez des avis par e-mail, SMS, QR ou carte NFC."
+
+#: tmpl/onboard.php:181
+msgid "AI Visibility:"
+msgstr "AI Visibility :"
+
+#: tmpl/onboard.php:181
+msgid "Free check"
+msgstr "Vérification gratuite"
+
+#: tmpl/onboard.php:181
+msgid "see if ChatGPT, Gemini and Google Maps recommend you, or your competitors."
+msgstr "découvrez si ChatGPT, Gemini et Google Maps vous recommandent, ou vos concurrents."
+
+#: tmpl/onboard.php:182
+msgid "White-label ready:"
+msgstr "Marque blanche :"
+
+#: tmpl/onboard.php:182
+msgid "resell to your clients under your own brand."
+msgstr "revendez à vos clients sous votre propre marque."
+
+#: tmpl/onboard.php:190
+msgid "Repuso product overview"
+msgstr "Aperçu du produit Repuso"
+
+#: tmpl/overview-dashboard.php:51 tmpl/overview-dashboard.php:89
+msgid "Complete your setup"
+msgstr "Finalisez votre configuration"
+
+#: tmpl/overview-dashboard.php:53 tmpl/overview-dashboard.php:91
+msgid "Refresh setup status"
+msgstr "Actualiser l'état de la configuration"
+
+#: tmpl/overview-dashboard.php:56
+msgid "Checking…"
+msgstr "Vérification…"
+
+#: tmpl/overview-dashboard.php:94
+msgid "done"
+msgstr "terminé"
+
+#: tmpl/overview-dashboard.php:111
+msgid "Time range"
+msgstr "Plage temporelle"
+
+#: tmpl/overview-dashboard.php:112
+msgid "30d"
+msgstr "30j"
+
+#: tmpl/overview-dashboard.php:113
+msgid "90d"
+msgstr "90j"
+
+#: tmpl/overview-dashboard.php:114
+msgid "1y"
+msgstr "1a"
+
+#: tmpl/overview-dashboard.php:115
+msgid "2y"
+msgstr "2a"
+
+#: tmpl/overview-dashboard.php:117
+msgid "Refresh dashboard"
+msgstr "Actualiser le tableau de bord"
+
+#: tmpl/overview-dashboard.php:136
+msgid "Total reviews"
+msgstr "Total des avis"
+
+#: tmpl/overview-dashboard.php:145
+msgid "New this month"
+msgstr "Nouveaux ce mois-ci"
+
+#: tmpl/overview-dashboard.php:165
+msgid "reviews waiting for your approval"
+msgstr "avis en attente de votre approbation"
+
+#: tmpl/overview-dashboard.php:180
+msgid "Latest reviews"
+msgstr "Derniers avis"
+
+#: tmpl/overview-dashboard.php:181
+msgid "Most recent reviews across every connected platform."
+msgstr "Avis les plus récents sur toutes les plateformes connectées."
+
+#: tmpl/overview-dashboard.php:184
+msgid "See all reviews"
+msgstr "Voir tous les avis"
+
+#: tmpl/overview-dashboard.php:194
+msgid "No reviews yet."
+msgstr "Aucun avis."
+
+#: tmpl/overview-dashboard.php:203
+msgid "AI insights"
+msgstr "Analyses IA"
+
+#: tmpl/overview-dashboard.php:204
+msgid "Strengths and suggested improvements, summarised from your reviews."
+msgstr "Points forts et améliorations suggérées, résumés à partir de vos avis."
+
+#: tmpl/overview-dashboard.php:243
+msgid "Strengths"
+msgstr "Points forts"
+
+#: tmpl/overview-dashboard.php:251
+msgid "Improvements"
+msgstr "Améliorations"
+
+#: tmpl/overview-dashboard.php:275
+msgid "Customer outreach"
+msgstr "Sensibilisation client"
+
+#: tmpl/overview-dashboard.php:276
+msgid "Nudge customers to leave reviews - one less reason to wait."
+msgstr "Encouragez vos clients à laisser des avis - une raison de moins d'attendre."
+
+#: tmpl/overview-dashboard.php:289
+msgid "Rating distribution"
+msgstr "Répartition des notes"
+
+#: tmpl/overview-dashboard.php:290
+msgid "How customer ratings break down by stars."
+msgstr "Répartition des notes clients par étoile."
+
+#: tmpl/overview-dashboard.php:299
+msgid "No reviews in this range yet."
+msgstr "Aucun avis dans cette période."
+
+#: tmpl/overview-dashboard.php:308
+msgid "Platform breakdown"
+msgstr "Répartition par plateforme"
+
+#: tmpl/overview-dashboard.php:309
+msgid "Share of reviews, rating and connected channels per platform."
+msgstr "Part des avis, note et canaux connectés par plateforme."
+
+#: tmpl/overview-dashboard.php:318
+msgid "No platforms with reviews yet."
+msgstr "Aucune plateforme avec des avis."
+
+#: tmpl/overview-dashboard.php:324
+msgid "Platform"
+msgstr "Plateforme"
+
+#: tmpl/overview-dashboard.php:325
+msgid "Share"
+msgstr "Part"
+
+#: tmpl/overview-dashboard.php:343
+msgid "Reviews over time"
+msgstr "Avis dans le temps"
+
+#: tmpl/overview-dashboard.php:344
+msgid "Last 12 months, by platform."
+msgstr "Les 12 derniers mois, par plateforme."
+
+#: tmpl/overview-dashboard.php:354
+msgid "No reviews collected yet. Once reviews start coming in this chart will show monthly volume per platform."
+msgstr "Aucun avis collecté pour le moment. Dès que des avis arrivent, ce graphique affichera le volume mensuel par plateforme."
+
+#: tmpl/overview-dashboard.php:368
+msgid "Average rating trend"
+msgstr "Évolution de la note moyenne"
+
+#: tmpl/overview-dashboard.php:369
+msgid "How your average rating has moved over the selected period."
+msgstr "Comment votre note moyenne a évolué sur la période sélectionnée."
 
 #: tmpl/overview.php:9
 msgid "What is Repuso?"
 msgstr "Qu'est-ce que Repuso ?"
 
-#: social-testimonials-and-reviews-widget.php:206
-msgid "When customers leave reviews on your connected channels they appear here for you to approve."
-msgstr "Lorsque les clients laissent des avis sur vos canaux connectés, ils apparaissent ici pour être approuvés."
+#: tmpl/overview.php:10
+msgid "A 90-second overview of how Repuso collects reviews and turns them into widgets for your website."
+msgstr "Aperçu en 90 secondes de la façon dont Repuso collecte les avis et les transforme en widgets pour votre site."
+
+#: tmpl/overview.php:15
+msgid "Product overview"
+msgstr "Aperçu du produit"
+
+#: tmpl/overview.php:16
+msgid "A walkthrough of the Repuso dashboard - channels, widgets, the Collect page, and review moderation."
+msgstr "Une visite guidée du tableau de bord Repuso - canaux, widgets, la page Collecte et la modération des avis."
+
+#: tmpl/overview.php:21
+msgid "How to embed a reviews widget on a WordPress website"
+msgstr "Comment intégrer un widget d'avis sur un site WordPress"
+
+#: tmpl/overview.php:22
+msgid "Pick a widget, copy the shortcode, paste it into any page or post - reviews appear instantly."
+msgstr "Choisissez un widget, copiez le shortcode, collez-le dans n'importe quelle page ou article - les avis apparaissent immédiatement."
+
+#: tmpl/overview.php:32 tmpl/topbar.php:39
+msgid "Help"
+msgstr "Aide"
+
+#: tmpl/overview.php:33
+msgid "Quick walkthroughs of what Repuso does and how to get the most out of it."
+msgstr "Aperçus rapides de ce que fait Repuso et de comment en tirer le meilleur parti."
 
 #: tmpl/overview.php:43
 msgid "Where do I find my widget shortcode?"
 msgstr "Où trouver le shortcode de mon widget ?"
 
-#: tmpl/overview.php:91
-msgid "Which payment methods do you accept?"
-msgstr "Quels moyens de paiement acceptez-vous ?"
-
-#: tmpl/onboard.php:118
-msgid "White-label ready:"
-msgstr "Marque blanche :"
+#: tmpl/overview.php:44
+msgid "Open the Widgets tab in this plugin. Each widget row shows its shortcode (like [rw_grid id=\"123\"]). Click it to copy. Paste into any WordPress page, post, or block to embed."
+msgstr "Ouvrez l'onglet Widgets de cette extension. Chaque ligne de widget affiche son shortcode (comme [rw_grid id=\"123\"]). Cliquez dessus pour le copier. Collez-le dans n'importe quelle page, article ou bloc WordPress."
 
 #: tmpl/overview.php:47
 msgid "Why are my reviews not appearing on the page after I added the shortcode?"
 msgstr "Pourquoi mes avis n'apparaissent-ils pas sur la page après l'ajout du shortcode ?"
 
-#: tmpl/overview.php:63
-msgid "Why are some reviews not showing in my widget?"
-msgstr "Pourquoi certains avis ne s'affichent-ils pas dans mon widget ?"
+#: tmpl/overview.php:48
+msgid "Most often this is a caching plugin holding the page contents. Clear your site cache and reload. Also check that the widget on Repuso has at least one approved review and a connected channel. Some widget types only render once the underlying script loads in the browser - if your theme strips scripts on certain pages, switch the widget to a different layout."
+msgstr "Le plus souvent, un plugin de cache retient le contenu de la page. Videz le cache de votre site et rechargez. Vérifiez aussi que le widget Repuso a au moins un avis approuvé et un canal connecté. Certains types de widgets ne s'affichent qu'une fois le script chargé - si votre thème supprime les scripts sur certaines pages, choisissez une autre mise en page."
 
-#: tmpl/floating.php:19 tmpl/main.php:62
-msgid "Widget types"
-msgstr "Types de widgets"
+#: tmpl/overview.php:51
+msgid "How do I connect a new review channel (Google, Facebook, etc.)?"
+msgstr "Comment connecter un nouveau canal d'avis (Google, Facebook, etc.) ?"
 
-#: tmpl/floating.php:20 tmpl/main.php:63 tmpl/main.php:72 tmpl/topbar.php:35
-msgid "Widgets"
-msgstr "Widgets"
+#: tmpl/overview.php:52
+msgid "Use the Channels tab inside the plugin to see what is already connected. To add a new one, click \"Connect a channel\" to open the Repuso dashboard - new channels are added from there. Once added, reviews start flowing back into your widgets automatically."
+msgstr "Utilisez l'onglet Canaux de l'extension pour voir ce qui est déjà connecté. Pour en ajouter un, cliquez sur \"Connecter un canal\" pour ouvrir le tableau de bord Repuso : les nouveaux canaux s'ajoutent là-bas. Ensuite, les avis arrivent automatiquement dans vos widgets."
 
-#: tmpl/main.php:25 tmpl/overview-dashboard.php:31
-msgid "Yes"
-msgstr "Oui"
+#: tmpl/overview.php:55
+msgid "How long until reviews appear after I connect a channel?"
+msgstr "Combien de temps faut-il pour que les avis apparaissent après la connexion d'un canal ?"
 
-#: tmpl/overview.php:84
-msgid "Yes - 10 days, fully functional, no credit card needed. Start it from repuso.com."
-msgstr "Oui - 10 jours, entièrement fonctionnel, sans carte bancaire. Commencez sur repuso.com."
+#: tmpl/overview.php:56
+msgid "Usually a matter of minutes, but it can take up to 24 hours depending on the channel and how many reviews are being imported. After the initial fetch, Repuso checks for new reviews automatically on a regular schedule."
+msgstr "Généralement quelques minutes, mais cela peut prendre jusqu'à 24 heures selon le canal et le nombre d'avis importés. Après la première collecte, Repuso vérifie les nouveaux avis automatiquement à intervalles réguliers."
 
-#: tmpl/overview.php:88
-msgid "Yes, anytime. Your subscription will not renew. If you have paid and changed your mind within 7 days of payment, we will issue a full refund."
-msgstr "Oui, à tout moment. Votre abonnement ne se renouvellera pas. Si vous avez payé et changé d'avis dans les 7 jours suivant le paiement, nous vous rembourserons intégralement."
-
-#: tmpl/overview.php:72
-msgid "Yes. A widget shortcode can be embedded on as many pages and sites as you want - reviews and widget settings update centrally from Repuso, so a change applies everywhere instantly."
-msgstr "Oui. Un shortcode de widget peut être intégré sur autant de pages et de sites que vous le souhaitez - les avis et les paramètres se mettent à jour depuis Repuso, donc tout changement s'applique partout immédiatement."
+#: tmpl/overview.php:59
+msgid "Are new reviews pulled in automatically?"
+msgstr "Les nouveaux avis sont-ils récupérés automatiquement ?"
 
 #: tmpl/overview.php:60
 msgid "Yes. Once a channel is connected, Repuso monitors it for new reviews and pulls them in automatically as soon as they appear publicly on the source. New reviews can take up to 24 hours to populate, depending on when the channel was last checked and how the source surfaces them. If the channel is set to auto-approve 4 and 5 star ratings, new high-rated reviews are also displayed in your widgets straight away with no manual approval needed. Lower-rated reviews stay in the Inbox waiting for your approval."
 msgstr "Oui. Une fois un canal connecté, Repuso le surveille et récupère les nouveaux avis automatiquement dès qu'ils apparaissent publiquement à la source. Les nouveaux avis peuvent mettre jusqu'à 24 heures à s'afficher, selon la dernière vérification du canal et la manière dont la source les expose. Si le canal est configuré pour approuver automatiquement les notes 4 et 5 étoiles, les nouveaux avis bien notés sont aussi affichés immédiatement dans vos widgets sans approbation manuelle. Les avis moins bien notés restent dans la Boîte de réception en attente de votre approbation."
 
+#: tmpl/overview.php:63
+msgid "Why are some reviews not showing in my widget?"
+msgstr "Pourquoi certains avis ne s'affichent-ils pas dans mon widget ?"
+
+#: tmpl/overview.php:64
+msgid "Open the Reviews tab in the plugin. Anything in the Inbox is pending approval and will not display in widgets until you approve it. Reviews you dismissed are hidden by design. Approved reviews appear in widgets within a few seconds (your widget may also have its own filters like minimum star rating)."
+msgstr "Ouvrez l'onglet Avis du plugin. Tout ce qui se trouve dans la Boîte de réception est en attente d'approbation et ne s'affichera pas dans les widgets tant que vous ne l'aurez pas approuvé. Les avis rejetés sont masqués volontairement. Les avis approuvés apparaissent dans les widgets en quelques secondes (votre widget peut aussi avoir ses propres filtres, comme une note minimum)."
+
+#: tmpl/overview.php:67
+msgid "How do I customize how my widgets look?"
+msgstr "Comment personnaliser l'apparence de mes widgets ?"
+
+#: tmpl/overview.php:68
+msgid "Each widget has a designer in the Repuso dashboard - click Edit on the widget row in the Widgets tab to open it. You can change colors, fonts, layout, density, and more without touching code. On the Standard and Ultimate plans you can also add Custom CSS for fine-grained tweaks."
+msgstr "Chaque widget dispose d'un éditeur dans le tableau de bord Repuso - cliquez sur Modifier sur la ligne du widget dans l'onglet Widgets pour l'ouvrir. Vous pouvez changer les couleurs, polices, mise en page, densité et plus encore sans toucher au code. Sur les plans Standard et Ultimate, vous pouvez aussi ajouter du CSS personnalisé pour des ajustements fins."
+
+#: tmpl/overview.php:71
+msgid "Can the same widget be used on multiple WordPress sites?"
+msgstr "Le même widget peut-il être utilisé sur plusieurs sites WordPress ?"
+
+#: tmpl/overview.php:72
+msgid "Yes. A widget shortcode can be embedded on as many pages and sites as you want - reviews and widget settings update centrally from Repuso, so a change applies everywhere instantly."
+msgstr "Oui. Un shortcode de widget peut être intégré sur autant de pages et de sites que vous le souhaitez - les avis et les paramètres se mettent à jour depuis Repuso, donc tout changement s'applique partout immédiatement."
+
+#: tmpl/overview.php:75
+msgid "How do I show the floating widget only on certain pages?"
+msgstr "Comment afficher le widget flottant seulement sur certaines pages ?"
+
+#: tmpl/overview.php:76
+msgid "Open the Widgets → Floating widget tab. There you can pick the widget to use, restrict it to specific WordPress content types, exclude individual pages, and add Show/Hide rules by URL pattern."
+msgstr "Ouvrez l'onglet Widgets → Widget flottant. Vous pouvez y choisir le widget à utiliser, le restreindre à certains types de contenu WordPress, exclure des pages individuelles et ajouter des règles Afficher/Masquer par motif d'URL."
+
+#: tmpl/overview.php:79
+msgid "How do I switch between sub-accounts?"
+msgstr "Comment basculer entre les sous-comptes ?"
+
+#: tmpl/overview.php:80
+msgid "Use the account dropdown on the right side of the top bar inside the plugin. The dropdown only shows when you have more than one sub-account on Repuso. Switching there updates the data shown on every plugin page (Dashboard, Reviews, Channels, Widgets)."
+msgstr "Utilisez le menu déroulant des comptes à droite de la barre supérieure du plugin. Il n'apparaît que si vous avez plus d'un sous-compte sur Repuso. Le changement met à jour les données affichées sur toutes les pages du plugin (Tableau de bord, Avis, Canaux, Widgets)."
+
+#: tmpl/overview.php:83
+msgid "Do you offer a free trial?"
+msgstr "Proposez-vous un essai gratuit ?"
+
+#: tmpl/overview.php:84
+msgid "Yes - 10 days, fully functional, no credit card needed. Start it from repuso.com."
+msgstr "Oui - 10 jours, entièrement fonctionnel, sans carte bancaire. Commencez sur repuso.com."
+
+#: tmpl/overview.php:87
+msgid "Can I cancel my subscription?"
+msgstr "Puis-je annuler mon abonnement ?"
+
+#: tmpl/overview.php:88
+msgid "Yes, anytime. Your subscription will not renew. If you have paid and changed your mind within 7 days of payment, we will issue a full refund."
+msgstr "Oui, à tout moment. Votre abonnement ne se renouvellera pas. Si vous avez payé et changé d'avis dans les 7 jours suivant le paiement, nous vous rembourserons intégralement."
+
+#: tmpl/overview.php:91
+msgid "Which payment methods do you accept?"
+msgstr "Quels moyens de paiement acceptez-vous ?"
+
+#: tmpl/overview.php:92
+msgid "All major credit cards via Stripe."
+msgstr "Toutes les principales cartes de crédit via Stripe."
+
+#: tmpl/overview.php:95
+msgid "I'm an agency or reseller - is this for me?"
+msgstr "Je suis une agence ou un revendeur : est-ce pour moi ?"
+
 #: tmpl/overview.php:96
 msgid "Yes. Repuso offers a fully white-labeled solution for agencies and resellers with sub-accounts, custom domain, and reselling tools. See repuso.com/white-label-reputation-management for details."
 msgstr "Oui. Repuso propose une solution entièrement en marque blanche pour les agences et revendeurs, avec sous-comptes, domaine personnalisé et outils de revente. Voir repuso.com/white-label-reputation-management pour plus de détails."
 
-#: social-testimonials-and-reviews-widget.php:543
-msgid "and beautifully showcase social proof reviews on your website."
-msgstr "et affichez magnifiquement des avis sociaux sur votre site."
-
-#: tmpl/overview-dashboard.php:81
-msgid "done"
-msgstr "terminé"
-
-#: tmpl/onboard.php:116
-msgid "grid, slider, badges, floating widget. Drop them anywhere with a shortcode."
-msgstr "grille, slider, badges, widget flottant. Insérez-les n'importe où avec un shortcode."
-
-#: social-testimonials-and-reviews-widget.php:247 tmpl/overview-dashboard.php:219
-msgid "negative"
-msgstr "négatifs"
-
-#: social-testimonials-and-reviews-widget.php:246 tmpl/overview-dashboard.php:218
-msgid "neutral"
-msgstr "neutres"
-
-#: social-testimonials-and-reviews-widget.php:245 tmpl/overview-dashboard.php:217
-msgid "positive"
-msgstr "positifs"
-
-#: tmpl/onboard.php:117
-msgid "request reviews by email, SMS, QR or NFC card."
-msgstr "demandez des avis par e-mail, SMS, QR ou carte NFC."
-
-#: tmpl/onboard.php:118
-msgid "resell to your clients under your own brand."
-msgstr "revendez à vos clients sous votre propre marque."
-
-#: tmpl/overview-dashboard.php:149
-msgid "reviews waiting for your approval"
-msgstr "avis en attente de votre approbation"
-
-#: social-testimonials-and-reviews-widget.php:626
-msgid "reviews waiting for your approval on Repuso."
-msgstr "avis en attente de votre approbation sur Repuso."
-
-
-#: js (rwI18n bundle)
-msgid "Yes, do it"
-msgstr "Oui, continuer"
-
-#: js (rwI18n bundle)
-msgid "Cancel"
-msgstr "Annuler"
-
-#: js (rwI18n bundle)
-msgid "Disconnect from Repuso?"
-msgstr "Se déconnecter de Repuso ?"
-
-#: js (rwI18n bundle)
-msgid "You can reconnect anytime by signing back in. Your data on Repuso isn't affected - only this site's link to it is removed."
-msgstr "Vous pouvez vous reconnecter à tout moment. Vos données sur Repuso ne sont pas affectées - seul le lien de ce site est supprimé."
-
-#: js (rwI18n bundle)
-msgid "Yes, disconnect"
-msgstr "Oui, déconnecter"
-
-#: js (rwI18n bundle)
-msgid "Not available for your role"
-msgstr "Indisponible pour votre rôle"
-
-#: js (rwI18n bundle)
-msgid "Your account role doesn't have access to %s. Ask an admin on your Repuso account to grant access, or sign in with an admin user."
-msgstr "Votre rôle de compte n'a pas accès à %s. Demandez à un administrateur de votre compte Repuso de vous accorder l'accès, ou connectez-vous avec un utilisateur administrateur."
-
-#: js (rwI18n bundle)
-msgid "last 30 days"
-msgstr "30 derniers jours"
-
-#: js (rwI18n bundle)
-msgid "last 90 days"
-msgstr "90 derniers jours"
-
-#: js (rwI18n bundle)
-msgid "last year"
-msgstr "année dernière"
-
-#: js (rwI18n bundle)
-msgid "last 2 years"
-msgstr "2 dernières années"
-
-#: js (rwI18n bundle)
-msgid "n/a"
-msgstr "n/a"
-
-#: js (rwI18n bundle)
-msgid "across %d platform"
-msgstr "sur %d plateforme"
-
-#: js (rwI18n bundle)
-msgid "across %d platforms"
-msgstr "sur %d plateformes"
-
-#: js (rwI18n bundle)
-msgid "New reviews (%s)"
-msgstr "Nouveaux avis (%s)"
-
-#: js (rwI18n bundle)
-msgid "No new reviews in range"
-msgstr "Aucun nouvel avis sur la période"
-
-#: js (rwI18n bundle)
-msgid "vs first half of range"
-msgstr "vs première moitié de la période"
-
-#: js (rwI18n bundle)
-msgid "Couldn't load"
-msgstr "Échec du chargement"
-
-#: js (rwI18n bundle)
-msgid "Chart library failed to load."
-msgstr "Échec du chargement de la bibliothèque graphique."
-
-#: js (rwI18n bundle)
-msgid "Couldn't load chart data."
-msgstr "Impossible de charger les données du graphique."
-
-#: js (rwI18n bundle)
-msgid "No improvement themes detected. Customers are happy!"
-msgstr "Aucun thème d'amélioration détecté. Vos clients sont satisfaits !"
-
-#: js (rwI18n bundle)
-msgid "AI reply unavailable - %s"
-msgstr "Réponse IA indisponible - %s"
-
-#: js (rwI18n bundle)
-msgid "AI service: %s"
-msgstr "Service IA : %s"
-
-#: js (rwI18n bundle)
-msgid "unknown error"
-msgstr "erreur inconnue"
-
-#: js (rwI18n bundle)
-msgid "Show top %d"
-msgstr "Voir les %d premières"
-
-#: js (rwI18n bundle)
-msgid "Show all %d platforms"
-msgstr "Voir les %d plateformes"
-
-#: js (rwI18n bundle)
-msgid "%ds ago"
-msgstr "il y a %ds"
-
-#: js (rwI18n bundle)
-msgid "%dm ago"
-msgstr "il y a %dm"
-
-#: js (rwI18n bundle)
-msgid "%dh ago"
-msgstr "il y a %dh"
-
-#: js (rwI18n bundle)
-msgid "%dd ago"
-msgstr "il y a %dj"
-
-#: js (rwI18n bundle)
-msgid "%dw ago"
-msgstr "il y a %dsem"
-
-#: js (rwI18n bundle)
-msgid "%dmo ago"
-msgstr "il y a %dmois"
-
-#: js (rwI18n bundle)
-msgid "%dy ago"
-msgstr "il y a %da"
-
-#: js (rwI18n bundle)
-msgid "%d s ago"
-msgstr "il y a %d s"
-
-#: js (rwI18n bundle)
-msgid "%d min ago"
-msgstr "il y a %d min"
-
-#: js (rwI18n bundle)
-msgid "%d h ago"
-msgstr "il y a %d h"
-
-#: js (rwI18n bundle)
-msgid "%d d ago"
-msgstr "il y a %d j"
-
-#: js (rwI18n bundle)
-msgid "Widget preview"
-msgstr "Aperçu du widget"
-
-#: js (rwI18n bundle)
-msgid "Widget code"
-msgstr "Code du widget"
-
-#: js (rwI18n bundle)
-msgid "No preview available."
-msgstr "Aucun aperçu disponible."
-
-#: js (rwI18n bundle)
-msgid "Could not load the widget. Please try again."
-msgstr "Impossible de charger le widget. Veuillez réessayer."
-
-#: js (rwI18n bundle)
-msgid "Copy code"
-msgstr "Copier le code"
-
-#: tmpl/onboard.php (login OTP)
-msgid "Email me a code"
-msgstr "M'envoyer un code par e-mail"
-
-#: tmpl/onboard.php (login OTP)
-msgid "We'll email you a 6-digit code. Enter it here to sign in - no password needed."
-msgstr "Nous vous enverrons un code à 6 chiffres par e-mail. Saisissez-le ici pour vous connecter, sans mot de passe."
-
-#: tmpl/onboard.php (login OTP)
-msgid "6-digit code"
-msgstr "Code à 6 chiffres"
-
-#: tmpl/onboard.php (login OTP)
-msgid "Sign in with code"
-msgstr "Se connecter avec le code"
-
-#: tmpl/onboard.php (login OTP)
-msgid "Resend code"
-msgstr "Renvoyer le code"
-
-#: tmpl/onboard.php
-msgid "I'm new to Repuso"
-msgstr "Je découvre Repuso"
-
-#: tmpl/onboard.php
-msgid "One-click signup. We'll email you your login details."
-msgstr "Inscription en un clic. Nous vous enverrons vos identifiants de connexion par e-mail."
-
-#: tmpl/onboard.php
-msgid "We've emailed you your login details. Open your dashboard to add your first review channel."
-msgstr "Nous vous avons envoyé vos identifiants par e-mail. Ouvrez votre tableau de bord pour ajouter votre premier canal d'avis."
-
-#: dashboard rating trend
-msgid "Average rating trend"
-msgstr "Évolution de la note moyenne"
-
-#: dashboard rating trend
-msgid "How your average rating has moved over the selected period."
-msgstr "Comment votre note moyenne a évolué sur la période sélectionnée."
-
-#: dashboard rating trend
-msgid "No rating data for the selected period."
-msgstr "Aucune donnée de note pour la période sélectionnée."
-
-#: js/rw-onboard.js
-msgid "Email is required."
-msgstr "L'e-mail est obligatoire."
-
-#: js/rw-onboard.js
-msgid "Enter a valid email address."
-msgstr "Saisissez une adresse e-mail valide."
-
-#: js/rw-onboard.js
-msgid "Use a real email address, not a reserved placeholder domain."
-msgstr "Utilisez une vraie adresse e-mail, pas un domaine fictif réservé."
-
-#: js/rw-onboard.js
-msgid "Use a real email address, not a local or reserved-TLD domain."
-msgstr "Utilisez une vraie adresse e-mail, pas un domaine local ou un TLD réservé."
-
-#: js/rw-onboard.js
-msgid "An account with this email already exists. Use the \"I already have a Repuso account\" form to sign in."
-msgstr "Un compte existe déjà avec cet e-mail. Utilisez le formulaire « J'ai déjà un compte Repuso » pour vous connecter."
-
-#: js/rw-onboard.js
-msgid "We could not create your account. Try again."
-msgstr "Impossible de créer votre compte. Réessayez."
-
-#: js/rw-onboard.js
-msgid "Creating your account…"
-msgstr "Création de votre compte…"
-
-#: js/rw-onboard.js
-msgid "Invalid email or password"
-msgstr "E-mail ou mot de passe invalide"
-
-#: js/rw-onboard.js
-msgid "Password is required."
-msgstr "Le mot de passe est obligatoire."
-
-#: js/rw-onboard.js
-msgid "Signing in…"
-msgstr "Connexion…"
-
-#: js/rw-onboard.js
-msgid "Sending…"
-msgstr "Envoi…"
-
-#: js/rw-onboard.js
-msgid "Couldn't send the code. Please try again."
-msgstr "Impossible d'envoyer le code. Veuillez réessayer."
-
-#: js/rw-onboard.js
-msgid "We emailed a 6-digit code to %s. It expires in 10 minutes."
-msgstr "Nous avons envoyé un code à 6 chiffres à %s. Il expire dans 10 minutes."
-
-#: js/rw-onboard.js
-msgid "Enter the 6-digit code from your email."
-msgstr "Saisissez le code à 6 chiffres reçu par e-mail."
-
-#: js/rw-onboard.js
-msgid "Invalid or expired code. Try again or request a new one."
-msgstr "Code invalide ou expiré. Réessayez ou demandez-en un nouveau."
-
-#: tmpl/onboard.php (login switch links)
-msgid "Email me a login code instead"
-msgstr "M'envoyer plutôt un code de connexion par e-mail"
-
-#: tmpl/onboard.php (login switch links)
-msgid "Use password instead"
-msgstr "Utiliser le mot de passe à la place"
-
-#: tmpl/onboard.php (signup success)
-msgid "Redirecting to your dashboard…"
-msgstr "Redirection vers votre tableau de bord…"
-
-#: tmpl/onboard.php (signup success)
-msgid "We've emailed you your login details."
-msgstr "Nous vous avons envoyé vos identifiants par e-mail."
-
-#: trial / account-status banner
-msgid "Free trial ends today"
-msgstr "L'essai gratuit se termine aujourd'hui"
-
-#: trial / account-status banner
-msgid "1 day left in your free trial"
-msgstr "Il reste 1 jour à votre essai gratuit"
-
-#: trial / account-status banner
-msgid "%d days left in your free trial"
-msgstr "%d jours restants dans votre essai gratuit"
-
-#: trial / account-status banner
-msgid "Complete your setup before the trial ends."
-msgstr "Terminez votre configuration avant la fin de l'essai."
-
-#: trial / account-status banner
-msgid "Pick a plan to keep your widgets live after the trial ends."
-msgstr "Choisissez un plan pour garder vos widgets actifs après la fin de l'essai."
-
-#: trial / account-status banner
+#: tmpl/overview.php:99
+msgid "What's a property?"
+msgstr "Qu'est-ce qu'un établissement ?"
+
+#: tmpl/overview.php:100
+msgid "A property is a set of all channels, one per kind (1 x Google, 1 x Facebook, 1 x TripAdvisor etc). Usually used for multiple locations, services or rental properties of the same business. Reviews from different properties can be displayed together in widgets."
+msgstr "Une propriété est un ensemble de canaux, un par type (1 Google, 1 Facebook, 1 TripAdvisor, etc.). Généralement utilisée pour plusieurs sites, services ou logements en location d'une même entreprise. Les avis de différentes propriétés peuvent être affichés ensemble dans les widgets."
+
+#: tmpl/overview.php:103
+msgid "What's a sub account?"
+msgstr "Qu'est-ce qu'un sous-compte ?"
+
+#: tmpl/overview.php:104
+msgid "A sub account is a standalone account, usually used for a new business, service or client. It can have multiple properties and has its own Collect page and widgets."
+msgstr "Un sous-compte est un compte autonome, généralement utilisé pour une nouvelle activité, un service ou un client. Il peut contenir plusieurs propriétés et dispose de sa propre page Collecte et de ses propres widgets."
+
+#: tmpl/overview.php:114
+msgid "Chat with our team"
+msgstr "Discuter avec notre équipe"
+
+#: tmpl/overview.php:115
+msgid "Real humans, real fast. Drop us a message and we will reply during business hours."
+msgstr "De vraies personnes, très rapidement. Envoyez-nous un message et nous répondrons pendant nos heures d'ouverture."
+
+#: tmpl/overview.php:121
+msgid "Start a chat"
+msgstr "Démarrer une discussion"
+
+#: tmpl/overview.php:129
+msgid "Frequently asked questions"
+msgstr "Questions fréquentes"
+
+#: tmpl/overview.php:130
+msgid "Quick answers to the things people ask most. Still stuck? Use the chat above."
+msgstr "Réponses rapides aux questions les plus courantes. Toujours bloqué ? Utilisez le chat ci-dessus."
+
+#. translators: %s: link to repuso.com
+#: tmpl/overview.php:177
+#, php-format
+msgid "Find out more at our website: %s"
+msgstr "En savoir plus sur notre site : %s"
+
+#: tmpl/shortcodes.php:5
+msgid "Shortcodes"
+msgstr "Shortcodes"
+
+#: tmpl/shortcodes.php:7
+msgid "You can use shortcodes on your WordPress posts and pages to implement in-page testimonials widgets, here's how:"
+msgstr "Vous pouvez utiliser des shortcodes dans vos articles et pages WordPress pour intégrer des widgets d'avis. Voici comment :"
+
+#: tmpl/shortcodes.php:9
+msgid "Go to your \"Dashboard\" (at the left menu)"
+msgstr "Allez dans votre \"Tableau de bord\" (menu de gauche)"
+
+#: tmpl/shortcodes.php:10
+msgid "Go to \"Widgets\" and choose which widget to implement"
+msgstr "Allez dans \"Widgets\" et choisissez le widget à intégrer"
+
+#: tmpl/shortcodes.php:11
+msgid "Find and copy the shortcode for the widget:"
+msgstr "Trouvez et copiez le shortcode du widget :"
+
+#: tmpl/shortcodes.php:12
+msgid "Paste the shortcode anywhere on your posts or pages:"
+msgstr "Collez le shortcode dans vos articles ou pages :"
+
+#: tmpl/topbar.php:34
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: tmpl/topbar.php:53
 msgid "Choose a plan"
 msgstr "Choisir un plan"
 
-#: trial / account-status banner
-msgid "Your Repuso account is disabled"
-msgstr "Votre compte Repuso est désactivé"
+#: tmpl/topbar.php:61
+msgid "Repuso plugin navigation"
+msgstr "Navigation du plugin Repuso"
 
-#: trial / account-status banner
-msgid "Choose a plan to reactivate your account and bring your widgets back online."
-msgstr "Choisissez un plan pour réactiver votre compte et remettre vos widgets en ligne."
+#: tmpl/topbar.php:81
+msgid "Active website"
+msgstr "Site actif"
 
-#: trial banner sub-line
-msgid "Choose your plan to avoid interruptions, remaining trial days are not billed."
-msgstr "Choisissez votre plan pour éviter toute interruption, les jours d'essai restants ne sont pas facturés."
+#: tmpl/topbar.php:85
+msgid "Open the full Repuso dashboard"
+msgstr "Ouvrir le tableau de bord Repuso complet"
 
-#: admin notice (global)
-msgid "Repuso review widgets"
-msgstr "Repuso review widgets"
+#: tmpl/topbar.php:87
+msgid "Full Dashboard"
+msgstr "Tableau de bord complet"
 
-#: admin notice (global)
-msgid "%s: your account is disabled"
-msgstr "%s : votre compte est désactivé"
+#: tmpl/topbar.php:90
+msgid "Disconnect this site from Repuso"
+msgstr "Déconnecter ce site de Repuso"
 
-#: admin notice (global)
-msgid "Choose a plan to reactivate your account and bring your review widgets back online."
-msgstr "Choisissez un plan pour réactiver votre compte et remettre vos widgets d'avis en ligne."
+#: tmpl/topbar.php:92
+msgid "Disconnect"
+msgstr "Déconnexion"
 
-#: admin notice (global)
-msgid "%s: free trial ends today"
-msgstr "%s : l'essai gratuit se termine aujourd'hui"
 
-#: admin notice (global)
-msgid "%s: 1 day left in your free trial"
-msgstr "%s : il reste 1 jour à votre essai gratuit"
-
-#: admin notice (global)
-msgid "%1$s: %2$d days left in your free trial"
-msgstr "%1$s : %2$d jours restants dans votre essai gratuit"
-
-#: admin notice (global)
-msgid "Showcase reviews from 45+ platforms on your site. Choose your plan to avoid interruptions; remaining trial days are not billed."
-msgstr "Affichez des avis provenant de plus de 45 plateformes sur votre site. Choisissez votre plan pour éviter les interruptions ; les jours d'essai restants ne sont pas facturés."
-
-#: admin notice (global)
-msgid "Check"
-msgstr "Vérifier"
-
-#: admin notice (connect)
-msgid "%s: connect to display reviews on your site"
-msgstr "%s : connectez-vous pour afficher des avis sur votre site"
-
-#: admin notice (connect)
-msgid "Showcase reviews from Google, Facebook, TripAdvisor, Airbnb and 45+ other platforms. Free 14-day trial."
-msgstr "Affichez des avis de Google, Facebook, TripAdvisor, Airbnb et plus de 45 autres plateformes. Essai gratuit de 14 jours."
-
-#: admin notice (connect)
-msgid "Connect"
-msgstr "Connecter"
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Post reply on Google"
-msgstr "Publier la réponse sur Google"
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Edit reply"
-msgstr "Modifier la réponse"
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Delete reply"
-msgstr "Supprimer la réponse"
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Delete this reply from Google?"
-msgstr "Supprimer cette réponse de Google ?"
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Your reply"
-msgstr "Votre réponse"
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Not matched to Google yet"
-msgstr "Pas encore associé à Google"
-
-#: social-testimonials-and-reviews-widget.php
-msgid "You don't have permission to reply here."
-msgstr "Vous n'avez pas l'autorisation de répondre ici."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "This review is not on Google yet. Try again in a few minutes."
-msgstr "Cet avis n'est pas encore disponible sur Google. Réessayez dans quelques minutes."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Google access expired. Reconnect Google on the Repuso dashboard."
-msgstr "L'accès Google a expiré. Reconnectez Google dans le tableau de bord Repuso."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "The reply is too long for Google."
-msgstr "La réponse est trop longue pour Google."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Write a reply first."
-msgstr "Écrivez d'abord une réponse."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "This review was answered meanwhile. Nothing was posted."
-msgstr "Cet avis a reçu une réponse entre-temps. Rien n'a été publié."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Google is busy right now. Please try again in a minute."
-msgstr "Google est très sollicité en ce moment. Réessayez dans une minute."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Google did not accept the reply. Please try again."
-msgstr "Google n'a pas accepté la réponse. Veuillez réessayer."
-
-#: social-testimonials-and-reviews-widget.php
-msgid "Write your reply..."
-msgstr "Écrivez votre réponse..."
+#~ msgid "We've emailed you your login details. Open your dashboard to add your first review channel."
+#~ msgstr "Nous vous avons envoyé vos identifiants par e-mail. Ouvrez votre tableau de bord pour ajouter votre premier canal d'avis."
